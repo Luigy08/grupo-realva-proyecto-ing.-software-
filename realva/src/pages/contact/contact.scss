@@ -1,3 +1,53 @@
 page-contact {
+    form {
+        display: block;
+        margin-top: 0em;
+        border: 0px;
+        .form-group{
+            margin-top: 10px;
+            height: auto;
+            float: left;
+            width: 100%;
+        }
 
+    }
+    fieldset{
+        border: 0px;
+    }
+h1,h2{
+    color: rgb(68, 67, 73);
+    border: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #5C8BA6;
+}
+}
+div {
+    display: block;
+    border: 0px;
+}
+.form-group .control-label{
+    float: left;
+    display: block;
+    width: 25%;
+}
+
+.form-group .form-control{
+    float: left;
+    display: block;
+    width: 70%;
+}
+
+.buttons{
+    float: right;
+    margin-right: 6%;
+}
+
+.control-label::before{
+    content: "*";
+    color: #EA2E49;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    margin-right: 3px;
 }
