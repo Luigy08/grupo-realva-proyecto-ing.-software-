@@ -14,6 +14,7 @@ import {AdminPage} from "../pages/admin/admin";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {ProductPage} from "../pages/product/product";
+import { DownloadsPage } from '../pages/downloads/downloads';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {ProductPage} from "../pages/product/product";
     TabsPage,
     ProductPage,
     LoginPage,
-    AdminPage
+    AdminPage,
+    DownloadsPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import {ProductPage} from "../pages/product/product";
     TabsPage,
     ProductPage,
     LoginPage,
-    AdminPage
+    AdminPage,
+    DownloadsPage
 
   ],
   providers: [
