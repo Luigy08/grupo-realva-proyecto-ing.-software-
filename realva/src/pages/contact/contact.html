@@ -43,7 +43,7 @@
         <div class="form-group required">
           <div class="col-sm-10">
             <label class="col-sm-2 control-label" for="input-name">Tu Nombre:</label>
-            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keyup)="onKeyUp($event)" required>
+            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"  (keyup)="onKeyUp($event)" required>
           </div>
         </div>
         <div class="form-group required">

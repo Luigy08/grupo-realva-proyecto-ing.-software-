@@ -46,7 +46,7 @@ export class ContactPage {
 
     let newValue = event.target.value;
 
-    let regExp = new RegExp('^[A-Za,a-z ]+$');
+    let regExp = new RegExp('^[A-ZaÑñÁÉÍÓÚáéíóú,a-z, ]+$');
 
     if (!regExp.test(newValue)) {
       event.target.value = newValue.slice(0, -1);
