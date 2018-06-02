@@ -1,4 +1,12 @@
-h1{
+h1,
+h2 {
+    color: rgb(68, 67, 73);
+    border: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #5C8BA6;
+}
+h1 {
     text-align: center;
 }
 
@@ -30,4 +38,8 @@ div.blocks{
 
 p{
     text-align: justify;
+}
+
+.About{
+    margin: 70px;
 }
