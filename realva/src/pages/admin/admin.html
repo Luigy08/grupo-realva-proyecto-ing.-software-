@@ -1,0 +1,69 @@
+<!--
+  Generated template for the AdminPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title end>Admin</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-segment [(ngModel)]="AdminTab" color="primary">
+      <ion-segment-button value="CarruselOfertas">
+        Carrusel Ofertas
+      </ion-segment-button>
+      <ion-segment-button value="CarruselPrincipal">
+        Carrusel Principal
+      </ion-segment-button>
+      <ion-segment-button value="AceptacionClientes">
+        Aceptacion de Clientes
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="AdminTab">
+    <div *ngSwitchCase="'CarruselOfertas'">
+      <button ion-button>Añadir</button>
+      <ion-list *ngFor="let image of images">
+        <ion-item>
+          <ion-card>
+            <button ion-button (click)="DeleteImageCarrOfer(image.id)"></button>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'CarruselPrincipal'">
+      <button ion-button>Añadir</button>
+      <ion-list *ngFor="let image of images">
+        <ion-item>
+          <ion-card>
+            <button (click)="DeleteImageCarrMain(image.id)"></button>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'AceptacionClientes'">
+      <ion-card>
+        <ion-card-header>
+          Cliente: Mario <br>Status: X <br>Calle: X <br>Telefono: 98756413 <br>Clasificacion: veterinario <br>RTN: 1987416315
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button small >Aceptar</button>
+          <button ion-button small >Denegar</button>
+        </ion-card-content>
+      </ion-card>
+      <ion-list *ngFor="let image of images">
+        <ion-item>
+          <ion-card>
+            <button ion-button (click)="DeleteImageCarrMain(image.id)"></button>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+
+</ion-content>
