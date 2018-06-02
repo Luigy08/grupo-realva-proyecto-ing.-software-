@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'admin.html',
 })
 export class AdminPage {
+  url: any;
   AdminScreenIndex: number;
   prueba: any = "Texto";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -22,10 +23,10 @@ export class AdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminPage');
   }
-  DeleteImageCarrOfer(ImageId){
+  DeleteImageCarrOfer(ImageId) {
 
   }
-  DeleteImageCarrMain(ImageId){
+  DeleteImageCarrMain(ImageId) {
 
   }
 }

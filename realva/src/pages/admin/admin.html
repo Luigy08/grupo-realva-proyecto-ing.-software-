@@ -26,7 +26,10 @@
   </div>
   <div [ngSwitch]="AdminTab">
     <div *ngSwitchCase="'CarruselOfertas'">
-      <button ion-button>Añadir</button>
+      <form action="">
+        <input type="file" name="pic" accept="image/*">
+        <input type="submit">
+      </form>
       <ion-list *ngFor="let image of images">
         <ion-item>
           <ion-card>
@@ -36,12 +39,15 @@
       </ion-list>
     </div>
     <div *ngSwitchCase="'CarruselPrincipal'">
-      <button ion-button>Añadir</button>
+        <form action="">
+            <input type="file" name="pic" accept="image/*">
+            <input type="submit">
+          </form>
       <ion-list *ngFor="let image of images">
         <ion-item>
           <ion-card>
             <ion-card-content>
-                <button (click)="DeleteImageCarrMain(image.id)"></button>
+              <button (click)="DeleteImageCarrMain(image.id)"></button>
             </ion-card-content>
           </ion-card>
         </ion-item>
