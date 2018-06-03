@@ -18,7 +18,7 @@
     <fieldset>
       <div class="form-group required">
         <div class="col-sm-10">
-          <label class="col-sm-2 control-label" for="input-name">Tu Nombre:</label>
+          <label class="col-sm-2 control-label" for="input-name">Nombre:</label>
           <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"
             (keyup)="onKeyUp($event)" min="10" max="32" required>
         </div>
@@ -38,16 +38,23 @@
       </div>
       <div class="form-group required">
         <div class="col-sm-10">
-          <label class="col-sm-2 control-label" for="input-name">Telefono:</label>
+          <label class="col-sm-2 control-label" for="input-telephone">Telefono:</label>
           <input type="tel" class="form-control" [(ngModel)]="Data.telephone" name="telephone" formControlName="telephone" (keypress)="onKeyUpNum($event)"
             (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8" max="12" required>
         </div>
       </div>
       <div class="form-group required">
         <div class="col-sm-10">
-          <label class="col-sm-2 control-label" for="input-name">RTN:</label>
+          <label class="col-sm-2 control-label" for="input-id">RTN:</label>
           <input type="text" class="form-control" [(ngModel)]="Data.RTN" name="RTN" formControlName="RTN" pattern="[0-9]{14}" (keypress)="onKeyUpNum($event)"
             (keyup)="onKeyUpNum($event)" min="14" max="17" required>
+        </div>
+      </div>
+      <div class="form-group required">
+        <div class="col-sm-10">
+          <label class="col-sm-2 control-label" for="input-password">Contraseña:</label>
+          <input type="text" class="form-control" [(ngModel)]="Data.password" name="password" formControlName="password" min="5" max="32"
+            required>
         </div>
       </div>
     </fieldset>
