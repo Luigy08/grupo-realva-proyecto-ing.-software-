@@ -19,8 +19,8 @@ export class LoginRegisterProvider {
     this.AdminAuth = !this.AdminAuth;
   }
 
-  Login(){
-
+  Login(Data){
+    this.presentAlert(Data.username,Data.password,"ok");
   }
   LogOut(){
 

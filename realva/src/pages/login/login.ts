@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {LoginRegisterProvider} from "../../providers/login-register/login-register"
+import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
+import { LoginRegisterProvider } from "../../providers/login-register/login-register";
 
 /**
  * Generated class for the LoginPage page.
@@ -15,8 +16,15 @@ import {LoginRegisterProvider} from "../../providers/login-register/login-regist
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  Data: any = {};
+  loginForm: FormGroup;
+  username: AbstractControl;
+  email: AbstractControl;
   constructor(public navCtrl: NavController, public navParams: NavParams, public loginRegister: LoginRegisterProvider) {
+    this.loginForm = new FormGroup({
+      username: new FormControl('', Validators.required),
+      password: new FormControl(),
+    });
   }
 
   ionViewDidLoad() {

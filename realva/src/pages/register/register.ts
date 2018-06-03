@@ -32,7 +32,7 @@ export class RegisterPage {
       direction: new FormControl(),
       telephone: new FormControl('', Validators.required),
       RTN: new FormControl('', Validators.required),
-      password: new FormControl()
+      password: new FormControl(),
     });
   }
 
