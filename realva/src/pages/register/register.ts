@@ -29,8 +29,8 @@ export class RegisterPage {
       username: new FormControl('', Validators.required),
       email: new FormControl(),
       direction: new FormControl(),
-      telephone:new FormControl(),
-      RTN:new FormControl()
+      telephone:new FormControl('', Validators.required),
+      RTN:new FormControl('', Validators.required)
     });
   }
 
@@ -46,7 +46,7 @@ export class RegisterPage {
   }
   public onKeyUpNum(event: any) {
     let newValue = event.target.value;
-    let regExp = new RegExp('^[0-9,+]');
+    let regExp = new RegExp('^[0-9, ]+$');
     if (!regExp.test(newValue)) {
       event.target.value = newValue.slice(0, -1);
     }
