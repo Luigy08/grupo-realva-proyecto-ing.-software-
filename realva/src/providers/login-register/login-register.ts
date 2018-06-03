@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NavController, ActionSheetController, AlertController } from 'ionic-angular';
 
 /*
   Generated class for the LoginRegisterProvider provider.
@@ -11,7 +12,7 @@ import { Injectable } from '@angular/core';
 export class LoginRegisterProvider {
   AdminAuth:boolean=false;
   ClientAuth:boolean=false;
-  constructor() {
+  constructor(private alertCtrl: AlertController) {
     console.log('Hello LoginRegisterProvider Provider');
   }
   AdminLogin(){
@@ -24,7 +25,14 @@ export class LoginRegisterProvider {
   LogOut(){
 
   }
-  Register(){
-    
+  Register(Data){
+  }
+  presentAlert(Title, SubTitle, Button) {
+    let alert = this.alertCtrl.create({
+      title: Title,
+      subTitle: SubTitle,
+      buttons: [Button]
+    });
+    alert.present();
   }
 }
