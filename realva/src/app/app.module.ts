@@ -15,6 +15,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {ProductPage} from "../pages/product/product";
 import { DownloadsPage } from '../pages/downloads/downloads';
+import { RegisterPage } from '../pages/register/register';
+import { LoginRegisterProvider } from '../providers/login-register/login-register';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { DownloadsPage } from '../pages/downloads/downloads';
     ProductPage,
     LoginPage,
     AdminPage,
-    DownloadsPage
+    DownloadsPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -43,13 +46,15 @@ import { DownloadsPage } from '../pages/downloads/downloads';
     ProductPage,
     LoginPage,
     AdminPage,
-    DownloadsPage
+    DownloadsPage,
+    RegisterPage
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginRegisterProvider
   ]
 })
 export class AppModule {}

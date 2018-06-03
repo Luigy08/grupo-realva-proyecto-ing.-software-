@@ -1,7 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Home</ion-title>
-    <button ion-button [navPush]="login"> Login </button>
+    <ion-buttons end>
+      <button ion-button [navPush]="login" >Login</button>
+      <button ion-button [navPush]="register" > Registrarse </button>
+      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -23,45 +27,49 @@
     <div id="home_info" margin-top="3%">
       <h2>Pivote</h2>
       <p>
-        Nikola Tesla (en cirÃ­lico: ÐÐ¸ÐºÐ¾Ð»Ð° Ð¢ÐµÑÐ»Ð°; Smiljan, Imperio austrÃ­aco, actual Croacia, 10 de julio de 1856-Nueva York, 7 de
-        enero de 1943) fue un inventor, ingeniero mecÃ¡nico, elÃ©ctrico y fÃ­sico de origen serbio.1â€‹2â€‹ Se le conoce sobre todo
-        por sus numerosas invenciones en el campo del electromagnetismo, desarrolladas a finales del siglo XIX y principios
-        del siglo XX. Las patentes de Tesla y su trabajo teÃ³rico ayudaron a forjar las bases de los sistemas modernos para
-        el uso de la energÃ­a elÃ©ctrica por corriente alterna (CA), incluyendo el sistema polifÃ¡sico de distribuciÃ³n elÃ©ctrica
-        y el motor de corriente alterna, que contribuyeron al surgimiento de la Segunda RevoluciÃ³n Industrial.
+        Nikola Tesla (en cirÃ­lico: ÐÐ¸ÐºÐ¾Ð»Ð° Ð¢ÐµÑÐ»Ð°; Smiljan, Imperio austrÃ­aco, actual Croacia, 10 de julio de 1856-Nueva
+        York, 7 de enero de 1943) fue un inventor, ingeniero mecÃ¡nico, elÃ©ctrico y fÃ­sico de origen serbio.1â€‹2â€‹ Se
+        le conoce sobre todo por sus numerosas invenciones en el campo del electromagnetismo, desarrolladas a finales del
+        siglo XIX y principios del siglo XX. Las patentes de Tesla y su trabajo teÃ³rico ayudaron a forjar las bases de los
+        sistemas modernos para el uso de la energÃ­a elÃ©ctrica por corriente alterna (CA), incluyendo el sistema polifÃ¡sico
+        de distribuciÃ³n elÃ©ctrica y el motor de corriente alterna, que contribuyeron al surgimiento de la Segunda RevoluciÃ³n
+        Industrial.
       </p>
     </div>
     <div id="home_info2">
       <div>
         <p>
-            Nikola Tesla (en cirÃ­lico: ÐÐ¸ÐºÐ¾Ð»Ð° Ð¢ÐµÑÐ»Ð°; Smiljan, Imperio austrÃ­aco, actual Croacia, 10 de julio de 1856-Nueva York, 7 de
-            enero de 1943) fue un inventor, ingeniero mecÃ¡nico, elÃ©ctrico y fÃ­sico de origen serbio.1â€‹2â€‹ Se le conoce sobre todo
-            por sus numerosas invenciones en el campo del electromagnetismo, desarrolladas a finales del siglo XIX y principios
-            del siglo XX. Las patentes de Tesla y su trabajo teÃ³rico ayudaron a forjar las bases de los sistemas modernos para
-            el uso de la energÃ­a elÃ©ctrica por corriente alterna (CA), incluyendo el sistema polifÃ¡sico de distribuciÃ³n elÃ©ctrica
-            y el motor de corriente alterna, que contribuyeron al surgimiento de la Segunda RevoluciÃ³n Industrial.
-          </p>
+          Nikola Tesla (en cirÃ­lico: ÐÐ¸ÐºÐ¾Ð»Ð° Ð¢ÐµÑÐ»Ð°; Smiljan, Imperio austrÃ­aco, actual Croacia, 10 de julio de 1856-Nueva
+          York, 7 de enero de 1943) fue un inventor, ingeniero mecÃ¡nico, elÃ©ctrico y fÃ­sico de origen serbio.1â€‹2â€‹
+          Se le conoce sobre todo por sus numerosas invenciones en el campo del electromagnetismo, desarrolladas a finales
+          del siglo XIX y principios del siglo XX. Las patentes de Tesla y su trabajo teÃ³rico ayudaron a forjar las bases
+          de los sistemas modernos para el uso de la energÃ­a elÃ©ctrica por corriente alterna (CA), incluyendo el sistema
+          polifÃ¡sico de distribuciÃ³n elÃ©ctrica y el motor de corriente alterna, que contribuyeron al surgimiento de la
+          Segunda RevoluciÃ³n Industrial.
+        </p>
       </div>
       <div>
-          <p>
-              Nikola Tesla (en cirÃ­lico: ÐÐ¸ÐºÐ¾Ð»Ð° Ð¢ÐµÑÐ»Ð°; Smiljan, Imperio austrÃ­aco, actual Croacia, 10 de julio de 1856-Nueva York, 7 de
-              enero de 1943) fue un inventor, ingeniero mecÃ¡nico, elÃ©ctrico y fÃ­sico de origen serbio.1â€‹2â€‹ Se le conoce sobre todo
-              por sus numerosas invenciones en el campo del electromagnetismo, desarrolladas a finales del siglo XIX y principios
-              del siglo XX. Las patentes de Tesla y su trabajo teÃ³rico ayudaron a forjar las bases de los sistemas modernos para
-              el uso de la energÃ­a elÃ©ctrica por corriente alterna (CA), incluyendo el sistema polifÃ¡sico de distribuciÃ³n elÃ©ctrica
-              y el motor de corriente alterna, que contribuyeron al surgimiento de la Segunda RevoluciÃ³n Industrial.
-            </p>
+        <p>
+          Nikola Tesla (en cirÃ­lico: ÐÐ¸ÐºÐ¾Ð»Ð° Ð¢ÐµÑÐ»Ð°; Smiljan, Imperio austrÃ­aco, actual Croacia, 10 de julio de 1856-Nueva
+          York, 7 de enero de 1943) fue un inventor, ingeniero mecÃ¡nico, elÃ©ctrico y fÃ­sico de origen serbio.1â€‹2â€‹
+          Se le conoce sobre todo por sus numerosas invenciones en el campo del electromagnetismo, desarrolladas a finales
+          del siglo XIX y principios del siglo XX. Las patentes de Tesla y su trabajo teÃ³rico ayudaron a forjar las bases
+          de los sistemas modernos para el uso de la energÃ­a elÃ©ctrica por corriente alterna (CA), incluyendo el sistema
+          polifÃ¡sico de distribuciÃ³n elÃ©ctrica y el motor de corriente alterna, que contribuyeron al surgimiento de la
+          Segunda RevoluciÃ³n Industrial.
+        </p>
       </div>
     </div>
     <div id="home_info3">
-        <p>
-            Nikola Tesla (en cirÃ­lico: ÐÐ¸ÐºÐ¾Ð»Ð° Ð¢ÐµÑÐ»Ð°; Smiljan, Imperio austrÃ­aco, actual Croacia, 10 de julio de 1856-Nueva York, 7 de
-            enero de 1943) fue un inventor, ingeniero mecÃ¡nico, elÃ©ctrico y fÃ­sico de origen serbio.1â€‹2â€‹ Se le conoce sobre todo
-            por sus numerosas invenciones en el campo del electromagnetismo, desarrolladas a finales del siglo XIX y principios
-            del siglo XX. Las patentes de Tesla y su trabajo teÃ³rico ayudaron a forjar las bases de los sistemas modernos para
-            el uso de la energÃ­a elÃ©ctrica por corriente alterna (CA), incluyendo el sistema polifÃ¡sico de distribuciÃ³n elÃ©ctrica
-            y el motor de corriente alterna, que contribuyeron al surgimiento de la Segunda RevoluciÃ³n Industrial.
-          </p>
+      <p>
+        Nikola Tesla (en cirÃ­lico: ÐÐ¸ÐºÐ¾Ð»Ð° Ð¢ÐµÑÐ»Ð°; Smiljan, Imperio austrÃ­aco, actual Croacia, 10 de julio de 1856-Nueva
+        York, 7 de enero de 1943) fue un inventor, ingeniero mecÃ¡nico, elÃ©ctrico y fÃ­sico de origen serbio.1â€‹2â€‹ Se
+        le conoce sobre todo por sus numerosas invenciones en el campo del electromagnetismo, desarrolladas a finales del
+        siglo XIX y principios del siglo XX. Las patentes de Tesla y su trabajo teÃ³rico ayudaron a forjar las bases de los
+        sistemas modernos para el uso de la energÃ­a elÃ©ctrica por corriente alterna (CA), incluyendo el sistema polifÃ¡sico
+        de distribuciÃ³n elÃ©ctrica y el motor de corriente alterna, que contribuyeron al surgimiento de la Segunda RevoluciÃ³n
+        Industrial.
+      </p>
     </div>
   </div>
 </ion-content>
