@@ -16,8 +16,7 @@ import * as firebase from 'firebase';
 @Injectable()
 export class ImageDataProvider {
   files: Observable<any[]>;
-  file: string;
-  fileurl: string = "hola";
+  file: string = "hola.png";
   constructor(private db: AngularFireDatabase, private afStorage: AngularFireStorage, private alertCtrl: AlertController, private toastCtrl: ToastController) { }
 
   getFiles() {
@@ -31,7 +30,7 @@ export class ImageDataProvider {
     this.uploadToStorage(File);
   }
   uploadToStorage(information) {
-    this.uploadFile(information);
+    firebase.storage().ref(this.file).put(information);
   }
   protected getFileUrl(): Promise<any> {
     return new Promise((resolve: any, reject: any) => {
@@ -45,14 +44,15 @@ export class ImageDataProvider {
     });
   }
   protected uploadFile(information): Promise<any> {
-    this.file = `hola.png`;
-    return new Promise((resolve: any, reject: any) => {
-      firebase.storage().ref(this.file).put(information).then(() => {
-            console.log('successfully uploaded Your file');
-            return resolve();
+    try {
+      return new Promise((resolve: any, reject: any) => {
+        firebase.storage().ref(this.file).put(information).then(() => {
+          console.log('successfully uploaded Your file');
+          return resolve();
         }).catch((error: any) => {
-            return reject(error);
+          return reject(error);
         });
-    });
-}
+      });
+    } catch (event) { }
+  }
 }
