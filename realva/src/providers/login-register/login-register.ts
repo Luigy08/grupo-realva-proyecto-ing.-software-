@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 import { NavController, ActionSheetController, AlertController } from 'ionic-angular';
 
 /*
@@ -12,18 +14,56 @@ import { NavController, ActionSheetController, AlertController } from 'ionic-ang
 export class LoginRegisterProvider {
   AdminAuth:boolean=false;
   ClientAuth:boolean=false;
-  constructor(private alertCtrl: AlertController) {
-    console.log('Hello LoginRegisterProvider Provider');
+  users: any;
+  constructor(private alertCtrl: AlertController ,public http: Http) {
+    this.http.get('http://localhost/get_users.php').map(res => res.json()).subscribe(data => {
+      this.users = data, err => {
+        console.log("Oops!");
+      };
+    });
+    var data = {
+      email: "test@somewhere.com",
+      password: "pass123"
+    };
+    this.http.post('http://localhost/login.php', data).map(res => res.json()).subscribe(res => {
+      if (res != "") {
+        console.log(res);
+      } else {
+        console.log("bad");
+      }
+    });
+  }
+  chargeUsers(){
+    this.http.get('http://localhost/get_users.php').map(res => res.json()).subscribe(data => {
+      this.users = data, err => {
+        console.log("Oops!");
+      };
+    });
   }
   AdminLogin(){
     this.AdminAuth = !this.AdminAuth;
   }
 
   Login(Data){
+    if(Data.username == "realva@gmail.com"){
+      if(Data.password == "123"){
+        this.AdminAuth = true;
+      }
+    }else{
+      for (let user of this.users) {
+        if(Data.username == user.user_email){
+          if(Data.password == user.password){
+            this. ClientAuth = true;
+          }
+        }
+      }
+    }
+    this.chargeUsers();
     this.presentAlert(Data.username,Data.password,"ok");
   }
   LogOut(){
-
+    this.AdminAuth=false;
+    this.ClientAuth=false;
   }
   Register(Data){
   }
