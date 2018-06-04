@@ -26,7 +26,9 @@ export class LoginPage {
       password: new FormControl(),
     });
   }
-
+  clear(){
+    this.loginForm.reset();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }

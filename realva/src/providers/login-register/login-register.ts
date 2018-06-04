@@ -48,18 +48,19 @@ export class LoginRegisterProvider {
     if(Data.username == "realva@gmail.com"){
       if(Data.password == "123"){
         this.AdminAuth = true;
+        this.presentAlert("Inicio Sesion","Exitoso","ok");
       }
     }else{
       for (let user of this.users) {
         if(Data.username == user.user_email){
           if(Data.password == user.password){
             this. ClientAuth = true;
+            this.presentAlert("Inicio Sesion","Exitoso","ok");
           }
         }
       }
     }
     this.chargeUsers();
-    this.presentAlert(Data.username,Data.password,"ok");
   }
   LogOut(){
     this.AdminAuth=false;
