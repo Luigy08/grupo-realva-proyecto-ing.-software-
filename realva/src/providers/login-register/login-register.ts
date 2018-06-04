@@ -16,25 +16,14 @@ export class LoginRegisterProvider {
   ClientAuth:boolean=false;
   users: any;
   constructor(private alertCtrl: AlertController ,public http: Http) {
-    this.http.get('http://localhost/get_users.php').map(res => res.json()).subscribe(data => {
+    this.http.get('https://realva.000webhostapp.com/get_users.php').map(res => res.json()).subscribe(data => {
       this.users = data, err => {
         console.log("Oops!");
       };
     });
-    var data = {
-      email: "test@somewhere.com",
-      password: "pass123"
-    };
-    this.http.post('http://localhost/login.php', data).map(res => res.json()).subscribe(res => {
-      if (res != "") {
-        console.log(res);
-      } else {
-        console.log("bad");
-      }
-    });
   }
   chargeUsers(){
-    this.http.get('http://localhost/get_users.php').map(res => res.json()).subscribe(data => {
+    this.http.get('https://realva.000webhostapp.com/get_users.php').map(res => res.json()).subscribe(data => {
       this.users = data, err => {
         console.log("Oops!");
       };

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
+import {ImageDataProvider} from "../../providers/image-data/image-data";
 import 'rxjs/add/operator/map';
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
 /**
@@ -26,21 +27,21 @@ export class AdminPage {
   clientsRTN: any;
   clientsTelephone: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,public image : ImageDataProvider) {
     this.chargeClients();
   }
   chargeClients() {
-    this.http.get('http://localhost/get_client.php').map(res => res.json()).subscribe(data => {
+    this.http.get('https://realva.000webhostapp.com/get_client.php').map(res => res.json()).subscribe(data => {
       this.clients = data, err => {
         console.log("Oops!");
       };
     });
-    this.http.get('http://localhost/get_client_rtn.php').map(res => res.json()).subscribe(data => {
+    this.http.get('https://realva.000webhostapp.com/get_client_rtn.php').map(res => res.json()).subscribe(data => {
       this.clientsRTN = data, err => {
         console.log("Oops!");
       };
     });
-    this.http.get('http://localhost/get_client_phone.php').map(res => res.json()).subscribe(data => {
+    this.http.get('https://realva.000webhostapp.com/get_client_phone.php').map(res => res.json()).subscribe(data => {
       this.clientsTelephone = data, err => {
         console.log("Oops!");
       };
@@ -51,7 +52,7 @@ export class AdminPage {
     console.log('ionViewDidLoad AdminPage');
   }
   loadimage() {
-
+    
   }
   handleFileInput(event) {
     console.log(event);
