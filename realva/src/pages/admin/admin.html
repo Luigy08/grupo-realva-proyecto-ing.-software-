@@ -1,0 +1,91 @@
+<!--
+  Generated template for the AdminPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title end>Admin</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-segment [(ngModel)]="AdminTab" color="primary">
+      <ion-segment-button value="CarruselOfertas">
+        Carrusel Ofertas
+      </ion-segment-button>
+      <ion-segment-button value="CarruselPrincipal">
+        Carrusel Principal
+      </ion-segment-button>
+      <ion-segment-button value="AceptacionClientes">
+        Aceptacion de Clientes
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="AdminTab">
+    <div *ngSwitchCase="'CarruselOfertas'">
+      <form action="">
+        <input type="file" name="pic" accept="image/*">
+        <input type="submit">
+      </form>
+      <ion-list *ngFor="let image of images">
+        <ion-item>
+          <ion-card>
+            <button ion-button (click)="DeleteImageCarrOfer(image.id)"></button>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'CarruselPrincipal'">
+        <form action="">
+            <input type="file" name="pic" accept="image/*">
+            <input type="submit">
+          </form>
+      <ion-list *ngFor="let image of images">
+        <ion-item>
+          <ion-card>
+            <ion-card-content>
+              <button (click)="DeleteImageCarrMain(image.id)"></button>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'AceptacionClientes'">
+      <ion-card>
+        <ion-card-header>
+          Cliente: Mario
+          <br>Status: X
+          <br>Calle: X
+          <br>Telefono: 98756413
+          <br>Clasificacion: veterinario
+          <br>RTN: 1987416315
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button small>Aceptar</button>
+          <button ion-button small>Denegar</button>
+        </ion-card-content>
+      </ion-card>
+      <ion-list *ngFor="let client of clients">
+        <ion-card>
+          <ion-card-header>
+            Cliente: {{client.name}}
+            <br>Status: {{client.status}}
+            <br>Calle: {{client.street}}
+            <br>Telefono: {{client.telephone}}
+            <br>Clasificacion: {{client.class}}
+            <br>RTN: {{client.RTN}}
+          </ion-card-header>
+          <ion-card-content>
+            <button ion-button small (click)="ClientAcepted(client)">Aceptar</button>
+            <button ion-button small (click)="ClientDecline(client)">Denegar</button>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </div>
+  </div>
+
+
+</ion-content>
