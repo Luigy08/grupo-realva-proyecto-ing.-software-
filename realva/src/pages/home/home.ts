@@ -4,6 +4,8 @@ import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
 import {LoginRegisterProvider} from "../../providers/login-register/login-register";
 import {AdminPage} from "../admin/admin";
+import { ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -16,5 +18,9 @@ export class HomePage {
   constructor(public navCtrl: NavController,public LoginRegister: LoginRegisterProvider) {
 
   }
+  @ViewChild(Slides) slides: Slides;
 
+  goToSlide() {
+    this.slides.slideTo(0, 15000);
+  }
 }

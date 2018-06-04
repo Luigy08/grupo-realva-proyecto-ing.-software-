@@ -1,3 +1,50 @@
 page-product{
-
+    .productBody{
+        margin-top: 2%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+      }
+      .productBodyLeft{
+        margin-left: 5%;
+        width: 25%;
+        height: 100%;
+      }
+      .productBodyRight{
+    
+        width: 50%;
+        height: 100%;
+        margin-left: 5%;
+      }
+    
+      .titleProduct{
+        margin-top: 2%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+      }
+      .productProductos{
+        margin-left: 5%;
+        width: 25%;
+        height: 100%;
+      }
+      .productCategorias{
+        width: 50%;
+        height: 100%;
+        margin-left: 5%;
+      }
+    
+    
+      .container img{
+        margin-left: 27%;
+        width: 50%;
+        height: 100%;
+      }
+    
+    
+    
+    
+    
+      .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+        
 }
