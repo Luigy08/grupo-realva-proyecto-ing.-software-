@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { NavController, ActionSheetController, AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
+import {LoginPage} from "../login/login";
+import {RegisterPage} from "../register/register";
 import {LoginRegisterProvider} from "../../providers/login-register/login-register";
+import {AdminPage} from "../admin/admin";
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -13,7 +16,9 @@ export class ContactPage {
   username: AbstractControl;
   email: AbstractControl;
   message: AbstractControl;
-
+  login = LoginPage;
+  register = RegisterPage;
+  Admin = AdminPage;
   constructor(public http: Http, nav: NavController,public LoginRegister: LoginRegisterProvider, public actionSheetCtrl: ActionSheetController, private alertCtrl: AlertController) {
     this.http = http;
     this.contactForm = new FormGroup({
