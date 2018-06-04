@@ -3,6 +3,12 @@
     <ion-title>
       Contacto
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">Cerrar Sesion</button>
+      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion</button>
+      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse </button>
+      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -43,19 +49,21 @@
         <div class="form-group required">
           <div class="col-sm-10">
             <label class="col-sm-2 control-label" for="input-name">Tu Nombre:</label>
-            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"  (keyup)="onKeyUp($event)" min="10" max="32" required>
+            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"
+              (keyup)="onKeyUp($event)" min="10" max="32" required>
           </div>
         </div>
         <div class="form-group required">
           <div class="col-sm-10">
             <label class="col-sm-2 control-label" for="input-email">Correo Electrónico:</label>
-            <input type="text"  class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" required ngModel email>
+            <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" required ngModel email>
           </div>
         </div>
         <div class="form-group required">
           <div class="col-sm-10">
             <label class="col-sm-2 control-label" for="input-enquiry">Mensaje:</label>
-            <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.message" name="message" formControlName="message" min="10" max="3000" required></textarea>
+            <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.message" name="message" formControlName="message"
+              min="10" max="3000" required></textarea>
           </div>
         </div>
       </fieldset>

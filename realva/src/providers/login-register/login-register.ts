@@ -49,7 +49,6 @@ export class LoginRegisterProvider {
         }
       }
     }
-    this.chargeUsers();
   }
   LogOut(){
     this.AdminAuth=false;
