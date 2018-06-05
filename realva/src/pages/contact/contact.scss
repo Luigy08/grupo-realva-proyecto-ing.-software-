@@ -41,7 +41,7 @@ page-contact {
     }
     .buttonsContacto {
         float: right;
-        margin-right: 6%;
+        margin-right: 5%;
     }
     .control-label::before {
         content: "*";
@@ -54,7 +54,7 @@ page-contact {
     .Contact {
         margin: 70px;
     }
-    .buttonsContacto {
+    .button {
         background-color: #4CAF50;
         border: 2px solid #4CAF50;
         border-radius: 25px;
@@ -82,6 +82,7 @@ page-contact {
         min-height: 35px;
         box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.08);
     }
+
     .footerTop{
         position: relative;
         display: flex;
