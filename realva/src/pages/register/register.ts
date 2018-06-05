@@ -26,7 +26,7 @@ export class RegisterPage {
   RTN: AbstractControl;
   password: AbstractControl;
   Repassword: AbstractControl;
-  my_variable: string = 'gray';
+  my_variable: string = '#bfbcbc';
   passwordcheck:string;
   passwordcheck1:string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public LoginRegister: LoginRegisterProvider) {
@@ -69,6 +69,8 @@ export class RegisterPage {
     this.passwordcheck = event.target.value;
     if(this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" &&  this.passwordcheck1 != ""){
       this.my_variable = "green";
+    }else if(this.passwordcheck1 != ""){
+      this.my_variable = '#bfbcbc';
     }else{
       this.my_variable = "red";
     }
@@ -77,7 +79,10 @@ export class RegisterPage {
     this.passwordcheck1 = event.target.value;
     if(this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" &&  this.passwordcheck1 != ""){
       this.my_variable = "green";
-    }else{
+    }else if(this.passwordcheck1 != ""){
+      this.my_variable = '#bfbcbc';
+    }
+    else{
       this.my_variable = "red";
     }
   }
