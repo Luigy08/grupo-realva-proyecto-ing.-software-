@@ -1,16 +1,12 @@
 page-home {
         .carrusel{
-            height: 400px;
+            height: 500px;
             width: 100%;
             
         }
-        .carrusel img{
-            height: 400px;
-            width: 100%;
-        }
       
         .bodyHome{
-            margin-top: -1%;
+            margin-top: -1.2%;
             height: 100%;
             width: 100%;
             position: relative;
@@ -24,10 +20,7 @@ page-home {
             flex-direction: row;
             text-align: center;
         }
-        #home_info2 img{
-            height: 200px;
-            width: 200px;
-        }
+        
         .home_info{
             margin-left: 10%;
             margin-top: 5%;
@@ -38,12 +31,12 @@ page-home {
             display: flex;
             flex-direction: row;
             width: 100%;
-            background-color: green;
+            background: #3bb522;
         }
+       
         .footerBot{
-            margin-top: -1.1%;
             text-align: center;
-            background-color: darkgreen
+            background:#1b9605;
         }
     }
     
