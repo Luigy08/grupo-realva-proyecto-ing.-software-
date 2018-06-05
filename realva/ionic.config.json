@@ -10,7 +10,7 @@
     },
     {
       "path":"/server",
-      "proxyUrl": "https://realva.000webhost.com/server"
+      "proxyUrl": "https://realva.000webhostapp.com/server"
     }
   ]
 }
