@@ -12,45 +12,46 @@ import { NavController, ActionSheetController, AlertController } from 'ionic-ang
 */
 @Injectable()
 export class LoginRegisterProvider {
-  AdminAuth:boolean=false;
-  ClientAuth:boolean=false;
+  AdminAuth: boolean = false;
+  ClientAuth: boolean = false;
   users: any;
-  constructor(private alertCtrl: AlertController ,public http: Http) {
+  constructor(private alertCtrl: AlertController, public http: Http) {
   }
-  chargeUsers(){
+  chargeUsers() {
     this.http.get('https://realva.000webhostapp.com/get_users.php').map(res => res.json()).subscribe(data => {
       this.users = data, err => {
         console.log("Oops!");
       };
     });
   }
-  AdminLogin(){
+  AdminLogin() {
     this.AdminAuth = !this.AdminAuth;
   }
 
-  Login(Data){
-    if(Data.username == "realva@gmail.com"){
-      if(Data.password == "123"){
-        this.AdminAuth = true;
-        return true;
-      }
-    }else{
-      for (let user of this.users) {
-        if(Data.username == user.user_email){
-          if(Data.password == user.password){
-            this. ClientAuth = true;
-            return true;
-          }
-        }
-      }
+  Login(Data) {
+    let data = {
+      email: Data.username,
+      password: Data.password
     }
+    let user_role = "";
+    this.http.post('https://realva.000webhostapp.com/login.php', JSON.stringify(data)).map(res => res.json()).subscribe(res => {
+      if (res != "") {
+        if (res[0].user_role == "admin") {
+          console.log(res[0].user_role == "admin");
+          this.AdminAuth = true;
+          return true;
+        }
+      } else {
+        console.log("bad");
+      }
+    });
     return false;
   }
-  LogOut(){
-    this.AdminAuth=false;
-    this.ClientAuth=false;
+  LogOut() {
+    this.AdminAuth = false;
+    this.ClientAuth = false;
   }
-  Register(Data){
+  Register(Data) {
   }
   presentAlert(Title, SubTitle, Button) {
     let alert = this.alertCtrl.create({
