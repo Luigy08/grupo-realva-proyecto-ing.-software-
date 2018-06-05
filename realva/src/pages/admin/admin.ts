@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {ImageDataProvider} from "../../providers/image-data/image-data";
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
 /**
@@ -77,6 +78,13 @@ export class AdminPage {
     // upload code goes here
   }
   uploadPic(){
+    console.log(this.selectedFile.name);
+    console.log(this.selectedFile.type);
+    let headers 	: any		= new HttpHeaders({'Content-Type' : 'application/octet-stream'}),
+          fileName  : any       = Date.now() + '.' + this.selectedFile.type,
+          options 	: any		= { "name" : this.selectedFile, "file" : this.selectedFile };
+
+      return this.http.post("https://realva.000webhostapp.com/upload.php", JSON.stringify(options), headers).subscribe();
     
   }
   DeleteImageCarrOfer(ImageId) {
