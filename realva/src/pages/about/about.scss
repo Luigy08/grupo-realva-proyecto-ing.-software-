@@ -33,10 +33,22 @@ page-about {
         margin: 18px;
         padding: 20px;
     }
-    p {
+    p.text {
         text-align: justify;
     }
     .About {
         margin: 70px;
+    }
+    .footerTop{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background: #3bb522;
+    }
+   
+    .footerBot{
+        text-align: center;
+        background:#1b9605;
     }
 }

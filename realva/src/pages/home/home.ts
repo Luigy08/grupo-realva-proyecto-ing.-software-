@@ -23,4 +23,5 @@ export class HomePage {
   goToSlide() {
     this.slides.slideTo(0, 15000);
   }
+  
 }

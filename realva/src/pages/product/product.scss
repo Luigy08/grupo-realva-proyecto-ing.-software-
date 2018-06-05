@@ -41,9 +41,19 @@ page-product{
         height: 100%;
       }
     
+      .footerTop{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background: #3bb522;
+    }
+   
+    .footerBot{
+        text-align: center;
+        background:#1b9605;
     
-    
-    
+    }
     
       .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
         
