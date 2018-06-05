@@ -22,14 +22,19 @@
       <ion-segment-button value="AceptacionClientes">
         Aceptacion de Clientes
       </ion-segment-button>
+      <ion-segment-button value="ArchivosDescarga">
+        Administrar Archivos de Descarga
+      </ion-segment-button>
+      <ion-segment-button value="SubirProducto">
+        Administrar Productos
+      </ion-segment-button>
     </ion-segment>
   </div>
   <div [ngSwitch]="AdminTab">
     <div *ngSwitchCase="'CarruselOfertas'">
-      <form #imageForm="ngForm">
-        <img [src]="imageUrl" alt="">
+      <form #imageForm="ngForm" method="POST">
         <input type="file" #Image accept="image/*" (change)="handleFileInput($event)">
-        <button ion-button type="submit" (click)="uploadFile(selectedFile)">Subir</button>
+        <button ion-button type="submit" (click)="upload()">Subir</button>
       </form>
       <ion-list *ngFor="let post of posts">
         <ion-item>
@@ -41,10 +46,9 @@
       </ion-list>
     </div>
     <div *ngSwitchCase="'CarruselPrincipal'">
-      <form #imageForm2="ngForm">
-        <img [src]="imageUrl2" alt="">
-        <input type="file" #Image accept="image/*" (change)="handleFileInput2($event)">
-        <button ion-button type="submit" (click)="uploadFile(selectedFile2)">Subir</button>
+      <form #imageForm="ngForm" method="POST">
+        <input type="file" #Image accept="image/*" (change)="handleFileInput($event)">
+        <button ion-button type="submit" (click)="upload()">Subir</button>
       </form>
       <ion-list *ngFor="let image of images">
         <ion-item>
@@ -55,6 +59,12 @@
           </ion-card>
         </ion-item>
       </ion-list>
+    </div>
+    <div *ngSwitchCase="'ArchivosDescarga'">
+
+    </div>
+    <div *ngSwitchCase="'SubirProducto'">
+
     </div>
     <div *ngSwitchCase="'AceptacionClientes'">
       <ion-grid>
