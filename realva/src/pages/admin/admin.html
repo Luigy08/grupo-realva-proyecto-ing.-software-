@@ -34,7 +34,7 @@
     <div *ngSwitchCase="'CarruselOfertas'">
       <form #imageForm="ngForm" method="POST">
         <input type="file" #Image accept="image/*" (change)="handleFileInput($event)">
-        <button ion-button type="submit" (click)="upload()">Subir</button>
+        <button ion-button type="submit" (click)="uploadPic()">Subir</button>
       </form>
       <ion-list *ngFor="let post of posts">
         <ion-item>
@@ -48,7 +48,7 @@
     <div *ngSwitchCase="'CarruselPrincipal'">
       <form #imageForm="ngForm" method="POST">
         <input type="file" #Image accept="image/*" (change)="handleFileInput($event)">
-        <button ion-button type="submit" (click)="upload()">Subir</button>
+        <button ion-button type="submit" (click)="uploadPic()">Subir</button>
       </form>
       <ion-list *ngFor="let image of images">
         <ion-item>
@@ -61,7 +61,10 @@
       </ion-list>
     </div>
     <div *ngSwitchCase="'ArchivosDescarga'">
-
+      <form #DocumentForm="ngForm" method="POST">
+        <input type="file" (change)="handleFileInput($event)">
+        <button ion-button type="submit" (click)="upload()">Subir</button>
+      </form>
     </div>
     <div *ngSwitchCase="'SubirProducto'">
 

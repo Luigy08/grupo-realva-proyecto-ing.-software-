@@ -76,6 +76,9 @@ export class AdminPage {
   upload() {
     // upload code goes here
   }
+  uploadpic(){
+    
+  }
   DeleteImageCarrOfer(ImageId) {
 
   }
