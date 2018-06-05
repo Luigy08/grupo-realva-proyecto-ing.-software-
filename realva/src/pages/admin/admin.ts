@@ -33,7 +33,7 @@ export class AdminPage {
   }
   chargeClients() {
     this.http.get('server/get_client.php').map(res => res.json()).subscribe(data => {
-      this.clients = data, err => {
+      this.clients = data , err => {
         console.log("Oops!");
       };
     });

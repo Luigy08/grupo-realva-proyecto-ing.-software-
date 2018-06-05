@@ -119,15 +119,19 @@
           <ion-col>
             {{client.client_classification}}
           </ion-col>
-          <ion-col *ngFor="let rtn of clientsRTN">
-            <span *ngIf="rtn.Client_client_id == client.client_id">
-              {{rtn.rtn_client}}
-            </span>
+          <ion-col>
+            <div *ngFor="let rtn of clientsRTN">
+              <span *ngIf="rtn.fk_client_id == client.client_id">
+                {{rtn.rtn_client}}
+              </span>
+            </div>
           </ion-col>
-          <ion-col *ngFor="let telephone of clientsTelephone">
-            <span *ngIf="telephone.Client_client_id == client.client_id">
-              {{telephone.phone_client}}
-            </span>
+          <ion-col>
+            <div *ngFor="let telephone of clientsTelephone">
+              <span *ngIf="telephone.fk_client_id == client.client_id">
+                {{telephone.phone_client}}
+              </span>
+            </div>
           </ion-col>
           <ion-col>
             <button ion-button>Modificar</button>
