@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <h1 class="Login">Iniciar Sesion</h1>
-  <form [formGroup]="loginForm" (ngSubmit)="loginRegister.Login(Data);clear();move();">
+  <form [formGroup]="loginForm" (ngSubmit)="Login(Data);">
     <fieldset>
       <div class="form-group required">
         <div class="col-sm-10">

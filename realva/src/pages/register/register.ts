@@ -24,15 +24,17 @@ export class RegisterPage {
   telephone: AbstractControl;
   RTN: AbstractControl;
   password: AbstractControl;
+  Repassword: AbstractControl;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public LoginRegister: LoginRegisterProvider) {
     this.registerForm = new FormGroup({
-      username: new FormControl('', Validators.required),
-      email: new FormControl(),
+      username: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]),
+      email: new FormControl('', [Validators.required, Validators.nullValidator, Validators.email]),
       direction: new FormControl(),
-      telephone: new FormControl('', Validators.required),
-      RTN: new FormControl('', Validators.required),
-      password: new FormControl(),
+      telephone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.nullValidator]),
+      RTN: new FormControl('', [Validators.required, Validators.minLength(14)]),
+      password: new FormControl('', [Validators.required, Validators.nullValidator]),
+      Repassword: new FormControl('', [Validators.required, Validators.nullValidator]),
     });
   }
 
@@ -48,9 +50,19 @@ export class RegisterPage {
   }
   public onKeyUpNum(event: any) {
     let newValue = event.target.value;
-    let regExp = new RegExp('^[0-9, ]+$');
+    let regExp = new RegExp('^[0-9, +()-]+$');
     if (!regExp.test(newValue)) {
       event.target.value = newValue.slice(0, -1);
     }
+  }
+  public onKeyUpRTN(event: any) {
+    let newValue = event.target.value;
+    let regExp = new RegExp('^[0-9, -]+$');
+    if (!regExp.test(newValue)) {
+      event.target.value = newValue.slice(0, -1);
+    }
+  }
+  public checkPassWord(event){
+    
   }
 }

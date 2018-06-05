@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from "../pages/login/login";
 import { AdminPage } from "../pages/admin/admin";
+import { AppMaskerModule } from 'brmasker-ionic';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,18 +18,8 @@ import { ProductPage } from "../pages/product/product";
 import { DownloadsPage } from '../pages/downloads/downloads';
 import { RegisterPage } from '../pages/register/register';
 import { LoginRegisterProvider } from '../providers/login-register/login-register';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireStorageModule } from 'angularfire2/storage';
 import { ImageDataProvider } from '../providers/image-data/image-data';
-export const firebaseConfig = {
-  apiKey: "AIzaSyBZAKqZfYiuQDTF-pDtZsxlO5X72wNFA1Q",
-  authDomain: "realva-54c4a.firebaseapp.com",
-  databaseURL: "https://realva-54c4a.firebaseio.com",
-  projectId: "realva-54c4a",
-  storageBucket: "realva-54c4a.appspot.com",
-  messagingSenderId: "233461489484"
-};
+
 
 @NgModule({
   declarations: [
@@ -47,9 +38,7 @@ export const firebaseConfig = {
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AppMaskerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

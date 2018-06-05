@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
 import { LoginRegisterProvider } from "../../providers/login-register/login-register";
 import {HomePage} from "../home/home";
@@ -22,17 +22,28 @@ export class LoginPage {
   username: AbstractControl;
   email: AbstractControl;
   page:HomePage;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loginRegister: LoginRegisterProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loginRegister: LoginRegisterProvider,public alertCtrl:AlertController) {
     this.loginForm = new FormGroup({
       username: new FormControl('', Validators.required),
       password: new FormControl(),
     });
   }
-  clear(){
-    this.loginForm.reset();
+  Login(Data){    
+    if(this.loginRegister.Login(Data)){
+      this.loginForm.reset();
+      this.navCtrl.pop();
+    }else{
+      this.presentAlert("Error Inicio de Sesion","Usuario o Contraseña incorrectos","OK");
+    }
   }
-  move(){
-    this.navCtrl.pop();
+
+  presentAlert(Title, SubTitle, Button) {
+    let alert = this.alertCtrl.create({
+      title: Title,
+      subTitle: SubTitle,
+      buttons: [Button]
+    });
+    alert.present();
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
