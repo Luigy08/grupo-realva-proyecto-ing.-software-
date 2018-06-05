@@ -18,7 +18,7 @@ export class LoginRegisterProvider {
   constructor(private alertCtrl: AlertController, public http: Http) {
   }
   chargeUsers() {
-    this.http.get('https://realva.000webhostapp.com/get_users.php').map(res => res.json()).subscribe(data => {
+    this.http.get('https://realva.000webhostapp.com/server/get_users.php').map(res => res.json()).subscribe(data => {
       this.users = data, err => {
         console.log("Oops!");
       };
@@ -28,25 +28,6 @@ export class LoginRegisterProvider {
     this.AdminAuth = !this.AdminAuth;
   }
 
-  Login(Data) {
-    let data = {
-      email: Data.username,
-      password: Data.password
-    }
-    let user_role = "";
-    this.http.post('https://realva.000webhostapp.com/login.php', JSON.stringify(data)).map(res => res.json()).subscribe(res => {
-      if (res != "") {
-        if (res[0].user_role == "admin") {
-          console.log(res[0].user_role == "admin");
-          this.AdminAuth = true;
-          return true;
-        }
-      } else {
-        console.log("bad");
-      }
-    });
-    return false;
-  }
   LogOut() {
     this.AdminAuth = false;
     this.ClientAuth = false;

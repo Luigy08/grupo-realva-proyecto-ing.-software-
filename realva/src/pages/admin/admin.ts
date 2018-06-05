@@ -31,17 +31,17 @@ export class AdminPage {
     this.chargeClients();
   }
   chargeClients() {
-    this.http.get('https://realva.000webhostapp.com/get_client.php').map(res => res.json()).subscribe(data => {
+    this.http.get('https://realva.000webhostapp.com/server/get_client.php').map(res => res.json()).subscribe(data => {
       this.clients = data, err => {
         console.log("Oops!");
       };
     });
-    this.http.get('https://realva.000webhostapp.com/get_client_rtn.php').map(res => res.json()).subscribe(data => {
+    this.http.get('https://realva.000webhostapp.com/server/get_client_rtn.php').map(res => res.json()).subscribe(data => {
       this.clientsRTN = data, err => {
         console.log("Oops!");
       };
     });
-    this.http.get('https://realva.000webhostapp.com/get_client_phone.php').map(res => res.json()).subscribe(data => {
+    this.http.get('https://realva.000webhostapp.com/server/get_client_phone.php').map(res => res.json()).subscribe(data => {
       this.clientsTelephone = data, err => {
         console.log("Oops!");
       };
