@@ -69,7 +69,7 @@ export class RegisterPage {
     this.passwordcheck = event.target.value;
     if(this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" &&  this.passwordcheck1 != ""){
       this.my_variable = "green";
-    }else if(this.passwordcheck1 != ""){
+    }else if(this.passwordcheck1 == ""){
       this.my_variable = '#bfbcbc';
     }else{
       this.my_variable = "red";
@@ -79,7 +79,7 @@ export class RegisterPage {
     this.passwordcheck1 = event.target.value;
     if(this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" &&  this.passwordcheck1 != ""){
       this.my_variable = "green";
-    }else if(this.passwordcheck1 != ""){
+    }else if(this.passwordcheck1 == ""){
       this.my_variable = '#bfbcbc';
     }
     else{
