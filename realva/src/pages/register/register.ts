@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
 import { LoginRegisterProvider } from "../../providers/login-register/login-register";
+import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 
 /**
  * Generated class for the RegisterPage page.
@@ -17,9 +19,10 @@ import { LoginRegisterProvider } from "../../providers/login-register/login-regi
 })
 export class RegisterPage {
   Data: any = {};
-  Contravalnull:boolean=false;
+  Contravalnull: boolean = false;
   registerForm: FormGroup;
   username: AbstractControl;
+  userlastname: AbstractControl;
   email: AbstractControl;
   direction: AbstractControl;
   telephone: AbstractControl;
@@ -27,11 +30,12 @@ export class RegisterPage {
   password: AbstractControl;
   Repassword: AbstractControl;
   my_variable: string = '#bfbcbc';
-  passwordcheck:string;
-  passwordcheck1:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public LoginRegister: LoginRegisterProvider) {
+  passwordcheck: string;
+  passwordcheck1: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public LoginRegister: LoginRegisterProvider, public http: Http) {
     this.registerForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]),
+      userlastname: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]),
       email: new FormControl('', [Validators.required, Validators.nullValidator, Validators.email]),
       direction: new FormControl(),
       telephone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.nullValidator]),
@@ -67,23 +71,46 @@ export class RegisterPage {
   }
   public checkPassWord(event) {
     this.passwordcheck = event.target.value;
-    if(this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" &&  this.passwordcheck1 != ""){
+    if (this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" && this.passwordcheck1 != "") {
       this.my_variable = "green";
-    }else if(this.passwordcheck1 == ""){
+    } else if (this.passwordcheck1 == "") {
       this.my_variable = '#bfbcbc';
-    }else{
+    } else {
       this.my_variable = "red";
     }
   }
   public checkPassWord1(event) {
     this.passwordcheck1 = event.target.value;
-    if(this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" &&  this.passwordcheck1 != ""){
+    if (this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" && this.passwordcheck1 != "") {
       this.my_variable = "green";
-    }else if(this.passwordcheck1 == ""){
+    } else if (this.passwordcheck1 == "") {
       this.my_variable = '#bfbcbc';
     }
-    else{
+    else {
       this.my_variable = "red";
     }
+  }
+  Register(Data) {
+    console.log(Data);
+    let ident: number;
+    let subir = { name: Data.username, last_name: Data.userlastname, status: 1, clase: 0, rtn: Data.RTN, phone: Data.telephone, email: Data.email, password: Data.password };
+    this.http.post('https://realva.000webhostapp.com/server/register.php', JSON.stringify(subir)).map(res => res.json()).subscribe(res => {
+      if (res != "") {
+        /*console.log(res);*/
+        ident = res;
+        let subir2 = { phone: Data.telephone, id: res };
+        this.http.post('https://realva.000webhostapp.com/server/register_phone.php', JSON.stringify(subir2)).subscribe(res => {
+        });
+        let subir1 = { rtn: Data.RTN, id: res };
+        this.http.post('https://realva.000webhostapp.com/server/register_rtn.php', JSON.stringify(subir1)).subscribe(res => {
+        });
+        let subir3 = { email: Data.email, password: Data.password, id: ident };
+        this.http.post('https://realva.000webhostapp.com/server/register_user.php', JSON.stringify(subir3)).subscribe(res => {
+        });
+        this.registerForm.reset();
+        this.navCtrl.pop();
+      }
+    });
+
   }
 }
