@@ -16,7 +16,6 @@ export class LoginRegisterProvider {
   ClientAuth:boolean=false;
   users: any;
   constructor(private alertCtrl: AlertController ,public http: Http) {
-    this.chargeUsers();
   }
   chargeUsers(){
     this.http.get('https://realva.000webhostapp.com/get_users.php').map(res => res.json()).subscribe(data => {
