@@ -32,17 +32,17 @@ export class AdminPage {
     this.chargeClients();
   }
   chargeClients() {
-    this.http.get('https://realva.000webhostapp.com/get_client.php').map(res => res.json()).subscribe(data => {
+    this.http.get('server/get_client.php').map(res => res.json()).subscribe(data => {
       this.clients = data, err => {
         console.log("Oops!");
       };
     });
-    this.http.get('https://realva.000webhostapp.com/get_client_rtn.php').map(res => res.json()).subscribe(data => {
+    this.http.get('server/get_client_rtn.php').map(res => res.json()).subscribe(data => {
       this.clientsRTN = data, err => {
         console.log("Oops!");
       };
     });
-    this.http.get('https://realva.000webhostapp.com/get_client_phone.php').map(res => res.json()).subscribe(data => {
+    this.http.get('server/get_client_phone.php').map(res => res.json()).subscribe(data => {
       this.clientsTelephone = data, err => {
         console.log("Oops!");
       };
@@ -84,7 +84,7 @@ export class AdminPage {
           fileName  : any       = Date.now() + '.' + this.selectedFile.type,
           options 	: any		= { "name" : this.selectedFile, "file" : this.selectedFile };
 
-      return this.http.post("https://realva.000webhostapp.com/upload.php", JSON.stringify(options), headers).subscribe();
+      return this.http.post("server/upload.php", JSON.stringify(options), headers).subscribe();
     
   }
   DeleteImageCarrOfer(ImageId) {

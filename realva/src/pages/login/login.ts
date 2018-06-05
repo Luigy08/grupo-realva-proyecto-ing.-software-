@@ -44,7 +44,7 @@ export class LoginPage {
       password: Data.password
     }
     let user_role = "";
-    this.http.post('https://realva.000webhostapp.com/server/login.php', JSON.stringify(data)).map(res => res.json()).subscribe(res => {
+    this.http.post('server/login.php', JSON.stringify(data)).map(res => res.json()).subscribe(res => {
       if (res != "") {
         if (res[0].user_role == "admin") {
           console.log(res[0].user_role == "admin");
