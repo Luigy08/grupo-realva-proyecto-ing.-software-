@@ -17,6 +17,7 @@ import { LoginRegisterProvider } from "../../providers/login-register/login-regi
 })
 export class RegisterPage {
   Data: any = {};
+  Contravalnull:boolean=false;
   registerForm: FormGroup;
   username: AbstractControl;
   email: AbstractControl;
@@ -25,7 +26,9 @@ export class RegisterPage {
   RTN: AbstractControl;
   password: AbstractControl;
   Repassword: AbstractControl;
-
+  my_variable: string = 'gray';
+  passwordcheck:string;
+  passwordcheck1:string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public LoginRegister: LoginRegisterProvider) {
     this.registerForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]),
@@ -62,7 +65,20 @@ export class RegisterPage {
       event.target.value = newValue.slice(0, -1);
     }
   }
-  public checkPassWord(event){
-    
+  public checkPassWord(event) {
+    this.passwordcheck = event.target.value;
+    if(this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" &&  this.passwordcheck1 != ""){
+      this.my_variable = "green";
+    }else{
+      this.my_variable = "red";
+    }
+  }
+  public checkPassWord1(event) {
+    this.passwordcheck1 = event.target.value;
+    if(this.passwordcheck == this.passwordcheck1 && this.passwordcheck != "" &&  this.passwordcheck1 != ""){
+      this.my_variable = "green";
+    }else{
+      this.my_variable = "red";
+    }
   }
 }
