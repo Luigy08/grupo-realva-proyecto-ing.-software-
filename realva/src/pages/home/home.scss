@@ -4,7 +4,9 @@ page-home {
             width: 100%;
             
         }
-      
+        .pictureCarrusel img{
+            height: 500px;
+        }
         .bodyHome{
             margin-top: -1.2%;
             height: 100%;
@@ -26,7 +28,13 @@ page-home {
             margin-top: 5%;
             width: 80%;
         }
+        .home_info img{
+            height: 200px;
+            width: 400px;
+        }
         .footerTop{
+            text-align: left;
+            
             position: relative;
             display: flex;
             flex-direction: row;
@@ -37,6 +45,18 @@ page-home {
         .footerBot{
             text-align: center;
             background:#1b9605;
+        }
+        hr{
+            border: 1px;
+            border-top-style: solid;
+            color: #00f865;
+        }
+        h2 {
+            color: rgb(68, 67, 73);
+            border: 0px;
+            border-bottom: 1px;
+            border-style: solid;
+            border-color: #00f865;
         }
     }
     
