@@ -6,6 +6,7 @@ import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
 import {LoginRegisterProvider} from "../../providers/login-register/login-register";
 import {AdminPage} from "../admin/admin";
+import {ProfilePage} from "../profile/profile"
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -19,6 +20,7 @@ export class ContactPage {
   login = LoginPage;
   register = RegisterPage;
   Admin = AdminPage;
+  Profile = ProfilePage;
   constructor(public http: Http, nav: NavController,public LoginRegister: LoginRegisterProvider, public actionSheetCtrl: ActionSheetController, private alertCtrl: AlertController) {
     this.http = http;
     this.contactForm = new FormGroup({

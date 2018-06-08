@@ -19,6 +19,7 @@ import { DownloadsPage } from '../pages/downloads/downloads';
 import { RegisterPage } from '../pages/register/register';
 import { LoginRegisterProvider } from '../providers/login-register/login-register';
 import { ImageDataProvider } from '../providers/image-data/image-data';
+import { ProfilePage } from '../pages/profile/profile';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ImageDataProvider } from '../providers/image-data/image-data';
     LoginPage,
     AdminPage,
     DownloadsPage,
-    RegisterPage
+    RegisterPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { ImageDataProvider } from '../providers/image-data/image-data';
     LoginPage,
     AdminPage,
     DownloadsPage,
-    RegisterPage
+    RegisterPage,
+    ProfilePage
 
   ],
   providers: [

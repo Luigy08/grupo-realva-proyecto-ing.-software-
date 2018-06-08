@@ -4,6 +4,7 @@ import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
 import {LoginRegisterProvider} from "../../providers/login-register/login-register";
 import {AdminPage} from "../admin/admin";
+import {ProfilePage} from "../profile/profile"
 /**
  * Generated class for the DownloadsPage page.
  *
@@ -20,6 +21,7 @@ export class DownloadsPage {
   login = LoginPage;
   register = RegisterPage;
   Admin = AdminPage;
+  Profile = ProfilePage;
   constructor(public navCtrl: NavController, public navParams: NavParams,public LoginRegister: LoginRegisterProvider) {
   }
 
