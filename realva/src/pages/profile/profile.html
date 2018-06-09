@@ -5,7 +5,9 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <ion-navbar>
     <ion-title>profile</ion-title>
   </ion-navbar>
@@ -14,5 +16,53 @@
 
 
 <ion-content padding>
-
+  <div>
+  <div>
+    <h1>Perfil de Usuario</h1>
+    <img class="avatar" src="assets/icon/perfil.png" alt="">
+  </div>
+  <div class="form-group1">
+    <div class="col-sm-10">
+      <label class="col-sm-2 control-label1" for="input-name">Nombre:</label>
+      <input type="text" class="form-control1"disabled>
+    </div>
+  </div>
+  <div class="form-group1 required">
+    <div class="col-sm-10">
+      <label class="col-sm-2 control-label1" for="input-lastname">Apellido:</label>
+      <input type="text" class="form-control1"disabled>
+    </div>
+  </div>
+  <div class="form-group1 required">
+    <div class="col-sm-10">
+      <label class="col-sm-2 control-label1" for="input-email">Correo Electrónico:</label>
+      <input type="text" class="form-control1" disabled>
+    </div>
+  </div>
+  <div class="form-group1 required">
+    <div class="col-sm-10">
+      <label class="col-sm-2 control-label1" for="input-enquiry">Direccion</label>
+      <textarea rows="10" id="input-enquiry" class="form-control1" disabled></textarea>
+    </div>
+  </div>
+  <div class="form-group1 required">
+    <div class="col-sm-10">
+      <label class="col-sm-2 control-label1" for="input-telephone">Telefono:</label>
+      <input type="tel" class="form-control1"disabled >
+    </div>
+  </div>
+  <div class="form-group1 required">
+    <div class="col-sm-10">
+      <label class="col-sm-2 control-label1" for="input-id">RTN:</label>
+      <input type="text" class="form-control1"disabled>
+    </div>
+  </div>
+</div>
+  <div class="buttons1">
+      <div>
+        <!-- <input  type="delete" value="Eliminar Cuenta"> -->
+        <button type="button" class="btn btn-info">Modificar</button>
+        <button type="button2" class="btn btn-danger">Borrar Cuenta</button>
+      </div>
+    </div>
 </ion-content>
