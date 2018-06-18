@@ -20,7 +20,20 @@ import { RegisterPage } from '../pages/register/register';
 import { LoginRegisterProvider } from '../providers/login-register/login-register';
 import { ImageDataProvider } from '../providers/image-data/image-data';
 import { ProfilePage } from '../pages/profile/profile';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+ 
+ 
+// AF2 Settings
+export const firebaseConfig = {
+  apiKey: "AIzaSyBZAKqZfYiuQDTF-pDtZsxlO5X72wNFA1Q",
+  authDomain: "realva-54c4a.firebaseapp.com",
+  databaseURL: "https://realva-54c4a.firebaseio.com",
+  projectId: "realva-54c4a",
+  storageBucket: "realva-54c4a.appspot.com",
+  messagingSenderId: "233461489484"
 
+};
 
 @NgModule({
   declarations: [
@@ -40,7 +53,9 @@ import { ProfilePage } from '../pages/profile/profile';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    AppMaskerModule
+    AppMaskerModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
