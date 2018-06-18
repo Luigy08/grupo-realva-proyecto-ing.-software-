@@ -20,6 +20,7 @@ import { RegisterPage } from '../pages/register/register';
 import { LoginRegisterProvider } from '../providers/login-register/login-register';
 import { ImageDataProvider } from '../providers/image-data/image-data';
 import { ProfilePage } from '../pages/profile/profile';
+import {ShowproductPage} from "../pages/showproduct/showproduct";
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ProfilePage } from '../pages/profile/profile';
     AdminPage,
     DownloadsPage,
     RegisterPage,
-    ProfilePage
+    ProfilePage,
+    ShowproductPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { ProfilePage } from '../pages/profile/profile';
     AdminPage,
     DownloadsPage,
     RegisterPage,
-    ProfilePage
+    ProfilePage,
+    ShowproductPage
 
   ],
   providers: [

@@ -5,6 +5,9 @@ import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
 import {AdminPage} from "../admin/admin";
 import {ProfilePage} from "../profile/profile"
+import {ShowproductPage} from "../showproduct/showproduct";
+
+
 @Component({
   selector: 'page-product',
   templateUrl: 'product.html'
@@ -14,8 +17,12 @@ export class ProductPage {
   register = RegisterPage;
   Admin = AdminPage;
   Profile = ProfilePage;
+
+
   constructor(public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider) {
 
   }
-
+  push(){
+    this.navCtrl.push(ShowproductPage);
+  }
 }
