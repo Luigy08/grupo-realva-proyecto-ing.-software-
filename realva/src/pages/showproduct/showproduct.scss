@@ -1,3 +1,35 @@
 page-showproduct {
+  .bodyShowProduct{
+    width: 100%;
+    height: 100%;
+  }
+  .bodyShowProductTop{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: aquamarine;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70%;
+  }
+  .bodyShowProductBot{
+    background-color: #5C8BA6;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30%;
 
+  }
+  .bodyShowProductTopLeft{
+    background-color: #3bb522;
+    height: 100%;
+    width: 45%;
+  }
+  .bodyShowProductTopRight{
+    background-color: #aquamarine;
+    height: 100%;
+    width: 55%;
+  }
 }
