@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
 import 'rxjs/add/operator/map';
 import { NavController, ActionSheetController, AlertController } from 'ionic-angular';
 
@@ -16,16 +14,15 @@ import { NavController, ActionSheetController, AlertController } from 'ionic-ang
 export class LoginRegisterProvider {
   AdminAuth: boolean = false;
   ClientAuth: boolean = false;
-
-  usuarioRef: any;
-  usuarios: AngularFireList<any>;
-  constructor(private alertCtrl: AlertController, public http: Http, public afDatabase: AngularFireDatabase,public afAuth: AngularFireAuth ) {
-    this.usuarioRef = afDatabase.list('clientes');
-    this.usuarios = this.usuarioRef.valueChanges();
+  users: any;
+  constructor(private alertCtrl: AlertController, public http: Http) {
   }
   chargeUsers() {
-    
-   
+    this.http.get('https://realva.000webhostapp.com/get_users.php').map(res => res.json()).subscribe(data => {
+      this.users = data, err => {
+        console.log("Oops!");
+      };
+    });
   }
   AdminLogin() {
     this.AdminAuth = !this.AdminAuth;
