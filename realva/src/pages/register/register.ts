@@ -39,6 +39,7 @@ export class RegisterPage {
       email: new FormControl('', [Validators.required, Validators.nullValidator, Validators.email]),
       direction: new FormControl(),
       telephone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.nullValidator]),
+      telephone2: new FormControl('', [Validators.required, Validators.minLength(8), Validators.nullValidator]),
       RTN: new FormControl('', [Validators.required, Validators.minLength(14)]),
       password: new FormControl('', [Validators.required, Validators.nullValidator]),
       Repassword: new FormControl('', [Validators.required, Validators.nullValidator]),
@@ -93,7 +94,7 @@ export class RegisterPage {
   Register(Data) {
     console.log(Data);
     let ident: number;
-    let subir = { name: Data.username, last_name: Data.userlastname, status: 1, clase: 0, rtn: Data.RTN, phone: Data.telephone, email: Data.email, password: Data.password };
+    let subir = { name: Data.username, last_name: Data.userlastname, status: 1, clase: 0, rtn: Data.RTN, phone: Data.telephone, phone2: Data.telephone2, email: Data.email, password: Data.password };
     this.http.post('https://realva.000webhostapp.com/server/register.php', JSON.stringify(subir)).map(res => res.json()).subscribe(res => {
       if (res != "") {
         /*console.log(res);*/
@@ -106,6 +107,9 @@ export class RegisterPage {
         });
         let subir3 = { email: Data.email, password: Data.password, id: ident };
         this.http.post('https://realva.000webhostapp.com/server/register_user.php', JSON.stringify(subir3)).subscribe(res => {
+        });
+        let subir4 = { phone: Data.telephone2, id: res };
+        this.http.post('https://realva.000webhostapp.com/server/register_phone.php', JSON.stringify(subir4)).subscribe(res => {
         });
         this.registerForm.reset();
         this.navCtrl.pop();

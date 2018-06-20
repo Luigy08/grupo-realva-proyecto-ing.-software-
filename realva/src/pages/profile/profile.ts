@@ -41,6 +41,11 @@ export class ProfilePage {
   }
   
   eliminarClientes(){
-    this.clientesref.remove("-LFJXV0J3wDc2cwZCL-_");    
+    var mensaje = confirm("¿Seguro que desea Eliminar su cuenta?");
+    if (mensaje) {
+      this.clientesref.remove("-LFJn0JZV8-eMDHRJ2cZ");
+      this.navCtrl.pop();  
+      }    
   }
+  
 }
