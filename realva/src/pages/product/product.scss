@@ -1,4 +1,7 @@
 page-product{
+    .productTop{
+      height: 70%;
+    }
     .productBody{
         margin-top: 2%;
         position: relative;
@@ -11,12 +14,12 @@ page-product{
         height: 100%;
       }
       .productBodyRight{
-    
+
         width: 50%;
         height: 100%;
         margin-left: 5%;
       }
-    
+
       .titleProduct{
         margin-top: 2%;
         position: relative;
@@ -33,14 +36,17 @@ page-product{
         height: 100%;
         margin-left: 5%;
       }
-    
-    
+
+
       .container img{
         margin-left: 27%;
         width: 50%;
         height: 100%;
       }
-    
+    .footer{
+      height: 30%;
+    }
+
       .footerTop{
         position: relative;
         display: flex;
@@ -48,13 +54,13 @@ page-product{
         width: 100%;
         background: #3bb522;
     }
-   
+
     .footerBot{
         text-align: center;
         background:#1b9605;
-    
+
     }
-    
+
       .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
-        
+
 }

@@ -22,7 +22,19 @@ import { ImageDataProvider } from '../providers/image-data/image-data';
 import { ProfilePage } from '../pages/profile/profile';
 import {ShowproductPage} from "../pages/showproduct/showproduct";
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule} from 'angularfire2/auth';
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyBZAKqZfYiuQDTF-pDtZsxlO5X72wNFA1Q",
+  authDomain: "realva-54c4a.firebaseapp.com",
+  databaseURL: "https://realva-54c4a.firebaseio.com",
+  projectId: "realva-54c4a",
+  storageBucket: "realva-54c4a.appspot.com",
+  messagingSenderId: "233461489484"
+
+};
 @NgModule({
   declarations: [
     MyApp,
@@ -42,7 +54,10 @@ import {ShowproductPage} from "../pages/showproduct/showproduct";
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    AppMaskerModule
+    AppMaskerModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

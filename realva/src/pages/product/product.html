@@ -13,57 +13,65 @@
 </ion-header>
 <ion-content padding>
 
-  <div class="titleProduct">
-    <div class="productProductos">
-      <h2>CATEGORIAS</h2>
-      <hr>
-    </div>
-    <div class="productCategorias">
-      <h2>PRODUCTOS</h2>
-      <HR>
-    </div>
-  </div>
+ <div class="productTop">
+   <div class="titleProduct">
+     <div class="productProductos">
+       <h2>CATEGORIAS</h2>
+       <hr>
+     </div>
+     <div class="productCategorias">
+       <h2>PRODUCTOS</h2>
+       <HR>
+     </div>
+   </div>
 
 
-  <div class="productBody">
-    <div class="productBodyLeft" >
-      <!--<ion-item>
-        <ion-label>Employee</ion-label>
-        <ion-select [(ngModel)]="employee" [compareWith]="compareFn">
-          <ion-option *ngFor="let employee of employees" [value]="employee"></ion-option>
-        </ion-select>
-      </ion-item> -->
+   <div class="productBody">
+     <div class="productBodyLeft" >
+       <ul >
+         <li *ngFor="let producto of productos" | async>
+          <pre>{{producto.clave}}</pre>
+         </li>
+       </ul>
+       <!--<ion-item>
+         <ion-label>Employee</ion-label>
+         <ion-select [(ngModel)]="employee" [compareWith]="compareFn">
+           <ion-option *ngFor="let employee of employees" [value]="employee"></ion-option>
+         </ion-select>
+       </ion-item> -->
 
 
-    </div>
+     </div>
 
-    <div class="productBodyRight">
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-
-           <div >
-             <div class="col-md-4">
-               <div class="card mb-4 box-shadow">
-                 <img class="card-img-top"  src="assets/imgs/p2.jpg" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                 <div class="card-body">
-                   <p class="card-text">TRIPLE AVIAR </p>
-                   <div class="d-flex justify-content-between align-items-center">
-                     <div class="btn-group">
-                       <button (click)="push()"type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                       <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+     <div class="productBodyRight">
+       <div class="album py-5 bg-light">
+         <div class="container">
+           <div class="row">
+             <ion-item *ngFor="let producto of productos ">
+               <div class="col-md-4">
+                 <div class="card mb-4 box-shadow">
+                   <img class="card-img-top"  src={{producto.img}} data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                   <div class="card-body">
+                     <p class="card-text">{{producto.clave}} </p>
+                     <p class="card-text" *ngIf="LoginRegister.ClientAuth" >{{producto.price}} </p>
+                     <div class="d-flex justify-content-between align-items-center">
+                       <div class="btn-group">
+                         <button (click)="push()"type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
+                         <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                       </div>
                      </div>
                    </div>
                  </div>
                </div>
-             </div>
-           </div>
+             </ion-item>
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
   <div class="footer">
       <div class="footerTop">
         <div>
