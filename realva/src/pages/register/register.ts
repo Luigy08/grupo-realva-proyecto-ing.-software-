@@ -29,6 +29,7 @@ export class RegisterPage {
   my_variable: string = '#bfbcbc';
   passwordcheck: string;
   passwordcheck1: string;
+
   signupError: string;
 	form: FormGroup;
   constructor(fb: FormBuilder, private navCtrl: NavController, private auth: AuthService) {
@@ -85,6 +86,7 @@ export class RegisterPage {
       this.my_variable = "red";
     }
   }
+
   Register() {
     let data = this.form.value;
 		let credentials = {
@@ -97,6 +99,5 @@ export class RegisterPage {
 			() => this.navCtrl.setRoot(HomePage),
 			error => this.signupError = error.message
     );
-
   }
 }
