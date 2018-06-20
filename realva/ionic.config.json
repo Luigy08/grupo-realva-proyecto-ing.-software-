@@ -2,14 +2,16 @@
   "name": "realva",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "proxies": [
     {
-      "path":"/api",
+      "path": "/api",
       "proxyUrl": "http://serverlessforms.com/api"
     },
     {
-      "path":"/server",
+      "path": "/server",
       "proxyUrl": "https://realva.000webhostapp.com/server"
     }
   ]

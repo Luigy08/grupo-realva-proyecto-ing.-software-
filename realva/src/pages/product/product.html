@@ -1,197 +1,75 @@
 <ion-header>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <ion-navbar>
     <ion-title>Product</ion-title>
     <ion-buttons end>
         <app-header></app-header>
-        <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse </button>
-        <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion </button>
-        <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil </button>
       </ion-buttons>
   </ion-navbar>
 </ion-header>
+
 <ion-content padding>
-    
-  <div class="titleProduct">
-    <div class="productProductos">
-      <h2>CATEGORIAS</h2>
-      <hr>
-    </div>
-    <div class="productCategorias">
-      <h2>PRODUCTOS</h2>
-      <HR>
-    </div>
-  </div>
+  <div class="productAll">
+    <div class="bodyProduct">
+      <div class="bodyProductTop">
+        <div class="titleProduct">
+          <div class="productProductos">
+            <h2>CATEGORIAS</h2>
+            <hr>
+          </div>
+          <div class="productCategorias">
+            <h2>PRODUCTOS</h2>
+            <HR>
+          </div>
+        </div>
 
 
-  <div class="productBody">
-    <div class="productBodyLeft" >
-      <!--<ion-item>
-        <ion-label>Employee</ion-label>
-        <ion-select [(ngModel)]="employee" [compareWith]="compareFn">
-          <ion-option *ngFor="let employee of employees" [value]="employee"></ion-option>
-        </ion-select>
-      </ion-item> -->
-      
+        <div class="productBody">
+          <div class="productBodyLeft">
 
-    </div>
+            <!--<ion-item>
+              <ion-label>Employee</ion-label>
+              <ion-select [(ngModel)]="employee" [compareWith]="compareFn">
+                <ion-option *ngFor="let employee of employees" [value]="employee"></ion-option>
+              </ion-select>
 
-    <div class="productBodyRight">
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
+              autoplay="3000" loop="true" speed="3000" c
+            </ion-item> -->
 
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top"  src="assets/imgs/p2.jpg" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">TRIPLE AVIAR </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+
+          </div>
+
+          <div class="productBodyRight">
+            <div class="album py-5 bg-light">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4" *ngFor='let producto of productos | async '>
+                    <div class="card mb-4 box-shadow">
+                      <img class="card-img-top" src={{producto.imagen}}
+                           data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
+                           alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">{{producto.nombre}} </p>
+                        <p class="card-text" > Precio: L. {{producto.precio}} </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button (click)="push(producto)" type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
+                            <button (click)= "pushCotizar(producto)"type="button" class="btn btn-sm btn-outline-secondary">Cotizar</button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top"  src="assets/imgs/p3.jpg" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">crema ordenie aloe y vitamina A 500 </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top"  src="assets/imgs/p4.jpg" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">FOSFOPLEX </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top"  src="assets/imgs/p5.jpg" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Kuramicina-BP </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top"  src="assets/imgs/p6.jpg" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Catosal </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top"  src="assets/imgs/p7.jpg" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Pen3Day </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top"  src="assets/imgs/p8.jpg" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Vitonal-B </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
-    </div>
+
   </div>
-  <div class="footer">
-      <div class="footerTop">
-        <div>
-          <pre style="color: white;">
-              <b>
-                  Direccion:
 
-                  Edificio Alvarenga, Boulevard Morazan
-                  Contiguo Paso Desnivel Las Lomas
-                  Tegucigalpa, M.D.C.
-                  HONDURAS
-                  
-                  Telefonos: +(504) 2236-5531 / 2236-5902 / 2236-8719</b>
-          </pre>
-        </div>
-        <div>
-          <pre style="color: white;">
-              <b>
-                  Correos:
+  </div>
 
-                  info@realva.net
-                  info@induvet.com
-              </b>
-          </pre>
-        </div>
-        <div>
-          <pre style="color: white;">
-              <b>
-                  Valores:
-
-                  - Honestidad
-                  - Servicio
-                  - Responsabilidad
-                  - Transparencia
-                  - Calidad
-                  - Seguridad 
-              </b>
-          </pre>
-        </div>
-      </div>
-      <div class="footerBot">
-        <p>© copyright</p>
-      </div>
-    </div>
 </ion-content>

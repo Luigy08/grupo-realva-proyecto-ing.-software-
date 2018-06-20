@@ -5,6 +5,14 @@ import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
 import {AdminPage} from "../admin/admin";
 import {ProfilePage} from "../profile/profile"
+import {ShowproductPage} from "../showproduct/showproduct";
+
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
+import {CotizarPage} from "../cotizar/cotizar";
+
+
 @Component({
   selector: 'page-product',
   templateUrl: 'product.html'
@@ -14,8 +22,20 @@ export class ProductPage {
   register = RegisterPage;
   Admin = AdminPage;
   Profile = ProfilePage;
-  constructor(public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider) {
 
+  productoRef: any;
+  productos: AngularFireList<any>;
+
+  constructor(public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider,public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
+    this.productoRef = afDatabase.list('productos');
+    this.productos = this.productoRef.valueChanges();
+    console.log(this.productoRef.valueChanges().clave);
   }
 
+  push(p: any){
+    this.navCtrl.push(ShowproductPage,{productoEntrada: p});
+  }
+  pushCotizar(p: any){
+    this.navCtrl.push(CotizarPage,{productoEntrada: p});
+  }
 }

@@ -16,18 +16,22 @@ import { AuthService } from '../services/auth.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginRegisterProvider } from '../providers/login-register/login-register';
+import { ImageDataProvider } from '../providers/image-data/image-data';
+
 import { ProductPage } from "../pages/product/product";
 import { DownloadsPage } from '../pages/downloads/downloads';
 import { RegisterPage } from '../pages/register/register';
-import { LoginRegisterProvider } from '../providers/login-register/login-register';
-import { ImageDataProvider } from '../providers/image-data/image-data';
 import { ProfilePage } from '../pages/profile/profile';
+import { ShowproductPage } from "../pages/showproduct/showproduct";
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HeaderComponent } from './header/header.component';
- 
-// AF2 Settings
+import { CotizarPage} from "../pages/cotizar/cotizar";
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBZAKqZfYiuQDTF-pDtZsxlO5X72wNFA1Q",
   authDomain: "realva-54c4a.firebaseapp.com",
@@ -36,8 +40,8 @@ export const firebaseConfig = {
   storageBucket: "realva-54c4a.appspot.com",
   messagingSenderId: "233461489484"
 
-};
 
+};
 @NgModule({
   declarations: [
     MyApp,
@@ -50,16 +54,20 @@ export const firebaseConfig = {
     AdminPage,
     DownloadsPage,
     RegisterPage,
+    ProfilePage,
+    ShowproductPage,
+    CotizarPage,
     HeaderComponent,
-    ProfilePage
+
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
     AppMaskerModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -73,8 +81,9 @@ export const firebaseConfig = {
     AdminPage,
     DownloadsPage,
     RegisterPage,
-    ProfilePage
-
+    ProfilePage,
+    ShowproductPage,
+    CotizarPage
   ],
   providers: [
     StatusBar,

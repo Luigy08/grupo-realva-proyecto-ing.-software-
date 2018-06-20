@@ -2,7 +2,7 @@ page-home {
         .carrusel{
             height: 350px;
             width: 100%;
-            
+
         }
         .pictureCarrusel img{
             height: 350px;
@@ -22,7 +22,7 @@ page-home {
             flex-direction: row;
             text-align: center;
         }
-        
+
         .home_info{
             margin-left: 10%;
             margin-top: 5%;
@@ -33,19 +33,29 @@ page-home {
             width: 400px;
         }
         .footerTop{
-            text-align: left;
-            
             position: relative;
             display: flex;
             flex-direction: row;
             width: 100%;
             background: #3bb522;
         }
-       
-        .footerBot{
-            text-align: center;
-            background:#1b9605;
+        .footerTop div{
+          margin-left: 10.5%;
+          margin-top: 2%;
         }
+
+
+  .footerBot{
+    text-align: center;
+    background:#1b9605;
+
+  }
+
+  .footer{
+    margin-left: -2%;
+    width: 104%;
+    height: 30%;
+  }
         hr{
             border: 1px;
             border-top-style: solid;
@@ -59,4 +69,4 @@ page-home {
             border-color: #00f865;
         }
     }
-    
+
