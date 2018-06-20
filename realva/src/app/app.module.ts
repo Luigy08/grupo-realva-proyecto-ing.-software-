@@ -14,17 +14,19 @@ import { AppMaskerModule } from 'brmasker-ionic';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginRegisterProvider } from '../providers/login-register/login-register';
+import { ImageDataProvider } from '../providers/image-data/image-data';
+
 import { ProductPage } from "../pages/product/product";
 import { DownloadsPage } from '../pages/downloads/downloads';
 import { RegisterPage } from '../pages/register/register';
-import { LoginRegisterProvider } from '../providers/login-register/login-register';
-import { ImageDataProvider } from '../providers/image-data/image-data';
 import { ProfilePage } from '../pages/profile/profile';
-import {ShowproductPage} from "../pages/showproduct/showproduct";
+import { ShowproductPage } from "../pages/showproduct/showproduct";
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule} from 'angularfire2/auth';
+import { CotizarPage} from "../pages/cotizar/cotizar";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBZAKqZfYiuQDTF-pDtZsxlO5X72wNFA1Q",
@@ -49,7 +51,9 @@ export const firebaseConfig = {
     DownloadsPage,
     RegisterPage,
     ProfilePage,
-    ShowproductPage
+    ShowproductPage,
+    CotizarPage,
+
   ],
   imports: [
     BrowserModule,
@@ -73,8 +77,8 @@ export const firebaseConfig = {
     DownloadsPage,
     RegisterPage,
     ProfilePage,
-    ShowproductPage
-
+    ShowproductPage,
+    CotizarPage
   ],
   providers: [
     StatusBar,

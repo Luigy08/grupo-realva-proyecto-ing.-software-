@@ -41,6 +41,8 @@
               <ion-select [(ngModel)]="employee" [compareWith]="compareFn">
                 <ion-option *ngFor="let employee of employees" [value]="employee"></ion-option>
               </ion-select>
+
+              autoplay="3000" loop="true" speed="3000" c
             </ion-item> -->
 
 
@@ -52,17 +54,16 @@
                 <div class="row">
                   <div class="col-md-4" *ngFor='let producto of productos | async '>
                     <div class="card mb-4 box-shadow">
-                      <img class="card-img-top" src="assets/imgs/p2.jpg"
+                      <img class="card-img-top" src={{producto.imagen}}
                            data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                            alt="Card image cap">
                       <div class="card-body">
-                        <p class="card-text">{{producto.name}} </p>
-                        <p class="card-text" *ngIf="LoginRegister.ClientAuth">{{producto.price}} </p>
+                        <p class="card-text">{{producto.nombre}} </p>
+                        <p class="card-text" > Precio: L. {{producto.precio}} </p>
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="btn-group">
-                            <button (click)="push(producto)" type="button" class="btn btn-sm btn-outline-secondary">Mirar
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                            <button (click)="push(producto)" type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
+                            <button (click)= "pushCotizar(producto)"type="button" class="btn btn-sm btn-outline-secondary">Cotizar</button>
                           </div>
                         </div>
                       </div>
@@ -76,36 +77,7 @@
       </div>
 
   </div>
-    <div class="footer">
-      <div class="footerTop">
-        <div>
-          <p style="color: white;">Direccion: </p>
-          <p style="color: white;">Edificio Alvarenga, Boulevard Morazan </p>
-          <p style="color: white;">Contiguo Paso Desnivel Las Lomas </p>
-          <p style="color: white;">Tegucigalpa, M.D.C. </p>
-          <p style="color: white;">HONDURAS </p>
-          <p style="color: white;"> Telefonos: +(504) 2236-5531 / 2236-5902 / 2236-8719</p>
 
-        </div>
-        <div>
-          <p style="color: white;">Correos: </p>
-          <p style="color: white;">info@realva.net </p>
-          <p style="color: white;">info@induvet.com </p>
-        </div>
-        <div>
-          <p style="color: white;"> Valores: </p>
-          <p style="color: white;">- Honestidad</p>
-          <p style="color: white;">- Servicio</p>
-          <p style="color: white;">- Responsabilidad</p>
-          <p style="color: white;">- Transparencia</p>
-          <p style="color: white;">- Calidad</p>
-          <p style="color: white;">- Seguridad</p>
-
-        </div>
-      </div>
-      <div class="footerBot">
-        <p>© copyright</p>
-      </div>
-    </div>
   </div>
+
 </ion-content>

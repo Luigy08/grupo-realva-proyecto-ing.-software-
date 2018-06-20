@@ -10,6 +10,8 @@ import {ShowproductPage} from "../showproduct/showproduct";
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
+import {CotizarPage} from "../cotizar/cotizar";
+
 
 @Component({
   selector: 'page-product',
@@ -33,5 +35,7 @@ export class ProductPage {
   push(p: any){
     this.navCtrl.push(ShowproductPage,{productoEntrada: p});
   }
-
+  pushCotizar(p: any){
+    this.navCtrl.push(CotizarPage,{productoEntrada: p});
+  }
 }

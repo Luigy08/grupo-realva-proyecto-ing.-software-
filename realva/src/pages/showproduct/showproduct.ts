@@ -17,7 +17,7 @@ export class ShowproductPage {
   producto: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.producto= navParams.get('productoEntrada');
-    console.log(this.producto.name);
+    console.log(this.producto.price);
   }
 
   ionViewDidLoad() {

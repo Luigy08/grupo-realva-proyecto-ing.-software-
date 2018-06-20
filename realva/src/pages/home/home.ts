@@ -20,7 +20,17 @@ export class HomePage {
   register = RegisterPage;
   Admin = AdminPage;
   Profile = ProfilePage;
+
+  ofertaRef: any;
+  ofertas: AngularFireList<any>;
+
+  logoRef: any;
+  logos: AngularFireList<any>;
   constructor(public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider,public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
+    this.ofertaRef= afDatabase.list('imagenesPrincipal');
+    this.ofertas = this.ofertaRef.valueChanges();
+    this.logoRef= afDatabase.list('imagenesOfertas');
+    this.logos= this.logoRef.valueChanges();
 
   }
   @ViewChild(Slides) slides: Slides;
