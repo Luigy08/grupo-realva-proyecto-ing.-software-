@@ -9,8 +9,7 @@ import {ShowproductPage} from "../showproduct/showproduct";
 
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
-import { Observable } from '@firebase/util';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-product',
@@ -25,13 +24,14 @@ export class ProductPage {
   productoRef: any;
   productos: AngularFireList<any>;
 
-
   constructor(public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider,public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
     this.productoRef = afDatabase.list('productos');
     this.productos = this.productoRef.valueChanges();
-    console.log(this.productos);
+    console.log(this.productoRef.valueChanges().clave);
   }
-  push(){
-    this.navCtrl.push(ShowproductPage);
+
+  push(p: any){
+    this.navCtrl.push(ShowproductPage,{productoEntrada: p});
   }
+
 }

@@ -34,6 +34,7 @@ export const firebaseConfig = {
   storageBucket: "realva-54c4a.appspot.com",
   messagingSenderId: "233461489484"
 
+
 };
 @NgModule({
   declarations: [
@@ -55,9 +56,9 @@ export const firebaseConfig = {
     HttpModule,
     IonicModule.forRoot(MyApp),
     AppMaskerModule,
-    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

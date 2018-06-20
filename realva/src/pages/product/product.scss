@@ -1,66 +1,78 @@
 page-product{
-    .productTop{
-      height: 70%;
-    }
-    .productBody{
-        margin-top: 2%;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-      }
-      .productBodyLeft{
-        margin-left: 5%;
-        width: 25%;
-        height: 100%;
-      }
-      .productBodyRight{
+  .productAll{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .bodyProduct{
+    height: 70%;
+    width: 100%;
+  }
+  .productBody{
+    margin-top: 2%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  .productBodyLeft{
+    margin-left: 5%;
+    width: 25%;
+    height: 100%;
+  }
+  .productBodyRight{
 
-        width: 50%;
-        height: 100%;
-        margin-left: 5%;
-      }
+    width: 50%;
+    height: 100%;
+    margin-left: 5%;
+  }
 
-      .titleProduct{
-        margin-top: 2%;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-      }
-      .productProductos{
-        margin-left: 5%;
-        width: 25%;
-        height: 100%;
-      }
-      .productCategorias{
-        width: 50%;
-        height: 100%;
-        margin-left: 5%;
-      }
+  .titleProduct{
+    margin-top: 2%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  .productProductos{
+    margin-left: 5%;
+    width: 25%;
+    height: 100%;
+  }
+  .productCategorias{
+    width: 50%;
+    height: 100%;
+    margin-left: 5%;
+  }
 
 
-      .container img{
-        margin-left: 27%;
-        width: 50%;
-        height: 100%;
-      }
-    .footer{
-      height: 30%;
-    }
+  .container img{
+    margin-left: 27%;
+    width: 50%;
+    height: 100%;
+  }
 
-      .footerTop{
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        background: #3bb522;
-    }
+  .footerTop{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #3bb522;
+  }
+  .footerTop div{
+    margin-left: 15%;
+    margin-top: 2%;
+  }
 
-    .footerBot{
-        text-align: center;
-        background:#1b9605;
+  .footerBot{
+    text-align: center;
+    background:#1b9605;
 
-    }
+  }
+  .footer{
 
-      .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+    height: 30%;
+  }
+
+  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
 }
