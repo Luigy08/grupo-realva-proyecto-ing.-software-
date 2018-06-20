@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdde9fcd-0a12-4b11-9ef5-dd0323d1e740" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/realva/src/pages/cotizar/cotizar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/realva/src/pages/cotizar/cotizar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/realva/src/pages/cotizar/cotizar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/realva/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/realva/src/pages/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/home/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/home/home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/home/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/home/home.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/product/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/product/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/product/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/product/product.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/product/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/product/product.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.scss" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.ts" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/tabs/tabs.html" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/tabs/tabs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/theme/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/theme/variables.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +19,32 @@
       <file leaf-file-name="product.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+            <state relative-caret-position="390">
+              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showproduct.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/realva/src/pages/login/login.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -69,20 +76,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showproduct.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="showproduct.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="240">
+              <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+            <state relative-caret-position="255">
+              <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -92,6 +99,33 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="410">
               <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/realva/src/pages/home/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#3;n#div#0;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#4;n#div#0;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#5;n#div#0;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#1;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#2;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#2;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#3;n#div#2;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#4;n#div#2;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#5;n#div#2;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#6;n#div#2;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,10 +157,10 @@
         <option value="$PROJECT_DIR$/realva/src/theme/variables.scss" />
         <option value="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.scss" />
         <option value="$PROJECT_DIR$/realva/src/pages/home/home.ts" />
-        <option value="$PROJECT_DIR$/realva/src/pages/home/home.html" />
         <option value="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html" />
         <option value="$PROJECT_DIR$/realva/src/pages/product/product.scss" />
         <option value="$PROJECT_DIR$/realva/src/pages/product/product.html" />
+        <option value="$PROJECT_DIR$/realva/src/pages/home/home.html" />
       </list>
     </option>
   </component>
@@ -145,9 +179,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="88" />
-    <option name="width" value="1356" />
-    <option name="height" value="555" />
+    <option name="y" value="27" />
+    <option name="width" value="683" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -204,6 +238,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="grupo-realva-proyecto-ing.-software-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grupo-realva-proyecto-ing.-software-" type="462c0819:PsiDirectoryNode" />
+              <item name="realva" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="grupo-realva-proyecto-ing.-software-" type="b2602c69:ProjectViewProjectNode" />
@@ -298,19 +340,19 @@
       <workItem from="1529457225288" duration="311000" />
       <workItem from="1529458091633" duration="15852000" />
       <workItem from="1529510404191" duration="7848000" />
-      <workItem from="1529526469177" duration="5163000" />
+      <workItem from="1529526469177" duration="6309000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62318000" />
+    <option name="totallyTimeSpent" value="63464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20417288" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.41505218" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -361,13 +403,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -633,16 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/realva/src/pages/cotizar/cotizar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -680,16 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/realva/src/pages/home/home.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -700,17 +715,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html">
+    <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="410">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/realva/src/pages/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="105">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
@@ -732,17 +747,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.scss">
+    <entry file="file://$PROJECT_DIR$/realva/src/pages/login/login.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="246">
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.ts">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
         </state>
       </provider>
     </entry>
