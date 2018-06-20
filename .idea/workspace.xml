@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdde9fcd-0a12-4b11-9ef5-dd0323d1e740" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.scss" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realva/src/pages/product/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/realva/src/pages/product/product.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showproduct.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="showproduct.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
+            <state relative-caret-position="512">
               <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
             </state>
           </provider>
@@ -86,6 +85,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="product.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -105,12 +113,12 @@
         <option value="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.module.ts" />
         <option value="$PROJECT_DIR$/realva/src/pages/home/home.ts" />
         <option value="$PROJECT_DIR$/realva/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/realva/src/pages/product/product.scss" />
         <option value="$PROJECT_DIR$/realva/src/pages/product/product.html" />
         <option value="$PROJECT_DIR$/realva/src/pages/product/product.ts" />
         <option value="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.ts" />
         <option value="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.html" />
         <option value="$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.scss" />
+        <option value="$PROJECT_DIR$/realva/src/pages/product/product.scss" />
       </list>
     </option>
   </component>
@@ -247,12 +255,12 @@
       <workItem from="1529355793427" duration="7641000" />
       <workItem from="1529453508482" duration="399000" />
       <workItem from="1529457225288" duration="311000" />
-      <workItem from="1529458091633" duration="15649000" />
+      <workItem from="1529458091633" duration="15852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49104000" />
+    <option name="totallyTimeSpent" value="49307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -648,27 +656,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
@@ -709,8 +700,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
+        <state relative-caret-position="512">
           <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realva/src/pages/showproduct/showproduct.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realva/src/pages/product/product.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
         </state>
       </provider>
     </entry>
