@@ -5,7 +5,7 @@ import { LoginRegisterProvider } from "../../providers/login-register/login-regi
 import { HomePage } from "../home/home";
 import { HttpClient } from '@angular/common/http';
 import { Http } from '@angular/http';
-
+import { AuthService } from '../../services/auth.service';
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,60 +19,36 @@ import { Http } from '@angular/http';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  Data: any = {};
   loginForm: FormGroup;
-  username: AbstractControl;
-  email: AbstractControl;
-  page: HomePage;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public loginRegister: LoginRegisterProvider, public alertCtrl: AlertController) {
-    this.loginForm = new FormGroup({
-      username: new FormControl('', Validators.required),
-      password: new FormControl(),
-    });
-  }
-  Loginpost(Data) {
-    if (this.loginRegister.Login(Data)) {
-      this.loginForm.reset();
-      this.navCtrl.pop();
-    } else {
-      this.presentAlert("Error Inicio de Sesion", "Usuario o Contraseña incorrectos", "OK");
-    }
-  }
-  Login(Data) {
-    let data = {
-      email: Data.username,
-      password: Data.password
-    }
-    let user_role = "";
-    this.http.post('server/login.php', JSON.stringify(data)).map(res => res.json()).subscribe(res => {
-      if (res != "") {
-        if (res[0].user_role == "admin") {
-          console.log(res[0].user_role == "admin");
-          this.loginRegister.AdminAuth = true;
-          this.loginForm.reset();
-          this.navCtrl.pop();
-        }
-        if(res[0].user_role == "user"){
-          this.loginRegister.ClientAuth = true;
-          this.loginForm.reset();
-          this.navCtrl.pop();
-        }
-      } else {
-        this.presentAlert("Error Inicio de Sesion", "Usuario o Contraseña incorrectos", "OK");
-      }
-    });
-    return false;
-  }
-  presentAlert(Title, SubTitle, Button) {
-    let alert = this.alertCtrl.create({
-      title: Title,
-      subTitle: SubTitle,
-      buttons: [Button]
-    });
-    alert.present();
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
+	loginError: string;
 
-}
+	constructor(
+		private navCtrl: NavController,
+		private auth: AuthService,
+		fb: FormBuilder
+	) {
+		this.loginForm = fb.group({
+			email: ['', Validators.compose([Validators.required, Validators.email])],
+			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+		});
+  }//Constructor
+  
+  login() {
+    let data = this.loginForm.value;
+
+		if (!data.email) {
+			return;
+		}
+
+		let credentials = {
+			email: data.email,
+			password: data.password
+		};
+		this.auth.signInWithEmail(credentials)
+			.then(
+				() => this.navCtrl.setRoot(HomePage),
+				error => this.loginError = error.message
+			);
+  }//login method
+
+}//main brackets

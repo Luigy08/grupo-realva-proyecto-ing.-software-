@@ -5,6 +5,10 @@ import { LoginRegisterProvider } from "../../providers/login-register/login-regi
 import { HttpClient } from '@angular/common/http';
 import { Http } from '@angular/http';
 
+import { HomePage } from '../home/home';
+import { AuthService } from '../../services/auth.service';
+
+
 /**
  * Generated class for the RegisterPage page.
  *
@@ -21,28 +25,19 @@ export class RegisterPage {
   Data: any = {};
   Contravalnull: boolean = false;
   registerForm: FormGroup;
-  username: AbstractControl;
-  userlastname: AbstractControl;
-  email: AbstractControl;
-  direction: AbstractControl;
-  telephone: AbstractControl;
-  RTN: AbstractControl;
-  password: AbstractControl;
-  Repassword: AbstractControl;
+  
   my_variable: string = '#bfbcbc';
   passwordcheck: string;
   passwordcheck1: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public LoginRegister: LoginRegisterProvider, public http: Http) {
-    this.registerForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]),
-      userlastname: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]),
-      email: new FormControl('', [Validators.required, Validators.nullValidator, Validators.email]),
-      direction: new FormControl(),
-      telephone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.nullValidator]),
-      RTN: new FormControl('', [Validators.required, Validators.minLength(14)]),
-      password: new FormControl('', [Validators.required, Validators.nullValidator]),
-      Repassword: new FormControl('', [Validators.required, Validators.nullValidator]),
-    });
+  signupError: string;
+	form: FormGroup;
+  constructor(fb: FormBuilder, private navCtrl: NavController, private auth: AuthService) {
+		this.form = fb.group({
+			email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+      address: new FormControl(''),
+      keyClient: new FormControl('')
+		});
   }
 
   ionViewDidLoad() {
@@ -90,27 +85,18 @@ export class RegisterPage {
       this.my_variable = "red";
     }
   }
-  Register(Data) {
-    console.log(Data);
-    let ident: number;
-    let subir = { name: Data.username, last_name: Data.userlastname, status: 1, clase: 0, rtn: Data.RTN, phone: Data.telephone, email: Data.email, password: Data.password };
-    this.http.post('https://realva.000webhostapp.com/server/register.php', JSON.stringify(subir)).map(res => res.json()).subscribe(res => {
-      if (res != "") {
-        /*console.log(res);*/
-        ident = res;
-        let subir2 = { phone: Data.telephone, id: res };
-        this.http.post('https://realva.000webhostapp.com/server/register_phone.php', JSON.stringify(subir2)).subscribe(res => {
-        });
-        let subir1 = { rtn: Data.RTN, id: res };
-        this.http.post('https://realva.000webhostapp.com/server/register_rtn.php', JSON.stringify(subir1)).subscribe(res => {
-        });
-        let subir3 = { email: Data.email, password: Data.password, id: ident };
-        this.http.post('https://realva.000webhostapp.com/server/register_user.php', JSON.stringify(subir3)).subscribe(res => {
-        });
-        this.registerForm.reset();
-        this.navCtrl.pop();
-      }
-    });
+  Register() {
+    let data = this.form.value;
+		let credentials = {
+			email: data.email,
+      password: data.password,
+      address: data.address
+    };
+    console.log(credentials.address);
+		this.auth.signUp(credentials).then(
+			() => this.navCtrl.setRoot(HomePage),
+			error => this.signupError = error.message
+    );
 
   }
 }

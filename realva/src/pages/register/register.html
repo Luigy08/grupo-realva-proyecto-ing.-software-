@@ -14,12 +14,12 @@
 
 
 <ion-content padding>
-  <form [formGroup]="registerForm" (ngSubmit)="Register(Data)">
+  <!--<form [formGroup]="registerForm" (ngSubmit)="Register()">
     <fieldset>
       <div class="form-group required">
         <div class="col-sm-10">
           <label class="col-sm-2 control-label" for="input-name">Nombre:</label>
-          <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"
+          <input type="text" class="form-control" formControlName="username" (keypress)="onKeyUp($event)"
             (keyup)="onKeyUp($event)" min="10" max="32" required>
         </div>
       </div>
@@ -81,5 +81,27 @@
         <input class="btn btn-primary button" type="submit" value="Registrarse">
       </div>
     </div>
-  </form>
+  </form>-->
+  <form (ngSubmit)="Register()" [formGroup]="form">
+		<ion-list inset>
+
+			<ion-item >
+				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+				<ion-input type="text" placeholder="Address" formControlName="address"></ion-input>
+			</ion-item>
+		</ion-list>
+
+		<div padding-horizontal>
+			<div class="form-error">{{signupError}}</div>
+
+			<button ion-button full type="submit" [disabled]="!form.valid">Sign up</button>
+		</div>
+	</form>
 </ion-content>

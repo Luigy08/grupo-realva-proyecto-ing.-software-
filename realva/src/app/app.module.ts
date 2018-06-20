@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Header } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 
@@ -11,6 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from "../pages/login/login";
 import { AdminPage } from "../pages/admin/admin";
 import { AppMaskerModule } from 'brmasker-ionic';
+import { AuthService } from '../services/auth.service';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +24,8 @@ import { ImageDataProvider } from '../providers/image-data/image-data';
 import { ProfilePage } from '../pages/profile/profile';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
- 
+import { AngularFireAuth } from 'angularfire2/auth';
+import { HeaderComponent } from './header/header.component';
  
 // AF2 Settings
 export const firebaseConfig = {
@@ -47,6 +50,7 @@ export const firebaseConfig = {
     AdminPage,
     DownloadsPage,
     RegisterPage,
+    HeaderComponent,
     ProfilePage
   ],
   imports: [
@@ -77,7 +81,9 @@ export const firebaseConfig = {
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     LoginRegisterProvider,
-    ImageDataProvider
+    AuthService,
+    ImageDataProvider,
+    AngularFireAuth
   ]
 })
 export class AppModule { }

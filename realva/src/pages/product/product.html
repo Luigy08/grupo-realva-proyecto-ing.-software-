@@ -3,8 +3,7 @@
   <ion-navbar>
     <ion-title>Product</ion-title>
     <ion-buttons end>
-        <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">Cerrar Sesion</button>
-        <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion</button>
+        <app-header></app-header>
         <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse </button>
         <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion </button>
         <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil </button>
