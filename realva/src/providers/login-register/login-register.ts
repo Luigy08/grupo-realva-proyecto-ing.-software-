@@ -31,7 +31,7 @@ export class LoginRegisterProvider {
   Register(Data,estado) {
     console.log(Data);
     let clientesRef = this.afDatabase.list('clientes').push({});
-    clientesRef.set({id:clientesRef.key,ClaveCliente:0,NombreEmpresa:Data.username,NombreRepresentante:Data.userlastname,RTN:Data.RTN,Estatus:estado,Telefono1:Data.telephone,Telefono2:0,Contraseña:Data.password,Clasificacion:0,Saldo:0,Direccion:Data.direction,Correo:Data.email});
+    clientesRef.set({id:clientesRef.key,ClaveCliente:0,NombreEmpresa:Data.username,NombreRepresentante:Data.userlastname,RTN:Data.RTN,Estatus:estado,Telefono1:Data.telephone,Telefono2:Data.telephone2,Contraseña:Data.password,Clasificacion:0,Saldo:0,Direccion:Data.direction,Correo:Data.email});
     this.presentAlert("Registro Exitoso", "Se logro registrar con exito", "OK");
   }
   presentAlert(Title, SubTitle, Button) {
