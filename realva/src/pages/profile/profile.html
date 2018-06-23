@@ -25,43 +25,43 @@
   <div class="form-group1">
     <div class="col-sm-10">
       <label class="col-sm-2 control-label1" for="input-name">Nombre Empresa:</label>
-      <input id ='NombreEmpresa' type="text" class="form-control1" value="user.NombreEmpresa" disabled>
+      <input id ='NombreEmpresa' type="text" class="form-control1" value="{{LoginRegister.userLogged.NombreEmpresa}}" disabled>
     </div>
   </div>
   <div class="form-group1 required">
     <div class="col-sm-10">
       <label class="col-sm-2 control-label1" for="input-lastname">Nombre Representante:</label>
-      <input id='NombreRepresentante' type="text" class="form-control1"disabled>
+      <input id='NombreRepresentante' type="text" class="form-control1" value="{{LoginRegister.userLogged.NombreRepresentante}}"disabled>
     </div>
   </div>
   <div class="form-group1 required">
     <div class="col-sm-10">
       <label class="col-sm-2 control-label1" for="input-email">Correo Electrónico:</label>
-      <input id='Correo' type="text" class="form-control1" disabled>
+      <input id='Correo' type="text" class="form-control1" value="{{LoginRegister.userLogged.Correo}}" disabled>
     </div>
   </div>
   <div class="form-group1 required">
     <div class="col-sm-10">
       <label class="col-sm-2 control-label1" for="input-enquiry">Direccion</label>
-      <textarea id='Direccion' rows="1" id="input-enquiry" class="form-control1" disabled></textarea>
+      <textarea id='Direccion' rows="1" id="input-enquiry" class="form-control1" value="{{LoginRegister.userLogged.Direccion}}" disabled></textarea>
     </div>
   </div>
   <div class="form-group1 required">
     <div class="col-sm-10">
       <label class="col-sm-2 control-label1" for="input-telephone">Telefono 1:</label>
-      <input id='Telefono1' type="tel" class="form-control1"disabled >
+      <input id='Telefono1' type="tel" class="form-control1" value="{{LoginRegister.userLogged.Telefono1}}"disabled >
     </div>
   </div>
   <div class="form-group1 required">
     <div class="col-sm-10">
       <label class="col-sm-2 control-label1" for="input-telephone">Telefono 2:</label>
-      <input id='Telefono2' type="tel" class="form-control1"disabled >
+      <input id='Telefono2' type="tel" class="form-control1" value="{{LoginRegister.userLogged.Telefono2}}" disabled >
     </div>
   </div>
   <div class="form-group1 required">
     <div class="col-sm-10">
       <label class="col-sm-2 control-label1" for="input-id">RTN:</label>
-      <input id='RTN' type="text" class="form-control1"disabled>
+      <input id='RTN' type="text" class="form-control1" value="{{LoginRegister.userLogged.RTN}}"disabled>
     </div>
   </div>
 </div>

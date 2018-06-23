@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { LoginRegisterProvider } from '../../providers/login-register/login-register';
 
 /**
  * Generated class for the ProfilePage page.
@@ -18,26 +19,12 @@ export class ProfilePage {
   user: any;
   clientes: AngularFireList<any>;
   clientesref: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public afDatabase: AngularFireDatabase) {
-    this.clientesref = afDatabase.list('clientes');
-    this.clientes = this.clientesref.valueChanges();
+  constructor(public navCtrl: NavController, public navParams: NavParams,public afDatabase: AngularFireDatabase,public LoginRegister:LoginRegisterProvider) {
+    
   }
 
   ionViewDidLoad() {
-    this.cargarClientes();
     console.log('ionViewDidLoad ProfilePage');
-  }
-  cargarClientes() {
-    let user: any;    
-    this.afDatabase.database.ref('clientes').on('value', function (snapshot) {
-        snapshot.forEach(function (childSnapshot) {
-          if( childSnapshot.val().ClaveCliente === 1){
-            user=childSnapshot.val();
-          }
-            
-        });
-        console.log(user);        
-    });    
   }
   
   eliminarClientes(){
