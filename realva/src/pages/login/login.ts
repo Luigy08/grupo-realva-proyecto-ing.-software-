@@ -43,7 +43,7 @@ export class LoginPage {
 	Login(Data) {
 		let clientesRef = this.afDatabase.list('clientes').valueChanges().subscribe((data) => {
 			data.forEach(element => {
-				let temp = element;
+				let temp :any = element;
 				if (temp.Correo == Data.username) {
 					if (temp.Contraseña == Data.password) {
 						this.loginRegister.userLogged = temp;
