@@ -64,7 +64,7 @@ export class LoginPage {
 		alert.present();
 	}
 	login(data) {
-		this.loginRegister.Login(data);
+
     /*let data = this.loginForm.value;
 
 		if (!data.email) {
