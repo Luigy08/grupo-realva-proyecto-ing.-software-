@@ -1,72 +1,80 @@
 page-home {
-        .carrusel{
-            height: 350px;
-            width: 100%;
+  .carrusel {
+    height: 350px;
+    width: 100%;
 
-        }
-        .pictureCarrusel img{
-            height: 350px;
-        }
-        .bodyHome{
-            margin-top: -1.2%;
-            height: 100%;
-            width: 100%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-        #home_info2{
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            text-align: center;
-        }
-
-        .home_info{
-            margin-left: 10%;
-            margin-top: 5%;
-            width: 80%;
-        }
-        .home_info img{
-            height: 200px;
-            width: 400px;
-        }
-        .footerTop{
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            background: #3bb522;
-        }
-        .footerTop div{
-          margin-left: 10.5%;
-          margin-top: 2%;
-        }
-
-
-  .footerBot{
+  }
+  .pictureCarrusel img {
+    height: 350px;
+  }
+  .bodyHome {
+    margin-top: -1.2%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    background:#1b9605;
+  }
+  .home_info2 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+  }
+
+  .home_info {
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+  }
+  .home_info img {
+    height: 200px;
+    width: 400px;
+  }
+  .homeText2{
+    margin-left: 9%;
+    width: 80%;
+  }
+  .homeText3{
+    margin-left: 9%;
+    width: 80%;
+  }
+  .footerTop {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #3bb522;
+  }
+  .footerTop div {
+    margin-left: 10.5%;
+    margin-top: 2%;
+  }
+
+  .footerBot {
+    text-align: center;
+    background: #1b9605;
 
   }
 
-  .footer{
+  .footer {
     margin-left: -2%;
     width: 104%;
     height: 30%;
   }
-        hr{
-            border: 1px;
-            border-top-style: solid;
-            color: #00f865;
-        }
-        h2 {
-            color: rgb(68, 67, 73);
-            border: 0px;
-            border-bottom: 1px;
-            border-style: solid;
-            border-color: #00f865;
-        }
-    }
+  hr {
+    border: 1px;
+    border-top-style: solid;
+    color: #00f865;
+  }
+  h2 {
+    color: rgb(68, 67, 73);
+    border: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #00f865;
+  }
+}
 
