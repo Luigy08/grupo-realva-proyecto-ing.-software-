@@ -1,31 +1,36 @@
 page-downloads {
-    h1,
-    h2 {
-        color: rgb(68, 67, 73);
-        border: 0px;
-        border-bottom: 1px;
-        border-style: solid;
-        border-color: #5C8BA6;
-    }
-    h1 {
-        text-align: center;
-    }
-    .Downloads {
-        margin: 70px;
-    }
-    a {
-        text-decoration: none;
-    }
-    .footerTop{
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        background: #3bb522;
-    }
-   
-    .footerBot{
-        text-align: center;
-        background:#1b9605;
-    }
+  h1,
+  h2 {
+    color: rgb(68, 67, 73);
+    border: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #5C8BA6;
+  }
+  h1 {
+    text-align: center;
+  }
+  .Downloads {
+    margin: 70px;
+  }
+  a {
+    text-decoration: none;
+  }
+  .footerTop {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #3bb522;
+  }
+  .footerTop div {
+    margin-left: 10.5%;
+    margin-top: 2%;
+  }
+
+  .footerBot {
+    text-align: center;
+    background: #1b9605;
+
+  }
 }
