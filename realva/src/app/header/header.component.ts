@@ -42,4 +42,6 @@ export class HeaderComponent implements OnInit {
   signUp() {
     this.navCtrl.setRoot(RegisterPage);
   }
+
+  
 }

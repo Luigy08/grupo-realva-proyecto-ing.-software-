@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl, } from '@angular/forms';
 import { LoginRegisterProvider } from "../../providers/login-register/login-register";
 import { HttpClient } from '@angular/common/http';
 import { Http } from '@angular/http';
 
 import { HomePage } from '../home/home';
 import { AuthService } from '../../services/auth.service';
-
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 /**
  * Generated class for the RegisterPage page.
@@ -37,8 +37,9 @@ export class RegisterPage {
   my_variable: string = '#bfbcbc';
   passwordcheck: string;
   passwordcheck1: string;
+  registroExitoso= false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public LoginRegister: LoginRegisterProvider) {
+  constructor(public navCtrl: NavController,private alertCtrl: AlertController,public afDatabase: AngularFireDatabase, public navParams: NavParams, public LoginRegister: LoginRegisterProvider) {
     this.registerForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]), 
       userlastname: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]),
@@ -58,6 +59,21 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
   }
 
+  Register(Data,estado) {
+    console.log(Data);
+    let clientesRef = this.afDatabase.list('clientes').push({});
+    clientesRef.set({id:clientesRef.key,ClaveCliente:0,NombreEmpresa:Data.username,NombreRepresentante:Data.userlastname,RTN:Data.RTN,Estatus:estado,Telefono1:Data.telephone,Telefono2:Data.telephone2,Contraseña:Data.password,Clasificacion:0,Saldo:0,Direccion:Data.direction,Correo:Data.email});
+    this.presentAlert("Registro Exitoso", "Se logro registrar con exito", "OK");
+    this.registroExitoso=true;
+  }
+  presentAlert(Title, SubTitle, Button) {
+    let alert = this.alertCtrl.create({
+      title: Title,
+      subTitle: SubTitle,
+      buttons: [Button]
+    });
+    alert.present();
+  }
   public onKeyUp(event: any) {
     let newValue = event.target.value;
     let regExp = new RegExp('^[A-ZaÑñÁÉÍÓÚáéíóú,a-z, ]+$');
@@ -109,6 +125,11 @@ export class RegisterPage {
 
   }
 
-  Register() {
+  FullRegister(Data) {
+    this.Register(Data,0);
+    if(this.registroExitoso){
+      this.registerForm.reset();
+      this.registroExitoso = false; 
+    }
   }
 }
