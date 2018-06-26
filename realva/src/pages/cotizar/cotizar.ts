@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import {LoginRegisterProvider} from "../../providers/login-register/login-register";
 import {ShowproductPage} from "../showproduct/showproduct";
 
@@ -9,16 +9,11 @@ import {ShowproductPage} from "../showproduct/showproduct";
   templateUrl: 'cotizar.html'
 })
 export class CotizarPage {
+productos: [any];
 
-
-  constructor(public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider) {
-
+  constructor(public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider,public navParams: NavParams) {
+    this.productos= navParams.get('productoEntrada');
   }
 
-  push(p: any){
-    this.navCtrl.push(ShowproductPage,{productoEntrada: p});
-  }
-  pushCotizar(p: any){
-    this.navCtrl.push(CotizarPage,{productoEntrada: p});
-  }
+
 }
