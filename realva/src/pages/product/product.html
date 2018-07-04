@@ -22,6 +22,12 @@
             <h2>PRODUCTOS</h2>
             <HR>
           </div>
+          <div>
+            <button ion-button icon-start (click)="pushCotizar(producto)" >
+              <ion-icon name="ios-clipboard"></ion-icon>
+              Cotizar
+            </button>
+          </div>
         </div>
 
 
@@ -46,20 +52,19 @@
                 <div class="row">
                   <div class="col-md-4" *ngFor='let producto of productos | async '>
                     <div class="card mb-4 box-shadow">
-                      <img class="card-img-top" src={{producto.imagen}}
-                           data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                           alt="Card image cap">
+                      <img class="imagenProducto" src={{producto.imagen}}>
                       <div class="card-body">
                         <p class="card-text">{{producto.nombre}} </p>
                         <p class="card-text" > Precio: L. {{producto.precio}} </p>
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="btn-group">
                             <button (click)="push(producto)" type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                            <button (click)= "pushCotizar(producto)"type="button" class="btn btn-sm btn-outline-secondary">Cotizar</button>
+                            <button (click)= "cotizando(producto)"type="button" class="btn btn-sm btn-outline-secondary">Cotizar</button>
                           </div>
                         </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
