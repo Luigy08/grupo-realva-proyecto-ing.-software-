@@ -15,5 +15,4 @@ productos: [any];
     this.productos= navParams.get('productoEntrada');
   }
 
-
 }

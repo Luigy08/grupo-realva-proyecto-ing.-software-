@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {LoginRegisterProvider} from "../../providers/login-register/login-register";
+
 
 /**
  * Generated class for the ShowproductPage page.
@@ -15,7 +17,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ShowproductPage {
   producto: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public LoginRegister: LoginRegisterProvider) {
     this.producto= navParams.get('productoEntrada');
     console.log(this.producto.price);
   }

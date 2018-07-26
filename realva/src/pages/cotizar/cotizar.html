@@ -20,16 +20,16 @@
           Productos a Cotizar
         </ion-card-header>
         <ion-list *ngFor="let producto of productos">
-          <ion-icon name="arrow-dropright"></ion-icon>
+          <ion-icon name="arrow-dropright" margin-left="3%"></ion-icon>
           {{producto["nombre"]}}
         </ion-list>
+
       </ion-card>
     </div>
     <div class="cotizarFormulario">
-      <form  (ngSubmit)="logForm()">
         <ion-item>
           <ion-label>Nombre</ion-label>
-          <ion-input [(ngModel)]="nombre" name="title"></ion-input>
+          <ion-input ></ion-input>
         </ion-item>
 
         <ion-item>
@@ -46,8 +46,7 @@
           <ion-label stacked>Descripcon</ion-label>
           <ion-input type="tel"  #msgInput rows="10" maxLength="500" ></ion-input>
         </ion-item>
-
-      </form>
+        <button margin-top="2px"ion-button>Enviar</button>
     </div>
 
   </div>

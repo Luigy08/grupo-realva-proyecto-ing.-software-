@@ -16,23 +16,30 @@
   <div class="bodyShowProduct">
     <div class="bodyShowProductTop">
       <div class="bodyShowProductTopLeft">
-          <img src={{producto.imagen}} alt="">
+        <img src={{producto.imagen}} alt="">
       </div>
       <div class="bodyShowProductTopRight">
         <div margin-left="2%">
           <h2 margin-top="2px">{{producto.nombre}} </h2>
-          <p><b>Precio:</b> L. {{producto.precio}}</p>
-          <p><b>Descripcion: </b>{{producto.descripcion}}</p>
-          <p margin-top="2px"><b>Indicaciones: </b>{{producto.indicaciones}}</p>
-          <p><b>Contra indicaciones: </b>{{producto.contraindicaciones}}</p>
+          <p *ngIf="LoginRegister.userLogged !=null">
+            <b>Precio:</b> L. {{producto.precio}}</p>
+          <p>
+            <b>Descripcion: </b>{{producto.descripcion}}</p>
+          <p margin-top="2px">
+            <b>Indicaciones: </b>{{producto.indicaciones}}</p>
+          <p>
+            <b>Contra indicaciones: </b>{{producto.contraindicaciones}}</p>
         </div>
       </div>
     </div>
     <div class="bodyShowProductBot">
       <div margin-left="5%" margin-top="2%">
-        <p><b>Especies: </b>{{producto.especie}}</p>
-        <p><b>Tipo de uso: </b>{{producto.tipoUso}}</p>
-        <p><b>Dosis: </b>{{producto.dosis}}</p>
+        <p>
+          <b>Especies: </b>{{producto.especie}}</p>
+        <p>
+          <b>Tipo de uso: </b>{{producto.tipoUso}}</p>
+        <p>
+          <b>Dosis: </b>{{producto.dosis}}</p>
       </div>
     </div>
   </div>

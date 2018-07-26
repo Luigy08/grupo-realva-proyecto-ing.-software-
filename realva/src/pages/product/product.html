@@ -23,7 +23,7 @@
             <HR>
           </div>
           <div>
-            <button ion-button icon-start (click)="pushCotizar(producto)" >
+            <button ion-button  (click)="pushCotizar(producto)" >
               <ion-icon name="ios-clipboard"></ion-icon>
               Cotizar
             </button>
@@ -55,7 +55,7 @@
                       <img class="imagenProducto" src={{producto.imagen}}>
                       <div class="card-body">
                         <p class="card-text">{{producto.nombre}} </p>
-                        <p class="card-text" > Precio: L. {{producto.precio}} </p>
+                        <p class="card-text" *ngIf="LoginRegister.userLogged !=null"> Precio: L. {{producto.precio}} </p>
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="btn-group">
                             <button (click)="push(producto)" type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
