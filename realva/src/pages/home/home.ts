@@ -41,4 +41,13 @@ export class HomePage {
     this.slides.slideTo(0, 15000);
   }
 
+  next(){
+    this.slides.slideNext();
+  }
+
+  prev(){
+    this.slides.slidePrev();
+  }
+
+
 }

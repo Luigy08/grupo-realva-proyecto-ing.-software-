@@ -9,12 +9,12 @@
 <ion-content padding>
   <div class="bodyHome">
     <div class="pictureCarrusel">
-
       <ion-slides class="carrusel">
-
-        <ion-slide *ngFor="let oferta of ofertas | async">
-          <img src={{oferta.imagen}}>
-        </ion-slide>
+          <ion-slide *ngFor="let oferta of ofertas | async">
+            <img src={{oferta.imagen}}>
+            <button type="submit" ion-button color="light" class="swiper-button-prev swiper-button-black" (click)="prev()"></button>
+            <button type="submit" ion-button color="light" class="swiper-button-next swiper-button-black" (click)="next()"></button>
+          </ion-slide>
       </ion-slides>
     </div>
 
@@ -80,10 +80,10 @@
 
         <p class="footer-company-about">
           <span>Acerca de Nosotros</span>
-          Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la
-        representación de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas
-        de productos agrícolas.
-         </p>
+          Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación
+          de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos
+          agrícolas.
+        </p>
 
         <div class="footer-icons">
 
