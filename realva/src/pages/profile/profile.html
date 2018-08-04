@@ -5,10 +5,10 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <ion-navbar>
     <ion-title>Profile</ion-title>
   </ion-navbar>
@@ -18,60 +18,73 @@
 <!-- value="{{user.NombreEmpresa}}"" -->
 <ion-content padding>
   <div>
-  <div>
-    <h1>Perfil de Usuario</h1>
-    <img class="avatar" src="assets/icon/perfil.png" alt="">
-  </div>
-  <div class="form-group1">
-    <div class="col-sm-10">
-      <label class="col-sm-2 control-label1" for="input-name">Nombre Empresa:</label>
-      <input id ='NombreEmpresa' type="text" class="form-control1" value="{{user.NombreEmpresa}}" disabled>
+    <div>
+      <h1>Perfil de Usuario</h1>
+      <img class="avatar" src="assets/icon/perfil.png" alt="">
     </div>
-  </div>
-  <div class="form-group1 required">
-    <div class="col-sm-10">
-      <label class="col-sm-2 control-label1" for="input-lastname">Nombre Representante:</label>
-      <input id='NombreRepresentante' type="text" class="form-control1" value="{{user.NombreRepresentante}}"disabled>
-    </div>
-  </div>
-  <div class="form-group1 required">
-    <div class="col-sm-10">
-      <label class="col-sm-2 control-label1" for="input-email">Correo Electrónico:</label>
-      <input id='Correo' type="text" class="form-control1" value="{{user.Correo}}" disabled>
-    </div>
-  </div>
-  <div class="form-group1 required">
-    <div class="col-sm-10">
-      <label class="col-sm-2 control-label1" for="input-enquiry">Direccion</label>
-      <textarea id='Direccion' rows="1" id="input-enquiry" class="form-control1" value="{{user.Direccion}}" disabled></textarea>
-    </div>
-  </div>
-  <div class="form-group1 required">
-    <div class="col-sm-10">
-      <label class="col-sm-2 control-label1" for="input-telephone">Telefono 1:</label>
-      <input id='Telefono1' type="tel" class="form-control1" value="{{user.Telefono1}}"disabled >
-    </div>
-  </div>
-  <div class="form-group1 required">
-    <div class="col-sm-10">
-      <label class="col-sm-2 control-label1" for="input-telephone">Telefono 2:</label>
-      <input id='Telefono2' type="tel" class="form-control1" value="{{user.Telefono2}}" disabled >
-    </div>
-  </div>
-  <div class="form-group1 required">
-    <div class="col-sm-10">
-      <label class="col-sm-2 control-label1" for="input-id">RTN:</label>
-      <input id='RTN' type="text" class="form-control1" value="{{user.RTN}}"disabled>
-    </div>
-  </div>
-</div>
-  <div class="buttons1">
-      <div>
-        <!-- <input  type="delete" value="Eliminar Cuenta"> -->
-        <button type="button" class="btn btn-info">Modificar</button>
-        <button type="button2" class="btn btn-danger"(click)='eliminarClientes()' >Borrar Cuenta</button>
+    <form [formGroup]="profileForm" (ngSubmit)="presentConfirm(Data)">
+      <fieldset>
+        <div class="form-group1 required">
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label1" for="input-name">Nombre Empresa:</label>
+            <input id='NombreEmpresa' type="text" class="form-control1" value="{{user.NombreEmpresa}}" formControlName="username" [(ngModel)]="Data.username" name="username"
+              (keypress)="onKeyUp($event)" (keyup)="onKeyUp($event)" min="10" max="32" required>
+          </div>
+        </div>
+        <div class="form-group1 required">
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label1" for="input-lastname">Nombre Representante:</label>
+            <input id='NombreRepresentante' type="text" class="form-control1" value="{{user.NombreRepresentante}}" [(ngModel)]="Data.userlastname" formControlName="userlastname" name="userlastname"(keypress)="onKeyUp($event)"
+              (keyup)="onKeyUp($event)" min="10" max="32" required>
+          </div>
+        </div>
+        <div class="form-group1 required">
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label1" for="input-email">Correo Electrónico:</label>
+            <input id='Correo' type="text" class="form-control1" [(ngModel)]="Data.email"   name="email" value="{{user.Correo}}" formControlName="email" required ngModel email>
+          </div>
+        </div>
+        <div class="form-group1 required">
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label1" for="input-enquiry">Direccion</label>
+            <textarea id='Direccion' rows="1" id="input-enquiry" class="form-control" [(ngModel)]="Data.direction" name="direction" formControlName="direction" class="form-control1" value="{{user.Direccion}}" min="10" max="3000"
+              required></textarea>
+          </div>
+        </div>
+        <div class="form-group1 required">
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label1" for="input-telephone">Telefono 1:</label>
+            <input id='Telefono1' type="tel" class="form-control1"  formControlName="telephone" name="telephone" [(ngModel)]="Data.telephone" value="{{user.Telefono1}}" [brmasker]="{mask:'+(000)0000-0000', len:15}"
+              (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8" max="12" required>
+          </div>
+        </div>
+        <div class="form-group1 required">
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label1" for="input-telephone">Telefono 2:</label>
+            <input id='Telefono2' type="tel" class="form-control1" name="telephone2" formControlName="telephone2" [(ngModel)]="Data.telephone2" value="{{user.Telefono2}}" [brmasker]="{mask:'+(000)0000-0000', len:15}"
+              (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8" max="12">
+          </div>
+        </div>
+        <div class="form-group1 required">
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label1" for="input-id">RTN:</label>
+            <input id='RTN' type="text" class="form-control1" [(ngModel)]="Data.RTN" name="RTN" formControlName="RTN" value="{{user.RTN}}" [brmasker]="{mask:'0000-0000-000000', len:16}" (keypress)="onKeyUpRTN($event)"
+              (keyup)="onKeyUpRTN($event)" min="14" max="17" required>
+          </div>
+        </div>
+      </fieldset>
+      <div class="buttons1">
+        <div>
+          <!-- <input  type="delete" value="Eliminar Cuenta"> -->
+
+          <input type="submit" class="btn btn-info" value="Modificar">
+          <button type="button2" class="btn btn-danger" (click)='eliminarClientes()'>Borrar Cuenta</button>
+        </div>
       </div>
-    </div>
+    </form>
+  </div>
+
+
 </ion-content>
 
 <!--  -->
