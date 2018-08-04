@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {CotizarPage} from "../cotizar/cotizar";
 
 /**
  * Generated class for the ShowproductPage page.
@@ -15,6 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ShowproductPage {
   producto: any;
+  cantidad: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.producto= navParams.get('productoEntrada');
     console.log(this.producto.price);
@@ -24,4 +26,7 @@ export class ShowproductPage {
     console.log('ionViewDidLoad ShowproductPage');
   }
 
+  pushCotizar(c: any) {
+    this.navCtrl.push(CotizarPage, {productoEntrada: this.producto});
+  }
 }

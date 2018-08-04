@@ -1,3 +1,4 @@
+import { ProductPage } from './../product/product';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {LoginPage} from "../login/login";
