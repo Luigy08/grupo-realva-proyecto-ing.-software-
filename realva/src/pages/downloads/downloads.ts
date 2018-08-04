@@ -5,14 +5,15 @@ import {RegisterPage} from "../register/register";
 import {LoginRegisterProvider} from "../../providers/login-register/login-register";
 import {AdminPage} from "../admin/admin";
 import {ProfilePage} from "../profile/profile"
+import {AuthService} from "../../services/auth.service";
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
 /**
  * Generated class for the DownloadsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
-@IonicPage()
 @Component({
   selector: 'page-downloads',
   templateUrl: 'downloads.html',
@@ -22,7 +23,13 @@ export class DownloadsPage {
   register = RegisterPage;
   Admin = AdminPage;
   Profile = ProfilePage;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public LoginRegister: LoginRegisterProvider) {
+
+  descargaRef: any;
+  descargas: AngularFireList<any>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public LoginRegister: LoginRegisterProvider, public auth:AuthService, public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
+    this.descargaRef= afDatabase.list('descargas');
+    this.descargas = this.descargaRef.valueChanges();
   }
 
   ionViewDidLoad() {

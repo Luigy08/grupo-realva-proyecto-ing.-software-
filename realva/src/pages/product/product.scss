@@ -1,10 +1,4 @@
 page-product{
-  .productAll{
-    height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
   .bodyProduct{
     height: 70%;
     width: 100%;
@@ -44,28 +38,6 @@ page-product{
     margin-left: 5%;
   }
 
-  .footerTop{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    background: #3bb522;
-  }
-  .footerTop div{
-    margin-left: 10%;
-    margin-top: 2%;
-  }
-
-  .footerBot{
-    text-align: center;
-    background:#1b9605;
-
-  }
-  .footer{
-    margin-left: -1%;
-    width: 103%;
-    height: 30%;
-  }
   .imagenProducto{
     margin-left: 15%;
     width: 120px;

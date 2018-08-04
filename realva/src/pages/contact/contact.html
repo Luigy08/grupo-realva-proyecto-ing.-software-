@@ -1,8 +1,7 @@
 <ion-header>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
   <ion-navbar>
-    <ion-title>
-      Contacto
-    </ion-title>
     <ion-buttons end>
       <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">
         Cerrar Sesion
@@ -52,21 +51,21 @@
     <form [formGroup]="contactForm" (ngSubmit)="post()">
       <fieldset>
         <div class="form-group required">
-          <div class="col-sm-10">
-            <label class="col-sm-2 control-label" for="input-name">Tu Nombre:</label>
+          <div class="">
+            <label class="control-label" for="input-name">Tu Nombre:</label>
             <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"
               (keyup)="onKeyUp($event)" min="10" max="32" required>
           </div>
         </div>
         <div class="form-group required">
-          <div class="col-sm-10">
-            <label class="col-sm-2 control-label" for="input-email">Correo Electrónico:</label>
+          <div class="">
+            <label class="control-label" for="input-email">Correo Electrónico:</label>
             <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" required ngModel email>
           </div>
         </div>
         <div class="form-group required">
-          <div class="col-sm-10">
-            <label class="col-sm-2 control-label" for="input-enquiry">Mensaje:</label>
+          <div class="">
+            <label class="control-label" for="input-enquiry">Mensaje:</label>
             <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.message" name="message" formControlName="message"
               min="10" max="3000" required></textarea>
           </div>
