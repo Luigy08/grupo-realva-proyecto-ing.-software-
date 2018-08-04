@@ -1,66 +1,6 @@
-webpackJsonp([6],{
+webpackJsonp([5],{
 
 /***/ 162:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DownloadsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_login_register_login_register__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(45);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the DownloadsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var DownloadsPage = /** @class */ (function () {
-    function DownloadsPage(navCtrl, navParams, LoginRegister) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.LoginRegister = LoginRegister;
-        this.login = __WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */];
-        this.register = __WEBPACK_IMPORTED_MODULE_3__register_register__["a" /* RegisterPage */];
-        this.Admin = __WEBPACK_IMPORTED_MODULE_5__admin_admin__["a" /* AdminPage */];
-        this.Profile = __WEBPACK_IMPORTED_MODULE_6__profile_profile__["a" /* ProfilePage */];
-    }
-    DownloadsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DownloadsPage');
-    };
-    DownloadsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-downloads',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\downloads\downloads.html"*/'<!--\n\n  Generated template for the DownloadsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>downloads</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">\n\n        Cerrar Sesion\n\n      </button>\n\n      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion\n\n      </button>\n\n      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse\n\n      </button>\n\n      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion</button>\n\n      <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <div class="Downloads">\n\n    <h1>Zona de Descargas</h1>\n\n    <ion-list id="list">\n\n      <a href="" ion-item download>Descargar catálogo 1</a>\n\n      <a href="" ion-item download>Descargar catálogo 2</a>\n\n      <a href="" ion-item download>Descargar catálogo 3</a>\n\n      <a href="" ion-item download>Descargar catálogo 4</a>\n\n      <a href="" ion-item download>Descargar catálogo 5</a>\n\n      <a href="" ion-item download>Descargar catálogo 6</a>\n\n    </ion-list>\n\n  </div>\n\n  <div class="footer">\n\n    <div class="footerTop">\n\n      <div>\n\n        <p style="color: white;">Direccion: </p>\n\n        <p style="color: white;">Edificio Alvarenga, Boulevard Morazan </p>\n\n        <p style="color: white;">Contiguo Paso Desnivel Las Lomas </p>\n\n        <p style="color: white;">Tegucigalpa, M.D.C. </p>\n\n        <p style="color: white;">HONDURAS </p>\n\n        <p style="color: white;"> Telefonos: +(504) 2236-5531 / 2236-5902 / 2236-8719</p>\n\n\n\n      </div>\n\n      <div>\n\n        <p style="color: white;">Correos: </p>\n\n        <p style="color: white;">info@realva.net </p>\n\n        <p style="color: white;">info@induvet.com </p>\n\n      </div>\n\n      <div>\n\n        <p style="color: white;"> Valores: </p>\n\n        <p style="color: white;">- Honestidad</p>\n\n        <p style="color: white;">- Servicio</p>\n\n        <p style="color: white;">- Responsabilidad</p>\n\n        <p style="color: white;">- Transparencia</p>\n\n        <p style="color: white;">- Calidad</p>\n\n        <p style="color: white;">- Seguridad</p>\n\n\n\n      </div>\n\n    </div>\n\n    <div class="footerBot">\n\n      <p>© copyright</p>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\downloads\downloads.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_login_register_login_register__["a" /* LoginRegisterProvider */]])
-    ], DownloadsPage);
-    return DownloadsPage;
-}());
-
-//# sourceMappingURL=downloads.js.map
-
-/***/ }),
-
-/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96,7 +36,7 @@ var ShowproductPage = /** @class */ (function () {
     };
     ShowproductPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-showproduct',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\showproduct\showproduct.html"*/'<!--\n\n  Generated template for the ShowproductPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Regresar</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div class="bodyShowProduct">\n\n    <div class="bodyShowProductTop">\n\n      <div class="bodyShowProductTopLeft">\n\n          <img src={{producto.imagen}} alt="">\n\n      </div>\n\n      <div class="bodyShowProductTopRight">\n\n        <div margin-left="2%">\n\n          <h2 margin-top="2px">{{producto.nombre}} </h2>\n\n          <p><b>Precio:</b> L. {{producto.precio}}</p>\n\n          <p><b>Descripcion: </b>{{producto.descripcion}}</p>\n\n          <p margin-top="2px"><b>Indicaciones: </b>{{producto.indicaciones}}</p>\n\n          <p><b>Contra indicaciones: </b>{{producto.contraindicaciones}}</p>\n\n        </div>\n\n      </div>\n\n    </div>\n\n    <div class="bodyShowProductBot">\n\n      <div margin-left="5%" margin-top="2%">\n\n        <p><b>Especies: </b>{{producto.especie}}</p>\n\n        <p><b>Tipo de uso: </b>{{producto.tipoUso}}</p>\n\n        <p><b>Dosis: </b>{{producto.dosis}}</p>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\showproduct\showproduct.html"*/,
+            selector: 'page-showproduct',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\showproduct\showproduct.html"*/'<!--\n\n  Generated template for the ShowproductPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Regresar</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div class="bodyShowProduct">\n\n    <div class="bodyShowProductTop">\n\n      <div class="bodyShowProductTopLeft">\n\n          <img src={{producto.imagen}} alt="">\n\n      </div>\n\n      <div class="bodyShowProductTopRight">\n\n        <div margin-left="2%">\n\n          <h2 margin-top="2px">{{producto.nombre}} </h2>\n\n          <p><b>Precio:</b> L. {{producto.precio}}</p>\n\n          <p><b>Descripcion: </b>{{producto.descripcion}}</p>\n\n          <p margin-top="2px"><b>Indicaciones: </b>{{producto.indicaciones}}</p>\n\n          <p><b>Contra indicaciones: </b>{{producto.contraindicaciones}}</p>\n\n        </div>\n\n      </div>\n\n    </div>\n\n    <div class="bodyShowProductBot">\n\n      <div margin-left="5%" margin-top="2%">\n\n        <p><b>Especies: </b>{{producto.especie}}</p>\n\n        <p><b>Tipo de uso: </b>{{producto.tipoUso}}</p>\n\n        <p><b>Dosis: </b>{{producto.dosis}}</p>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\showproduct\showproduct.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], ShowproductPage);
@@ -107,7 +47,7 @@ var ShowproductPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 197:
+/***/ 196:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -120,28 +60,24 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 197;
+webpackEmptyAsyncContext.id = 196;
 
 /***/ }),
 
-/***/ 239:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/admin/admin.module": [
 		504,
-		5
-	],
-	"../pages/downloads/downloads.module": [
-		505,
 		4
 	],
 	"../pages/login/login.module": [
-		506,
+		507,
 		3
 	],
 	"../pages/profile/profile.module": [
-		507,
+		505,
 		2
 	],
 	"../pages/register/register.module": [
@@ -149,7 +85,7 @@ var map = {
 		1
 	],
 	"../pages/showproduct/showproduct.module": [
-		509,
+		506,
 		0
 	]
 };
@@ -164,12 +100,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 239;
+webpackAsyncContext.id = 238;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 240:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -218,11 +154,11 @@ var ImageDataProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginRegisterProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -270,18 +206,18 @@ var LoginRegisterProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 293:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__product_product__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__downloads_downloads__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__product_product__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__downloads_downloads__ = __webpack_require__(297);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_login_register_login_register__ = __webpack_require__(27);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -311,7 +247,7 @@ var TabsPage = /** @class */ (function () {
         this.tab6Root = __WEBPACK_IMPORTED_MODULE_6__downloads_downloads__["a" /* DownloadsPage */];
     }
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\tabs\tabs.html"*/'<ion-tabs tabsPlacement=\'top\' class="menu" color="mynewcolor" >\n\n  <ion-tab [root]="tab1Root" tabTitle="INICIO" tabIcon="home"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabTitle="PRODUCTOS" tabIcon="md-cart"></ion-tab>\n\n  <ion-tab [root]="tab3Root" tabTitle="NOSOTROS" tabIcon="information-circle"></ion-tab>\n\n  <ion-tab [root]="tab4Root" tabTitle="CONTACTO" tabIcon="contacts"></ion-tab>\n\n  <ion-tab [root]="tab6Root" tabTitle="DESCARGAS" tabIcon="download"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\tabs\tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\tabs\tabs.html"*/'<ion-tabs tabsPlacement=\'top\' class="menu" color="mynewcolor" >\n\n  <ion-tab [root]="tab1Root" tabTitle="INICIO" tabIcon="home"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabTitle="PRODUCTOS" tabIcon="md-cart"></ion-tab>\n\n  <ion-tab [root]="tab3Root" tabTitle="NOSOTROS" tabIcon="information-circle"></ion-tab>\n\n  <ion-tab [root]="tab4Root" tabTitle="CONTACTO" tabIcon="contacts"></ion-tab>\n\n  <ion-tab [root]="tab6Root" tabTitle="DESCARGAS" tabIcon="download"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\tabs\tabs.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__providers_login_register_login_register__["a" /* LoginRegisterProvider */]])
     ], TabsPage);
@@ -322,7 +258,7 @@ var TabsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 294:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -330,10 +266,10 @@ var TabsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_register_login_register__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__register_register__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__register_register__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -361,7 +297,7 @@ var AboutPage = /** @class */ (function () {
     }
     AboutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-about',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\about\about.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      About\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">Cerrar Sesion</button>\n\n      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion</button>\n\n      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse </button>\n\n      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion </button>\n\n      <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div class="About">\n\n    <!--Begin main container-->\n\n    <h1>Nosotros</h1>\n\n    <div class="genBlock">\n\n      <!--Begin General information block-->\n\n      <p>\n\n        <br>Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la\n\n        representación de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas\n\n        de productos agrícolas. Se manejan líneas de calidad global reconocida como lo es BAYER (Alemania) y MSD (USA), y\n\n        líneas de calidad regional reconocida como lo son las marcas INVET (Colombia), LAVET (Guatemala), LABIPHARM (Guatemala),\n\n        GAMMA LABORATORIES (El Salvador), ERMA (Colombia), VM (Colombia) VET BRANDS (USA) y SANFER (México) entre otros.\n\n        <br>\n\n        <br>La empresa tiene una red de distribución a nivel de todo Honduras, con dos sucursales, una en Tegucigalpa y otra\n\n        en San Pedro Sula, además de distribución por medio de vendedores de ruta alcanzando todo el territorio nacional.\n\n        Además, de la distribución actual, la empresa está desarrollando proyectos para participar en el mercado regional\n\n        de América Central con distribuciones exclusivas regionales.\n\n        <br>\n\n        <br>La empresa atiende las diversas especies productivas del mercado además de las especies de compañía existentes en\n\n        la región. Existe una amplia gama de productos de la mayor calidad que sirven para atender la gran mayoría de las\n\n        necesidades del mercado veterinario y productivo del país.\n\n      </p>\n\n    </div><br>\n\n    <!--End General information block-->\n\n    <div class="bigBlock">\n\n      <!--Begin blocks container-->\n\n\n\n      <div class="blocks">\n\n        <!--Begin block (Mission) container-->\n\n        <h2>Misión</h2>\n\n        <p>\n\n          Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad\n\n          para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país, promoviendo\n\n          y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.\n\n        </p>\n\n      </div>\n\n      <!--End block (Mission) container-->\n\n\n\n      <div class="blocks">\n\n        <!--Begin block (Vision) container-->\n\n        <h2>Visión</h2>\n\n        <p>\n\n          Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central, siendo reconocidos como una\n\n          empresa que represente calidad en todos los productos y servicios que brinde, manteniendo una trayectoria de servicio,\n\n          honestidad, calidad y crecimiento intachable.\n\n        </p>\n\n      </div>\n\n      <!--End block (Vision) container-->\n\n\n\n      <div class="blocks">\n\n        <!--Begin block (Values) container-->\n\n        <h2>Valores</h2>\n\n        <ul>\n\n          <li>Honestidad</li>\n\n          <li>Servicio</li>\n\n          <li>Responsabilidad</li>\n\n          <li>Transparencia</li>\n\n          <li>Calidad</li>\n\n          <li>Seguridad</li>\n\n        </ul>\n\n      </div>\n\n      <!--End block (Values) container-->\n\n\n\n    </div>\n\n    <!--End blocks container-->\n\n\n\n  </div>\n\n  <!--End main container-->\n\n  <<div class="footer">\n\n  <div class="footerTop">\n\n    <div>\n\n      <p style="color: white;">Direccion: </p>\n\n      <p style="color: white;">Edificio Alvarenga, Boulevard Morazan </p>\n\n      <p style="color: white;">Contiguo Paso Desnivel Las Lomas </p>\n\n      <p style="color: white;">Tegucigalpa, M.D.C. </p>\n\n      <p style="color: white;">HONDURAS </p>\n\n      <p style="color: white;"> Telefonos: +(504) 2236-5531 / 2236-5902 / 2236-8719</p>\n\n\n\n    </div>\n\n    <div>\n\n      <p style="color: white;">Correos: </p>\n\n      <p style="color: white;">info@realva.net </p>\n\n      <p style="color: white;">info@induvet.com </p>\n\n    </div>\n\n    <div>\n\n      <p style="color: white;"> Valores: </p>\n\n      <p style="color: white;">- Honestidad</p>\n\n      <p style="color: white;">- Servicio</p>\n\n      <p style="color: white;">- Responsabilidad</p>\n\n      <p style="color: white;">- Transparencia</p>\n\n      <p style="color: white;">- Calidad</p>\n\n      <p style="color: white;">- Seguridad</p>\n\n\n\n    </div>\n\n  </div>\n\n  <div class="footerBot">\n\n    <p>© copyright</p>\n\n  </div>\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\about\about.html"*/
+            selector: 'page-about',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\about\about.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">Cerrar Sesion</button>\n\n      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion</button>\n\n      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse </button>\n\n      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion </button>\n\n      <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div class="About">\n\n    <!--Begin main container-->\n\n    <h1>Nosotros</h1>\n\n    <div class="genBlock">\n\n      <!--Begin General information block-->\n\n      <p>\n\n        <br>Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la\n\n        representación de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas\n\n        de productos agrícolas. Se manejan líneas de calidad global reconocida como lo es BAYER (Alemania) y MSD (USA), y\n\n        líneas de calidad regional reconocida como lo son las marcas INVET (Colombia), LAVET (Guatemala), LABIPHARM (Guatemala),\n\n        GAMMA LABORATORIES (El Salvador), ERMA (Colombia), VM (Colombia) VET BRANDS (USA) y SANFER (México) entre otros.\n\n        <br>\n\n        <br>La empresa tiene una red de distribución a nivel de todo Honduras, con dos sucursales, una en Tegucigalpa y otra\n\n        en San Pedro Sula, además de distribución por medio de vendedores de ruta alcanzando todo el territorio nacional.\n\n        Además, de la distribución actual, la empresa está desarrollando proyectos para participar en el mercado regional\n\n        de América Central con distribuciones exclusivas regionales.\n\n        <br>\n\n        <br>La empresa atiende las diversas especies productivas del mercado además de las especies de compañía existentes en\n\n        la región. Existe una amplia gama de productos de la mayor calidad que sirven para atender la gran mayoría de las\n\n        necesidades del mercado veterinario y productivo del país.\n\n      </p>\n\n    </div>\n\n    <br>\n\n    <!--End General information block-->\n\n    <div class="bigBlock">\n\n      <!--Begin blocks container-->\n\n\n\n      <div class="blocks">\n\n        <!--Begin block (Mission) container-->\n\n        <h2>Misión</h2>\n\n        <p>\n\n          Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad\n\n          para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país, promoviendo\n\n          y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.\n\n        </p>\n\n      </div>\n\n      <!--End block (Mission) container-->\n\n\n\n      <div class="blocks">\n\n        <!--Begin block (Vision) container-->\n\n        <h2>Visión</h2>\n\n        <p>\n\n          Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central, siendo reconocidos como una\n\n          empresa que represente calidad en todos los productos y servicios que brinde, manteniendo una trayectoria de servicio,\n\n          honestidad, calidad y crecimiento intachable.\n\n        </p>\n\n      </div>\n\n      <!--End block (Vision) container-->\n\n\n\n      <div class="blocks">\n\n        <!--Begin block (Values) container-->\n\n        <h2>Valores</h2>\n\n        <ul>\n\n          <li>Honestidad</li>\n\n          <li>Servicio</li>\n\n          <li>Responsabilidad</li>\n\n          <li>Transparencia</li>\n\n          <li>Calidad</li>\n\n          <li>Seguridad</li>\n\n        </ul>\n\n      </div>\n\n      <!--End block (Values) container-->\n\n\n\n    </div>\n\n    <!--End blocks container-->\n\n\n\n  </div>\n\n  <!--End main container-->\n\n  <div class="footer-distributed">\n\n    <div class="footer-left">\n\n\n\n      <h3>Distribuidora\n\n        <span>Realva</span>\n\n      </h3>\n\n\n\n      <p class="footer-links">\n\n        <a href="#">Inicio</a>\n\n        ·\n\n        <a href="#">Productos</a>\n\n        ·\n\n        <a href="#">Nosotros</a>\n\n        ·\n\n        <a href="#">Contacto</a>\n\n        ·\n\n        <a href="#">Descargas</a>\n\n      </p>\n\n\n\n      <p class="footer-company-name">Realva &copy; 2018</p>\n\n    </div>\n\n\n\n    <div class="footer-center">\n\n\n\n      <div>\n\n        <i class="fa fa-map-marker"></i>\n\n        <p>\n\n          <span>\n\n            Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>\n\n      </div>\n\n\n\n      <div>\n\n        <i class="fa fa-phone"></i>\n\n        <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>\n\n      </div>\n\n\n\n      <div>\n\n        <i class="fa fa-envelope"></i>\n\n        <p>\n\n          <a href="mailto:support@company.com">info@realva.com</a>\n\n        </p>\n\n      </div>\n\n\n\n    </div>\n\n\n\n    <div class="footer-right">\n\n\n\n      <p class="footer-company-about">\n\n        <span>Acerca de Nosotros</span>\n\n        Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación\n\n        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos\n\n        agrícolas.\n\n      </p>\n\n\n\n      <div class="footer-icons">\n\n\n\n        <a href="https://www.facebook.com/RealvaHonduras/">\n\n          <i class="fa fa-facebook"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-twitter"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-linkedin"></i>\n\n        </a>\n\n        <a href="#">\n\n            <i class="fa fa-youtube"></i>\n\n          </a>\n\n          <a href="#">\n\n              <i class="fa fa-instagram"></i>\n\n          </a>\n\n\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\about\about.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_login_register_login_register__["a" /* LoginRegisterProvider */]])
     ], AboutPage);
@@ -372,20 +308,20 @@ var AboutPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 295:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_login_register_login_register__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__admin_admin__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__profile_profile__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__admin_admin__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__profile_profile__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -450,7 +386,7 @@ var ContactPage = /** @class */ (function () {
     };
     ContactPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-contact',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\contact\contact.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Contacto\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">\n\n        Cerrar Sesion\n\n      </button>\n\n      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion\n\n      </button>\n\n      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse\n\n      </button>\n\n      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion</button>\n\n      <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div class="Contact">\n\n    <h1>Contacto</h1>\n\n    <div class="maps-location">\n\n      <iframe allowfullscreen="" frameborder="0" height="400"\n\n              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.6069125744443!2d-87.18652868532534!3d14.100366790122589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fa2d8da2100d3%3A0xb4d71a25f87cfdc2!2sAgropecuaria+Realva!5e0!3m2!1sen!2shn!4v1527009401267"\n\n              style="border:0" width="100%"></iframe>\n\n    </div>\n\n    <div>\n\n      <h2>Nuestra Ubicación</h2>\n\n      <div class="row">\n\n        <div class="col-sm-3 col">\n\n          <strong>Distribuidora REALVA e INDUSTRIA VETERINARIA S. de R.L.</strong>\n\n          <br>\n\n          <address>\n\n            Edificio Alvarenga, Boulevard Morazán Contiguo Paso Desnivel Las Lomas, Tegucigalpa, Honduras.\n\n          </address>\n\n        </div>\n\n        <div class="col-sm-3 col">\n\n          <strong>Teléfonos</strong>\n\n          <br> +(504) 2236-5531 / 2236-5902 / 2236-8719\n\n          <br>\n\n          <br>\n\n          <strong>Correos</strong>\n\n          <br>\n\n          <a href="mailto:info@realva.com" target="_top">info@realva.com</a>\n\n          <br>\n\n          <br>\n\n        </div>\n\n      </div>\n\n    </div>\n\n\n\n    <h2>Formulario de Contacto </h2>\n\n    <form [formGroup]="contactForm" (ngSubmit)="post()">\n\n      <fieldset>\n\n        <div class="form-group required">\n\n          <div class="col-sm-10">\n\n            <label class="col-sm-2 control-label" for="input-name">Tu Nombre:</label>\n\n            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username"\n\n                   formControlName="username" (keypress)="onKeyUp($event)"\n\n                   (keyup)="onKeyUp($event)" min="10" max="32" required>\n\n          </div>\n\n        </div>\n\n        <div class="form-group required">\n\n          <div class="col-sm-10">\n\n            <label class="col-sm-2 control-label" for="input-email">Correo Electrónico:</label>\n\n            <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email"\n\n                   required ngModel email>\n\n          </div>\n\n        </div>\n\n        <div class="form-group required">\n\n          <div class="col-sm-10">\n\n            <label class="col-sm-2 control-label" for="input-enquiry">Mensaje:</label>\n\n            <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.message" name="message"\n\n                      formControlName="message"\n\n                      min="10" max="3000" required></textarea>\n\n          </div>\n\n        </div>\n\n      </fieldset>\n\n      <div class="buttonsContacto">\n\n        <div class="pull-right">\n\n          <input class="btn btn-primary button" type="submit" value="Enviar">\n\n        </div>\n\n      </div>\n\n    </form>\n\n  </div>\n\n  <div class="footer">\n\n    <div class="footerTop">\n\n      <div>\n\n        <p style="color: white;">Direccion: </p>\n\n        <p style="color: white;">Edificio Alvarenga, Boulevard Morazan </p>\n\n        <p style="color: white;">Contiguo Paso Desnivel Las Lomas </p>\n\n        <p style="color: white;">Tegucigalpa, M.D.C. </p>\n\n        <p style="color: white;">HONDURAS </p>\n\n        <p style="color: white;"> Telefonos: +(504) 2236-5531 / 2236-5902 / 2236-8719</p>\n\n\n\n      </div>\n\n      <div>\n\n        <p style="color: white;">Correos: </p>\n\n        <p style="color: white;">info@realva.net </p>\n\n        <p style="color: white;">info@induvet.com </p>\n\n      </div>\n\n      <div>\n\n        <p style="color: white;"> Valores: </p>\n\n        <p style="color: white;">- Honestidad</p>\n\n        <p style="color: white;">- Servicio</p>\n\n        <p style="color: white;">- Responsabilidad</p>\n\n        <p style="color: white;">- Transparencia</p>\n\n        <p style="color: white;">- Calidad</p>\n\n        <p style="color: white;">- Seguridad</p>\n\n\n\n      </div>\n\n    </div>\n\n    <div class="footerBot">\n\n      <p>© copyright</p>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\contact\contact.html"*/
+            selector: 'page-contact',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\contact\contact.html"*/'<ion-header>\n\n  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"\n\n    crossorigin="anonymous">\n\n  <ion-navbar>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">\n\n        Cerrar Sesion\n\n      </button>\n\n      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion\n\n      </button>\n\n      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse\n\n      </button>\n\n      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion</button>\n\n      <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div class="Contact">\n\n    <h1>Contacto</h1>\n\n    <div class="maps-location">\n\n      <iframe allowfullscreen="" frameborder="0" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.6069125744443!2d-87.18652868532534!3d14.100366790122589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fa2d8da2100d3%3A0xb4d71a25f87cfdc2!2sAgropecuaria+Realva!5e0!3m2!1sen!2shn!4v1527009401267"\n\n        style="border:0" width="100%"></iframe>\n\n    </div>\n\n    <div>\n\n      <h2>Nuestra Ubicación</h2>\n\n      <div class="row">\n\n        <div class="col-sm-3 col">\n\n          <strong>Distribuidora REALVA e INDUSTRIA VETERINARIA S. de R.L.</strong>\n\n          <br>\n\n          <address>\n\n            Edificio Alvarenga, Boulevard Morazán Contiguo Paso Desnivel Las Lomas, Tegucigalpa, Honduras.\n\n          </address>\n\n        </div>\n\n        <div class="col-sm-3 col">\n\n          <strong>Teléfonos</strong>\n\n          <br> +(504) 2236-5531 / 2236-5902 / 2236-8719\n\n          <br>\n\n          <br>\n\n          <strong>Correos</strong>\n\n          <br>\n\n          <a href="mailto:info@realva.com" target="_top">info@realva.com</a>\n\n          <br>\n\n          <br>\n\n        </div>\n\n      </div>\n\n    </div>\n\n\n\n    <h2>Formulario de Contacto </h2>\n\n    <form [formGroup]="contactForm" (ngSubmit)="post()">\n\n      <fieldset>\n\n        <div class="form-group required">\n\n          <div class="">\n\n            <label class="control-label" for="input-name">Tu Nombre:</label>\n\n            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"\n\n              (keyup)="onKeyUp($event)" min="10" max="32" required>\n\n          </div>\n\n        </div>\n\n        <div class="form-group required">\n\n          <div class="">\n\n            <label class="control-label" for="input-email">Correo Electrónico:</label>\n\n            <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" required ngModel email>\n\n          </div>\n\n        </div>\n\n        <div class="form-group required">\n\n          <div class="">\n\n            <label class="control-label" for="input-enquiry">Mensaje:</label>\n\n            <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.message" name="message" formControlName="message"\n\n              min="10" max="3000" required></textarea>\n\n          </div>\n\n        </div>\n\n      </fieldset>\n\n      <div class="buttonsContacto">\n\n        <div class="pull-right">\n\n          <input class="buttonLoco" type="submit" value="Enviar">\n\n        </div>\n\n      </div>\n\n    </form>\n\n  </div>\n\n  <div class="footer-distributed">\n\n    <div class="footer-left">\n\n\n\n      <h3>Distribuidora\n\n        <span>Realva</span>\n\n      </h3>\n\n\n\n      <p class="footer-links">\n\n        <a href="#">Inicio</a>\n\n        ·\n\n        <a href="#">Productos</a>\n\n        ·\n\n        <a href="#">Nosotros</a>\n\n        ·\n\n        <a href="#">Contacto</a>\n\n        ·\n\n        <a href="#">Descargas</a>\n\n      </p>\n\n\n\n      <p class="footer-company-name">Realva &copy; 2018</p>\n\n    </div>\n\n\n\n    <div class="footer-center">\n\n\n\n      <div>\n\n        <i class="fa fa-map-marker"></i>\n\n        <p>\n\n          <span>\n\n            Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>\n\n      </div>\n\n\n\n      <div>\n\n        <i class="fa fa-phone"></i>\n\n        <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>\n\n      </div>\n\n\n\n      <div>\n\n        <i class="fa fa-envelope"></i>\n\n        <p>\n\n          <a href="mailto:support@company.com">info@realva.com</a>\n\n        </p>\n\n      </div>\n\n\n\n    </div>\n\n\n\n    <div class="footer-right">\n\n\n\n      <p class="footer-company-about">\n\n        <span>Acerca de Nosotros</span>\n\n        Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación\n\n        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos\n\n        agrícolas.\n\n      </p>\n\n\n\n      <div class="footer-icons">\n\n\n\n        <a href="https://www.facebook.com/RealvaHonduras/">\n\n          <i class="fa fa-facebook"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-twitter"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-linkedin"></i>\n\n        </a>\n\n        <a href="#">\n\n            <i class="fa fa-youtube"></i>\n\n          </a>\n\n          <a href="#">\n\n              <i class="fa fa-instagram"></i>\n\n          </a>\n\n\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\contact\contact.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_6__providers_login_register_login_register__["a" /* LoginRegisterProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
     ], ContactPage);
@@ -461,7 +397,7 @@ var ContactPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 296:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -469,14 +405,14 @@ var ContactPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_register_login_register__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__register_register__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__showproduct_showproduct__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__cotizar_cotizar__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__register_register__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__showproduct_showproduct__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__cotizar_cotizar__ = __webpack_require__(296);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -535,7 +471,7 @@ var ProductPage = /** @class */ (function () {
     };
     ProductPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-product',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\product\product.html"*/'<ion-header>\n\n  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"\n\n        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">\n\n  <ion-navbar>\n\n    <ion-title>Product</ion-title>\n\n    <ion-buttons end>\n\n        <app-header></app-header>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div class="productAll">\n\n    <div class="bodyProduct">\n\n      <div class="bodyProductTop">\n\n        <div class="titleProduct">\n\n          <div class="productProductos">\n\n            <h2>CATEGORIAS</h2>\n\n            <hr>\n\n          </div>\n\n          <div class="productCategorias">\n\n            <h2>PRODUCTOS</h2>\n\n            <HR>\n\n          </div>\n\n          <div>\n\n            <button ion-button icon-start (click)="pushCotizar(producto)" >\n\n              <ion-icon name="ios-clipboard"></ion-icon>\n\n              Cotizar\n\n            </button>\n\n          </div>\n\n        </div>\n\n\n\n\n\n        <div class="productBody">\n\n          <div class="productBodyLeft">\n\n\n\n            <!--<ion-item>\n\n              <ion-label>Employee</ion-label>\n\n              <ion-select [(ngModel)]="employee" [compareWith]="compareFn">\n\n                <ion-option *ngFor="let employee of employees" [value]="employee"></ion-option>\n\n              </ion-select>\n\n\n\n              autoplay="3000" loop="true" speed="3000" c\n\n            </ion-item> -->\n\n\n\n\n\n          </div>\n\n\n\n          <div class="productBodyRight">\n\n            <div class="album py-5 bg-light">\n\n              <div class="container">\n\n                <div class="row">\n\n                  <div class="col-md-4" *ngFor=\'let producto of productos | async \'>\n\n                    <div class="card mb-4 box-shadow">\n\n                      <img class="imagenProducto" src={{producto.imagen}}>\n\n                      <div class="card-body">\n\n                        <p class="card-text">{{producto.nombre}} </p>\n\n                        <p class="card-text" > Precio: L. {{producto.precio}} </p>\n\n                        <div class="d-flex justify-content-between align-items-center">\n\n                          <div class="btn-group">\n\n                            <button (click)="push(producto)" type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>\n\n                            <button (click)= "cotizando(producto)"type="button" class="btn btn-sm btn-outline-secondary">Cotizar</button>\n\n                          </div>\n\n                        </div>\n\n                      </div>\n\n                    </div>\n\n\n\n                  </div>\n\n                </div>\n\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n      </div>\n\n\n\n  </div>\n\n\n\n  </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\product\product.html"*/
+            selector: 'page-product',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\product\product.html"*/'<ion-header>\n\n  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"\n\n    crossorigin="anonymous">\n\n  <ion-navbar>\n\n    <ion-buttons end>\n\n      <app-header></app-header>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div class="container">\n\n    <div class="bodyProduct">\n\n      <div class="bodyProductTop">\n\n        <div class="titleProduct">\n\n          <div class="productProductos">\n\n            <h2>Categorias</h2>\n\n          </div>\n\n          <div class="productCategorias">\n\n            <h2>Productos</h2>\n\n          </div>\n\n        </div>\n\n\n\n\n\n        <div class="productBody">\n\n          <div class="productBodyLeft">\n\n\n\n            <!--<ion-item>\n\n              <ion-label>Employee</ion-label>\n\n              <ion-select [(ngModel)]="employee" [compareWith]="compareFn">\n\n                <ion-option *ngFor="let employee of employees" [value]="employee"></ion-option>\n\n              </ion-select>\n\n\n\n              autoplay="3000" loop="true" speed="3000" c\n\n            </ion-item> -->\n\n\n\n\n\n          </div>\n\n\n\n          <div class="productBodyRight">\n\n            <div class="album py-5 bg-light">\n\n              <div class="container">\n\n                <button ion-button icon-start (click)="pushCotizar(producto)">\n\n                  <ion-icon name="ios-clipboard"></ion-icon>\n\n                  Cotizar\n\n                </button>\n\n                <div class="row">\n\n                  <div class="col-md-4" *ngFor=\'let producto of productos | async \'>\n\n                    <div class="card mb-4 box-shadow">\n\n                      <img class="imagenProducto" src={{producto.imagen}}>\n\n                      <div class="card-body">\n\n                        <p class="card-text">{{producto.nombre}} </p>\n\n                        <p class="card-text"> Precio: L. {{producto.precio}} </p>\n\n                        <div class="d-flex justify-content-between align-items-center">\n\n                          <div class="btn-group">\n\n                            <button (click)="push(producto)" type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>\n\n                            <button (click)="cotizando(producto)" type="button" class="btn btn-sm btn-outline-secondary">Cotizar</button>\n\n                          </div>\n\n                        </div>\n\n                      </div>\n\n                    </div>\n\n\n\n                  </div>\n\n                </div>\n\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n      </div>\n\n\n\n    </div>\n\n  </div>\n\n  <div class="footer-distributed">\n\n    <div class="footer-left">\n\n\n\n      <h3>Distribuidora\n\n        <span>Realva</span>\n\n      </h3>\n\n\n\n      <p class="footer-links">\n\n        <a href="#">Inicio</a>\n\n        ·\n\n        <a href="#">Productos</a>\n\n        ·\n\n        <a href="#">Nosotros</a>\n\n        ·\n\n        <a href="#">Contacto</a>\n\n        ·\n\n        <a href="#">Descargas</a>\n\n      </p>\n\n\n\n      <p class="footer-company-name">Realva &copy; 2018</p>\n\n    </div>\n\n\n\n    <div class="footer-center">\n\n\n\n      <div>\n\n        <i class="fa fa-map-marker"></i>\n\n        <p>\n\n          <span>\n\n            Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>\n\n      </div>\n\n\n\n      <div>\n\n        <i class="fa fa-phone"></i>\n\n        <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>\n\n      </div>\n\n\n\n      <div>\n\n        <i class="fa fa-envelope"></i>\n\n        <p>\n\n          <a href="mailto:support@company.com">info@realva.com</a>\n\n        </p>\n\n      </div>\n\n\n\n    </div>\n\n\n\n    <div class="footer-right">\n\n\n\n      <p class="footer-company-about">\n\n        <span>Acerca de Nosotros</span>\n\n        Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación\n\n        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos agrícolas.\n\n      </p>\n\n\n\n      <div class="footer-icons">\n\n\n\n        <a href="https://www.facebook.com/RealvaHonduras/">\n\n          <i class="fa fa-facebook"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-twitter"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-linkedin"></i>\n\n        </a>\n\n        <a href="#">\n\n            <i class="fa fa-youtube"></i>\n\n          </a>\n\n          <a href="#">\n\n              <i class="fa fa-instagram"></i>\n\n          </a>\n\n\n\n      </div>\n\n    </div>\n\n  </div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\product\product.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_login_register_login_register__["a" /* LoginRegisterProvider */], __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], ProductPage);
@@ -546,7 +482,7 @@ var ProductPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 297:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -575,7 +511,7 @@ var CotizarPage = /** @class */ (function () {
     }
     CotizarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cotizar',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\cotizar\cotizar.html"*/'<!--\n\n  Generated template for the ShowproductPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Regresar</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div class="cotizarBody">\n\n    <div class="cotizarProductos">\n\n      <ion-card>\n\n        <ion-card-header>\n\n          Productos a Cotizar\n\n        </ion-card-header>\n\n        <ion-list *ngFor="let producto of productos">\n\n          <ion-icon name="arrow-dropright"></ion-icon>\n\n          {{producto["nombre"]}}\n\n        </ion-list>\n\n      </ion-card>\n\n    </div>\n\n    <div class="cotizarFormulario">\n\n      <form  (ngSubmit)="logForm()">\n\n        <ion-item>\n\n          <ion-label>Nombre</ion-label>\n\n          <ion-input [(ngModel)]="nombre" name="title"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-label>Email</ion-label>\n\n          <ion-input type="email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-label>Telefono</ion-label>\n\n          <ion-input type="tel"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-label stacked>Descripcon</ion-label>\n\n          <ion-input type="tel"  #msgInput rows="10" maxLength="500" ></ion-input>\n\n        </ion-item>\n\n\n\n      </form>\n\n    </div>\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\cotizar\cotizar.html"*/
+            selector: 'page-cotizar',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\cotizar\cotizar.html"*/'<!--\n\n  Generated template for the ShowproductPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Regresar</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div class="cotizarBody">\n\n    <div class="cotizarProductos">\n\n      <ion-card>\n\n        <ion-card-header>\n\n          Productos a Cotizar\n\n        </ion-card-header>\n\n        <ion-list *ngFor="let producto of productos">\n\n          <ion-icon name="arrow-dropright"></ion-icon>\n\n          {{producto["nombre"]}}\n\n        </ion-list>\n\n      </ion-card>\n\n    </div>\n\n    <div class="cotizarFormulario">\n\n      <form  (ngSubmit)="logForm()">\n\n        <ion-item>\n\n          <ion-label>Nombre</ion-label>\n\n          <ion-input [(ngModel)]="nombre" name="title"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-label>Email</ion-label>\n\n          <ion-input type="email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-label>Telefono</ion-label>\n\n          <ion-input type="tel"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-label stacked>Descripcon</ion-label>\n\n          <ion-input type="tel"  #msgInput rows="10" maxLength="500" ></ion-input>\n\n        </ion-item>\n\n\n\n      </form>\n\n    </div>\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\cotizar\cotizar.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_login_register_login_register__["a" /* LoginRegisterProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], CotizarPage);
@@ -583,6 +519,77 @@ var CotizarPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=cotizar.js.map
+
+/***/ }),
+
+/***/ 297:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DownloadsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_login_register_login_register__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_auth_service__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(56);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+/**
+ * Generated class for the DownloadsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DownloadsPage = /** @class */ (function () {
+    function DownloadsPage(navCtrl, navParams, LoginRegister, auth, afDatabase, afAuth) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.LoginRegister = LoginRegister;
+        this.auth = auth;
+        this.afDatabase = afDatabase;
+        this.afAuth = afAuth;
+        this.login = __WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */];
+        this.register = __WEBPACK_IMPORTED_MODULE_3__register_register__["a" /* RegisterPage */];
+        this.Admin = __WEBPACK_IMPORTED_MODULE_5__admin_admin__["a" /* AdminPage */];
+        this.Profile = __WEBPACK_IMPORTED_MODULE_6__profile_profile__["a" /* ProfilePage */];
+        this.descargaRef = afDatabase.list('descargas');
+        this.descargas = this.descargaRef.valueChanges();
+    }
+    DownloadsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DownloadsPage');
+    };
+    DownloadsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-downloads',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\downloads\downloads.html"*/'<!--\n\n  Generated template for the DownloadsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"\n\n    crossorigin="anonymous">\n\n  <ion-navbar>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">\n\n        Cerrar Sesion\n\n      </button>\n\n      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion\n\n      </button>\n\n      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse\n\n      </button>\n\n      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion</button>\n\n      <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <div class="Downloads">\n\n    <h1>Zona de Descargas</h1>\n\n    <ion-list>\n\n      <ion-item>\n\n        <div class="row">\n\n          <div class="col-sm-6" *ngFor="let descarga of descargas | async">\n\n            <div class="card">\n\n              <div class="card-body">\n\n                <h5 class="card-title">Catálogo</h5>\n\n                <p class="card-text">Aqui encontrara los productos que actualmente tenemos disponibles.</p>\n\n                <a download href="{{descarga.imagen}}" class="btn btn-primary">Descargar</a>\n\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n      </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <div class="container">\n\n    <!-- Section: Magazine v.3 -->\n\n    <section class="magazine-section my-5">\n\n\n\n      <!-- Section heading -->\n\n      <h1 class="h1-responsive font-weight-bold text-center my-5">Noticias</h1>\n\n      <!-- Section description -->\n\n      <p class="text-center w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint\n\n        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit id laborum.</p>\n\n\n\n      <!-- Grid row -->\n\n      <div class="row">\n\n\n\n        <!-- Grid column -->\n\n        <div class="col-lg-4 col-md-12 mb-lg-0 mb-5">\n\n\n\n          <!-- Featured news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Image -->\n\n            <div class="view overlay rounded z-depth-2 mb-4">\n\n              <img class="img-fluid" src="http://wikifaunia.com/wp-content/uploads/2015/01/cocker-ana.jpg" alt="Sample image">\n\n              <a>\n\n                <div class="mask rgba-white-slight"></div>\n\n              </a>\n\n            </div>\n\n\n\n            <!-- Grid row -->\n\n            <div class="row mb-3">\n\n\n\n              <!-- Grid column -->\n\n              <div class="col-12">\n\n\n\n                <!-- Badge -->\n\n                <a href="#!">\n\n                  <span class="badge pink">\n\n                    <i class="fa fa-paw pr-2" aria-hidden="true"></i>Veterinarias</span>\n\n                </a>\n\n\n\n              </div>\n\n              <!-- Grid column -->\n\n\n\n            </div>\n\n            <!-- Grid row -->\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a class="font-weight-bold">Animales en Honduras</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Featured news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a>Honduras, único en Centroamérica que forma agentes caninos</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a>Veterinarios hondureños con vocación a servir a la comunidad</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a>Conozca la importancia de tener un PLAN de SALUD para su mascota</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0">\n\n                <a>Veterinario alerta sobre mortal efecto de la encefalitis equina</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n        </div>\n\n        <!-- Grid column -->\n\n\n\n        <!-- Grid column -->\n\n        <div class="col-lg-4 col-md-6 mb-md-0 mb-5">\n\n\n\n          <!-- Featured news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Image -->\n\n            <div class="view overlay rounded z-depth-2 mb-4">\n\n              <img class="img-fluid" src="https://i.pinimg.com/736x/d1/2b/5b/d12b5b6581dd8ffd0624fe576a5b93a0--vida-animal-mundo-animal.jpg"\n\n                alt="Sample image">\n\n              <a>\n\n                <div class="mask rgba-white-slight"></div>\n\n              </a>\n\n            </div>\n\n\n\n            <!-- Grid row -->\n\n            <div class="row mb-3">\n\n\n\n              <!-- Grid column -->\n\n              <div class="col-12">\n\n\n\n                <!-- Badge -->\n\n                <a href="#!">\n\n                  <span class="badge deep-orange">\n\n                    <i class="fa fa-kiwi-bird pr-2" aria-hidden="true"></i>Agronomía</span>\n\n                </a>\n\n\n\n              </div>\n\n              <!-- Grid column -->\n\n\n\n            </div>\n\n            <!-- Grid row -->\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a class="font-weight-bold">Agronomía</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Featured news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a>Inteligencia artificial para ahorrar agua en los regadíos</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a>Big data y ciencia: los aliados de los agricultores para entender el clima</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a>Empresa familiar es un modelo de superación con cultivo hidropónico</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0">\n\n                <a>Veterinario alerta sobre mortal efecto de la encefalitis equina</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n        </div>\n\n        <!-- Grid column -->\n\n\n\n        <!-- Grid column -->\n\n        <div class="col-lg-4 col-md-6 mb-0">\n\n\n\n          <!-- Featured news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Image -->\n\n            <div class="view overlay rounded z-depth-2 mb-4">\n\n              <img class="img-fluid" src="https://mediateca.educa.madrid.org/imagen.php?id=smr5fvsqponuqw6i&m=0&ext=.jpg" alt="Sample image">\n\n              <a>\n\n                <div class="mask rgba-white-slight"></div>\n\n              </a>\n\n            </div>\n\n\n\n            <!-- Grid row -->\n\n            <div class="row mb-3">\n\n\n\n              <!-- Grid column -->\n\n              <div class="col-12">\n\n\n\n                <!-- Badge -->\n\n                <a href="#!">\n\n                  <span class="badge success-color">\n\n                    <i class="fa fa-leaf pr-2" aria-hidden="true"></i>Otros</span>\n\n                </a>\n\n\n\n              </div>\n\n              <!-- Grid column -->\n\n\n\n            </div>\n\n            <!-- Grid row -->\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a class="font-weight-bold">Animales en peligro de extinción</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Featured news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a>Mueren 7 rinocerontes negros tras ser trasladados a parque en Kenia</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a>Uno de los arrecifes más grandes del mundo sale de lista de peligro</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news mb-3">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0 mb-3">\n\n                <a>En Honduras hay más de 20 especies en riesgo de extinción.</a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n          <!-- Small news -->\n\n          <div class="single-news">\n\n\n\n            <!-- Title -->\n\n            <div class="d-flex justify-content-between">\n\n              <div class="col-11 text-truncate pl-0">\n\n                <a>La jirafa está en peligro de extinción por pérdida de su hábitat y caza </a>\n\n              </div>\n\n              <a>\n\n                <i class="fa fa-angle-double-right"></i>\n\n              </a>\n\n            </div>\n\n\n\n          </div>\n\n          <!-- Small news -->\n\n\n\n        </div>\n\n        <!-- Grid column -->\n\n\n\n      </div>\n\n      <!-- Grid row -->\n\n\n\n    </section>\n\n    <!-- Section: Magazine v.3 -->\n\n  </div>\n\n  <div class="footer-distributed">\n\n    <div class="footer-left">\n\n\n\n      <h3>Distribuidora\n\n        <span>Realva</span>\n\n      </h3>\n\n\n\n      <p class="footer-links">\n\n        <a href="#">Inicio</a>\n\n        ·\n\n        <a href="#">Productos</a>\n\n        ·\n\n        <a href="#">Nosotros</a>\n\n        ·\n\n        <a href="#">Contacto</a>\n\n        ·\n\n        <a href="#">Descargas</a>\n\n      </p>\n\n\n\n      <p class="footer-company-name">Realva &copy; 2018</p>\n\n    </div>\n\n\n\n    <div class="footer-center">\n\n\n\n      <div>\n\n        <i class="fa fa-map-marker"></i>\n\n        <p>\n\n          <span>\n\n            Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>\n\n      </div>\n\n\n\n      <div>\n\n        <i class="fa fa-phone"></i>\n\n        <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>\n\n      </div>\n\n\n\n      <div>\n\n        <i class="fa fa-envelope"></i>\n\n        <p>\n\n          <a href="mailto:support@company.com">info@realva.com</a>\n\n        </p>\n\n      </div>\n\n\n\n    </div>\n\n\n\n    <div class="footer-right">\n\n\n\n      <p class="footer-company-about">\n\n        <span>Acerca de Nosotros</span>\n\n        Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación\n\n        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos agrícolas.\n\n      </p>\n\n\n\n      <div class="footer-icons">\n\n\n\n        <a href="https://www.facebook.com/RealvaHonduras/">\n\n          <i class="fa fa-facebook"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-twitter"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-linkedin"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-youtube"></i>\n\n        </a>\n\n        <a href="#">\n\n          <i class="fa fa-instagram"></i>\n\n        </a>\n\n\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\downloads\downloads.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_login_register_login_register__["a" /* LoginRegisterProvider */], __WEBPACK_IMPORTED_MODULE_7__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__["a" /* AngularFireAuth */]])
+    ], DownloadsPage);
+    return DownloadsPage;
+}());
+
+//# sourceMappingURL=downloads.js.map
 
 /***/ }),
 
@@ -600,16 +607,163 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 42:
+/***/ 421:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export firebaseConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(491);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_about_about__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_contact_contact__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_admin_admin__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_brmasker_ionic__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_auth_service__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_login_register_login_register__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_image_data_image_data__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_product_product__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_downloads_downloads__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_register_register__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_profile_profile__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_showproduct_showproduct__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angularfire2__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angularfire2_database__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angularfire2_auth__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__header_header_component__ = __webpack_require__(503);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_cotizar_cotizar__ = __webpack_require__(296);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var firebaseConfig = {
+    apiKey: "AIzaSyBZAKqZfYiuQDTF-pDtZsxlO5X72wNFA1Q",
+    authDomain: "realva-54c4a.firebaseapp.com",
+    databaseURL: "https://realva-54c4a.firebaseio.com",
+    projectId: "realva-54c4a",
+    storageBucket: "realva-54c4a.appspot.com",
+    messagingSenderId: "233461489484"
+};
+var AppModule = /** @class */ (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_5__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_product_product__["a" /* ProductPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_admin_admin__["a" /* AdminPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_downloads_downloads__["a" /* DownloadsPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_register_register__["a" /* RegisterPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_profile_profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_showproduct_showproduct__["a" /* ShowproductPage */],
+                __WEBPACK_IMPORTED_MODULE_26__pages_cotizar_cotizar__["a" /* CotizarPage */],
+                __WEBPACK_IMPORTED_MODULE_25__header_header_component__["a" /* HeaderComponent */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {}, {
+                    links: [
+                        { loadChildren: '../pages/admin/admin.module#AdminPageModule', name: 'AdminPage', segment: 'admin', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/showproduct/showproduct.module#ShowproductPageModule', name: 'ShowproductPage', segment: 'showproduct', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
+                    ]
+                }),
+                __WEBPACK_IMPORTED_MODULE_11_brmasker_ionic__["a" /* AppMaskerModule */],
+                __WEBPACK_IMPORTED_MODULE_23_angularfire2_database__["b" /* AngularFireDatabaseModule */],
+                __WEBPACK_IMPORTED_MODULE_24_angularfire2_auth__["b" /* AngularFireAuthModule */],
+                __WEBPACK_IMPORTED_MODULE_22_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig)
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_5__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_product_product__["a" /* ProductPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_admin_admin__["a" /* AdminPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_downloads_downloads__["a" /* DownloadsPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_register_register__["a" /* RegisterPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_profile_profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_showproduct_showproduct__["a" /* ShowproductPage */],
+                __WEBPACK_IMPORTED_MODULE_26__pages_cotizar_cotizar__["a" /* CotizarPage */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_15__providers_login_register_login_register__["a" /* LoginRegisterProvider */],
+                __WEBPACK_IMPORTED_MODULE_12__services_auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_16__providers_image_data_image_data__["a" /* ImageDataProvider */],
+                __WEBPACK_IMPORTED_MODULE_24_angularfire2_auth__["a" /* AngularFireAuth */]
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 43:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(445);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_image_data_image_data__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_image_data_image_data__ = __webpack_require__(239);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -699,7 +853,7 @@ var AdminPage = /** @class */ (function () {
     };
     AdminPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admin',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\admin\admin.html"*/'<!--\n\n  Generated template for the AdminPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title end>Admin</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div>\n\n    <ion-segment [(ngModel)]="AdminTab" color="primary">\n\n      <ion-segment-button value="CarruselOfertas">\n\n        Carrusel Ofertas\n\n      </ion-segment-button>\n\n      <ion-segment-button value="CarruselPrincipal">\n\n        Carrusel Principal\n\n      </ion-segment-button>\n\n      <ion-segment-button value="AceptacionClientes">\n\n        Aceptacion de Clientes\n\n      </ion-segment-button>\n\n      <ion-segment-button value="ArchivosDescarga">\n\n        Administrar Archivos de Descarga\n\n      </ion-segment-button>\n\n      <ion-segment-button value="SubirProducto">\n\n        Administrar Productos\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n  <div [ngSwitch]="AdminTab">\n\n    <div *ngSwitchCase="\'CarruselOfertas\'">\n\n      <form #imageForm="ngForm" method="POST">\n\n        <input type="file" #Image accept="image/*" (change)="handleFileInput($event)">\n\n        <button ion-button type="submit" (click)="uploadPic()">Subir</button>\n\n      </form>\n\n      <ion-list *ngFor="let post of posts">\n\n        <ion-item>\n\n          <ion-card>\n\n            {{post.product_id}}\n\n            <button ion-button (click)="DeleteImageCarrOfer(image.id)"></button>\n\n          </ion-card>\n\n        </ion-item>\n\n      </ion-list>\n\n    </div>\n\n    <div *ngSwitchCase="\'CarruselPrincipal\'">\n\n      <form #imageForm="ngForm" method="POST">\n\n        <input type="file" #Image accept="image/*" (change)="handleFileInput($event)">\n\n        <button ion-button type="submit" (click)="uploadPic()">Subir</button>\n\n      </form>\n\n      <ion-list *ngFor="let image of images">\n\n        <ion-item>\n\n          <ion-card>\n\n            <ion-card-content>\n\n              <button (click)="DeleteImageCarrMain(image.id)"></button>\n\n            </ion-card-content>\n\n          </ion-card>\n\n        </ion-item>\n\n      </ion-list>\n\n    </div>\n\n    <div *ngSwitchCase="\'ArchivosDescarga\'">\n\n      <form #DocumentForm="ngForm" method="POST">\n\n        <input type="file" (change)="handleFileInput($event)">\n\n        <button ion-button type="submit" (click)="upload()">Subir</button>\n\n      </form>\n\n    </div>\n\n    <div *ngSwitchCase="\'SubirProducto\'">\n\n\n\n    </div>\n\n    <div *ngSwitchCase="\'AceptacionClientes\'">\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col>\n\n            <h2>Id</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Nombre</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Apellido</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Estado</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Saldo</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Clasificación</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>RTN</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Teléfono</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Modificar</h2>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row *ngFor="let client of clients">\n\n          <ion-col>\n\n            {{client.client_id}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_name}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_last_name}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_status}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_balance}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_classification}}\n\n          </ion-col>\n\n          <ion-col>\n\n            <div *ngFor="let rtn of clientsRTN">\n\n              <span *ngIf="rtn.fk_client_id == client.client_id">\n\n                {{rtn.rtn_client}}\n\n              </span>\n\n            </div>\n\n          </ion-col>\n\n          <ion-col>\n\n            <div *ngFor="let telephone of clientsTelephone">\n\n              <span *ngIf="telephone.fk_client_id == client.client_id">\n\n                {{telephone.phone_client}}\n\n              </span>\n\n            </div>\n\n          </ion-col>\n\n          <ion-col>\n\n            <button ion-button>Modificar</button>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </div>\n\n  </div>\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\admin\admin.html"*/,
+            selector: 'page-admin',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\admin\admin.html"*/'<!--\n\n  Generated template for the AdminPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title end>Admin</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div>\n\n    <ion-segment [(ngModel)]="AdminTab" color="primary">\n\n      <ion-segment-button value="CarruselOfertas">\n\n        Carrusel Ofertas\n\n      </ion-segment-button>\n\n      <ion-segment-button value="CarruselPrincipal">\n\n        Carrusel Principal\n\n      </ion-segment-button>\n\n      <ion-segment-button value="AceptacionClientes">\n\n        Aceptacion de Clientes\n\n      </ion-segment-button>\n\n      <ion-segment-button value="ArchivosDescarga">\n\n        Administrar Archivos de Descarga\n\n      </ion-segment-button>\n\n      <ion-segment-button value="SubirProducto">\n\n        Administrar Productos\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n  <div [ngSwitch]="AdminTab">\n\n    <div *ngSwitchCase="\'CarruselOfertas\'">\n\n      <form #imageForm="ngForm" method="POST">\n\n        <input type="file" #Image accept="image/*" (change)="handleFileInput($event)">\n\n        <button ion-button type="submit" (click)="uploadPic()">Subir</button>\n\n      </form>\n\n      <ion-list *ngFor="let post of posts">\n\n        <ion-item>\n\n          <ion-card>\n\n            {{post.product_id}}\n\n            <button ion-button (click)="DeleteImageCarrOfer(image.id)"></button>\n\n          </ion-card>\n\n        </ion-item>\n\n      </ion-list>\n\n    </div>\n\n    <div *ngSwitchCase="\'CarruselPrincipal\'">\n\n      <form #imageForm="ngForm" method="POST">\n\n        <input type="file" #Image accept="image/*" (change)="handleFileInput($event)">\n\n        <button ion-button type="submit" (click)="uploadPic()">Subir</button>\n\n      </form>\n\n      <ion-list *ngFor="let image of images">\n\n        <ion-item>\n\n          <ion-card>\n\n            <ion-card-content>\n\n              <button (click)="DeleteImageCarrMain(image.id)"></button>\n\n            </ion-card-content>\n\n          </ion-card>\n\n        </ion-item>\n\n      </ion-list>\n\n    </div>\n\n    <div *ngSwitchCase="\'ArchivosDescarga\'">\n\n      <form #DocumentForm="ngForm" method="POST">\n\n        <input type="file" (change)="handleFileInput($event)">\n\n        <button ion-button type="submit" (click)="upload()">Subir</button>\n\n      </form>\n\n    </div>\n\n    <div *ngSwitchCase="\'SubirProducto\'">\n\n\n\n    </div>\n\n    <div *ngSwitchCase="\'AceptacionClientes\'">\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col>\n\n            <h2>Id</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Nombre</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Apellido</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Estado</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Saldo</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Clasificación</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>RTN</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Teléfono</h2>\n\n          </ion-col>\n\n          <ion-col>\n\n            <h2>Modificar</h2>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row *ngFor="let client of clients">\n\n          <ion-col>\n\n            {{client.client_id}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_name}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_last_name}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_status}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_balance}}\n\n          </ion-col>\n\n          <ion-col>\n\n            {{client.client_classification}}\n\n          </ion-col>\n\n          <ion-col>\n\n            <div *ngFor="let rtn of clientsRTN">\n\n              <span *ngIf="rtn.fk_client_id == client.client_id">\n\n                {{rtn.rtn_client}}\n\n              </span>\n\n            </div>\n\n          </ion-col>\n\n          <ion-col>\n\n            <div *ngFor="let telephone of clientsTelephone">\n\n              <span *ngIf="telephone.fk_client_id == client.client_id">\n\n                {{telephone.phone_client}}\n\n              </span>\n\n            </div>\n\n          </ion-col>\n\n          <ion-col>\n\n            <button ion-button>Modificar</button>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </div>\n\n  </div>\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\admin\admin.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_4__providers_image_data_image_data__["a" /* ImageDataProvider */]])
     ], AdminPage);
@@ -710,155 +864,69 @@ var AdminPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 421:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export firebaseConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(491);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_about_about__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_contact_contact__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_admin_admin__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_brmasker_ionic__ = __webpack_require__(499);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_auth_service__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_login_register_login_register__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_image_data_image_data__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_product_product__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_downloads_downloads__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_register_register__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_profile_profile__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_showproduct_showproduct__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angularfire2__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angularfire2_database__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angularfire2_auth__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__header_header_component__ = __webpack_require__(503);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_cotizar_cotizar__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_register_login_register__ = __webpack_require__(27);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var firebaseConfig = {
-    apiKey: "AIzaSyBZAKqZfYiuQDTF-pDtZsxlO5X72wNFA1Q",
-    authDomain: "realva-54c4a.firebaseapp.com",
-    databaseURL: "https://realva-54c4a.firebaseio.com",
-    projectId: "realva-54c4a",
-    storageBucket: "realva-54c4a.appspot.com",
-    messagingSenderId: "233461489484"
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var AppModule = /** @class */ (function () {
-    function AppModule() {
+
+
+
+
+/**
+ * Generated class for the ProfilePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ProfilePage = /** @class */ (function () {
+    function ProfilePage(navCtrl, navParams, afDatabase, LoginRegister) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.afDatabase = afDatabase;
+        this.LoginRegister = LoginRegister;
+        this.clientesref = afDatabase.list('clientes');
+        this.user = this.LoginRegister.userLogged;
     }
-    AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_contact_contact__["a" /* ContactPage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_product_product__["a" /* ProductPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_admin_admin__["a" /* AdminPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_downloads_downloads__["a" /* DownloadsPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_register_register__["a" /* RegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_profile_profile__["a" /* ProfilePage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_showproduct_showproduct__["a" /* ShowproductPage */],
-                __WEBPACK_IMPORTED_MODULE_26__pages_cotizar_cotizar__["a" /* CotizarPage */],
-                __WEBPACK_IMPORTED_MODULE_25__header_header_component__["a" /* HeaderComponent */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {}, {
-                    links: [
-                        { loadChildren: '../pages/admin/admin.module#AdminPageModule', name: 'AdminPage', segment: 'admin', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/downloads/downloads.module#DownloadsPageModule', name: 'DownloadsPage', segment: 'downloads', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/showproduct/showproduct.module#ShowproductPageModule', name: 'ShowproductPage', segment: 'showproduct', priority: 'low', defaultHistory: [] }
-                    ]
-                }),
-                __WEBPACK_IMPORTED_MODULE_11_brmasker_ionic__["a" /* AppMaskerModule */],
-                __WEBPACK_IMPORTED_MODULE_23_angularfire2_database__["b" /* AngularFireDatabaseModule */],
-                __WEBPACK_IMPORTED_MODULE_24_angularfire2_auth__["b" /* AngularFireAuthModule */],
-                __WEBPACK_IMPORTED_MODULE_22_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig)
-            ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_contact_contact__["a" /* ContactPage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_product_product__["a" /* ProductPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_admin_admin__["a" /* AdminPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_downloads_downloads__["a" /* DownloadsPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_register_register__["a" /* RegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_profile_profile__["a" /* ProfilePage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_showproduct_showproduct__["a" /* ShowproductPage */],
-                __WEBPACK_IMPORTED_MODULE_26__pages_cotizar_cotizar__["a" /* CotizarPage */]
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_15__providers_login_register_login_register__["a" /* LoginRegisterProvider */],
-                __WEBPACK_IMPORTED_MODULE_12__services_auth_service__["a" /* AuthService */],
-                __WEBPACK_IMPORTED_MODULE_16__providers_image_data_image_data__["a" /* ImageDataProvider */],
-                __WEBPACK_IMPORTED_MODULE_24_angularfire2_auth__["a" /* AngularFireAuth */]
-            ]
-        })
-    ], AppModule);
-    return AppModule;
+    ProfilePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ProfilePage');
+    };
+    ProfilePage.prototype.eliminarClientes = function () {
+        var mensaje = confirm("¿Seguro que desea Eliminar su cuenta?");
+        if (mensaje) {
+            this.navCtrl.pop();
+            var temp = this.LoginRegister.userLogged.id;
+            this.LoginRegister.LogOut();
+            this.clientesref.remove(temp);
+        }
+    };
+    ProfilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\profile\profile.html"*/'<!--\n\n  Generated template for the ProfilePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">\n\n    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>\n\n    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>\n\n    \n\n  <ion-navbar>\n\n    <ion-title>Profile</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<!-- value="{{user.NombreEmpresa}}"" -->\n\n<ion-content padding>\n\n  <div>\n\n  <div>\n\n    <h1>Perfil de Usuario</h1>\n\n    <img class="avatar" src="assets/icon/perfil.png" alt="">\n\n  </div>\n\n  <div class="form-group1">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-name">Nombre Empresa:</label>\n\n      <input id =\'NombreEmpresa\' type="text" class="form-control1" value="{{user.NombreEmpresa}}" disabled>\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-lastname">Nombre Representante:</label>\n\n      <input id=\'NombreRepresentante\' type="text" class="form-control1" value="{{user.NombreRepresentante}}"disabled>\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-email">Correo Electrónico:</label>\n\n      <input id=\'Correo\' type="text" class="form-control1" value="{{user.Correo}}" disabled>\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-enquiry">Direccion</label>\n\n      <textarea id=\'Direccion\' rows="1" id="input-enquiry" class="form-control1" value="{{user.Direccion}}" disabled></textarea>\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-telephone">Telefono 1:</label>\n\n      <input id=\'Telefono1\' type="tel" class="form-control1" value="{{user.Telefono1}}"disabled >\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-telephone">Telefono 2:</label>\n\n      <input id=\'Telefono2\' type="tel" class="form-control1" value="{{user.Telefono2}}" disabled >\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-id">RTN:</label>\n\n      <input id=\'RTN\' type="text" class="form-control1" value="{{user.RTN}}"disabled>\n\n    </div>\n\n  </div>\n\n</div>\n\n  <div class="buttons1">\n\n      <div>\n\n        <!-- <input  type="delete" value="Eliminar Cuenta"> -->\n\n        <button type="button" class="btn btn-info">Modificar</button>\n\n        <button type="button2" class="btn btn-danger"(click)=\'eliminarClientes()\' >Borrar Cuenta</button>\n\n      </div>\n\n    </div>\n\n</ion-content>\n\n\n\n<!--  -->'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\profile\profile.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3__providers_login_register_login_register__["a" /* LoginRegisterProvider */]])
+    ], ProfilePage);
+    return ProfilePage;
 }());
 
-//# sourceMappingURL=app.module.js.map
+//# sourceMappingURL=profile.js.map
 
 /***/ }),
 
-/***/ 43:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -867,9 +935,9 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_register_login_register__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -958,7 +1026,7 @@ var LoginPage = /** @class */ (function () {
     }; //login method
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Iniciar Sesion</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <h1 class="Login">Iniciar Sesion</h1>\n\n  <form [formGroup]="loginForm" (ngSubmit)="Login(Data);">\n\n    <fieldset>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-name">Correo Electronico:</label>\n\n          <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" required>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-password">Contraseña:</label>\n\n          <input type="password" class="form-control" [(ngModel)]="Data.password" name="password" formControlName="password" required\n\n            ngModel>\n\n        </div>\n\n      </div>\n\n    </fieldset>\n\n    <div class="buttons">\n\n      <div class="pull-right">\n\n        <input class="btn btn-primary button" type="submit" value="Ingresar">\n\n      </div>\n\n    </div>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Iniciar Sesion</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <h1 class="Login">Iniciar Sesion</h1>\n\n  <form [formGroup]="loginForm" (ngSubmit)="Login(Data);">\n\n    <fieldset>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-name">Correo Electronico:</label>\n\n          <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" required>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-password">Contraseña:</label>\n\n          <input type="password" class="form-control" [(ngModel)]="Data.password" name="password" formControlName="password" required\n\n            ngModel>\n\n        </div>\n\n      </div>\n\n    </fieldset>\n\n    <div class="buttons">\n\n      <div class="pull-right">\n\n        <input class="btn btn-primary button" type="submit" value="Ingresar">\n\n      </div>\n\n    </div>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3__providers_login_register_login_register__["a" /* LoginRegisterProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
     ], LoginPage);
@@ -969,7 +1037,7 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 44:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -978,7 +1046,7 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_register_login_register__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1094,7 +1162,7 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\register\register.html"*/'<!--\n\n  Generated template for the RegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Registro</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="registerForm" (ngSubmit)="FullRegister(Data)">\n\n    <fieldset>\n\n        <h1>Registro de Usuario</h1>\n\n        <div class="form-group required">\n\n          <div class="col-sm-10">\n\n            <label class="col-sm-2 control-label" for="input-name">Nombre Empresa:</label>\n\n            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="userlastname" (keypress)="onKeyUp($event)"\n\n              (keyup)="onKeyUp($event)" min="10" max="32" required>\n\n          </div>\n\n        </div>\n\n      <div class="form-group required">\n\n          <div class="col-sm-10">\n\n            <label class="col-sm-2 control-label" for="input-lastname">Nombre Representante:</label>\n\n            <input type="text" class="form-control" [(ngModel)]="Data.userlastname" name="userlastname" formControlName="userlastname" (keypress)="onKeyUp($event)"\n\n              (keyup)="onKeyUp($event)" min="10" max="32" required>\n\n          </div>\n\n        </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-email">Correo Electrónico:</label>\n\n          <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" required ngModel email>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-password">Contraseña:</label>\n\n          <input type="password" class="form-control" [(ngModel)]="Data.password" name="password" formControlName="password" min="5"\n\n            max="32"(keypress)="checkPassWord($event)" (keyup)="checkPassWord($event)" required>\n\n            <div *ngIf="Contravalnull">\n\n              Contraseña tiene que estar lleno\n\n            </div>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-password">Ingrese Contraseña Nuevamente:</label>\n\n          <input [style.borderColor]="my_variable" type="password" class="form-control" [(ngModel)]="Data.repassword" name="Repassword" formControlName="Repassword"\n\n            min="5" max="32" required [ngStyle]="style" (keypress)="checkPassWord1($event)" (keyup)="checkPassWord1($event)">\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-enquiry">Direccion</label>\n\n          <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.direction" name="direction" formControlName="direction"\n\n            min="10" max="3000" required></textarea>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-telephone">Telefono 1:</label>\n\n          <input type="tel" class="form-control" [(ngModel)]="Data.telephone" [brmasker]="{mask:\'+(000)0000-0000\', len:15}" name="telephone"\n\n            formControlName="telephone" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8"\n\n            max="12" required>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n          <div class="col-sm-10">\n\n            <label class="col-sm-2 control-label" for="input-telephone">Telefono 2:</label>\n\n            <input type="tel" class="form-control" [(ngModel)]="Data.telephone2" [brmasker]="{mask:\'+(000)0000-0000\', len:15}" name="telephone2"\n\n              formControlName="telephone2" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8"\n\n              max="12" required>\n\n          </div>\n\n        </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-id">RTN:</label>\n\n          <input type="text" class="form-control" [(ngModel)]="Data.RTN" name="RTN" formControlName="RTN" [brmasker]="{mask:\'0000-0000-000000\', len:16}"\n\n            (keypress)="onKeyUpRTN($event)" (keyup)="onKeyUpRTN($event)" min="14" max="17" required>\n\n        </div>\n\n      </div>\n\n    </fieldset>\n\n    <div class="buttons">\n\n      <div class="pull-right">\n\n        <input class="btn btn-primary button" type="submit" value="Registrarse">\n\n      </div>\n\n    </div>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\register\register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\register\register.html"*/'<!--\n\n  Generated template for the RegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Registro</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="registerForm" (ngSubmit)="FullRegister(Data)">\n\n    <fieldset>\n\n        <h1>Registro de Usuario</h1>\n\n        <div class="form-group required">\n\n          <div class="col-sm-10">\n\n            <label class="col-sm-2 control-label" for="input-name">Nombre Empresa:</label>\n\n            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="userlastname" (keypress)="onKeyUp($event)"\n\n              (keyup)="onKeyUp($event)" min="10" max="32" required>\n\n          </div>\n\n        </div>\n\n      <div class="form-group required">\n\n          <div class="col-sm-10">\n\n            <label class="col-sm-2 control-label" for="input-lastname">Nombre Representante:</label>\n\n            <input type="text" class="form-control" [(ngModel)]="Data.userlastname" name="userlastname" formControlName="userlastname" (keypress)="onKeyUp($event)"\n\n              (keyup)="onKeyUp($event)" min="10" max="32" required>\n\n          </div>\n\n        </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-email">Correo Electrónico:</label>\n\n          <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" required ngModel email>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-password">Contraseña:</label>\n\n          <input type="password" class="form-control" [(ngModel)]="Data.password" name="password" formControlName="password" min="5"\n\n            max="32"(keypress)="checkPassWord($event)" (keyup)="checkPassWord($event)" required>\n\n            <div *ngIf="Contravalnull">\n\n              Contraseña tiene que estar lleno\n\n            </div>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-password">Ingrese Contraseña Nuevamente:</label>\n\n          <input [style.borderColor]="my_variable" type="password" class="form-control" [(ngModel)]="Data.repassword" name="Repassword" formControlName="Repassword"\n\n            min="5" max="32" required [ngStyle]="style" (keypress)="checkPassWord1($event)" (keyup)="checkPassWord1($event)">\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-enquiry">Direccion</label>\n\n          <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.direction" name="direction" formControlName="direction"\n\n            min="10" max="3000" required></textarea>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-telephone">Telefono 1:</label>\n\n          <input type="tel" class="form-control" [(ngModel)]="Data.telephone" [brmasker]="{mask:\'+(000)0000-0000\', len:15}" name="telephone"\n\n            formControlName="telephone" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8"\n\n            max="12" required>\n\n        </div>\n\n      </div>\n\n      <div class="form-group required">\n\n          <div class="col-sm-10">\n\n            <label class="col-sm-2 control-label" for="input-telephone">Telefono 2:</label>\n\n            <input type="tel" class="form-control" [(ngModel)]="Data.telephone2" [brmasker]="{mask:\'+(000)0000-0000\', len:15}" name="telephone2"\n\n              formControlName="telephone2" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8"\n\n              max="12" required>\n\n          </div>\n\n        </div>\n\n      <div class="form-group required">\n\n        <div class="col-sm-10">\n\n          <label class="col-sm-2 control-label" for="input-id">RTN:</label>\n\n          <input type="text" class="form-control" [(ngModel)]="Data.RTN" name="RTN" formControlName="RTN" [brmasker]="{mask:\'0000-0000-000000\', len:16}"\n\n            (keypress)="onKeyUpRTN($event)" (keyup)="onKeyUpRTN($event)" min="14" max="17" required>\n\n        </div>\n\n      </div>\n\n    </fieldset>\n\n    <div class="buttons">\n\n      <div class="pull-right">\n\n        <input class="btn btn-primary button" type="submit" value="Registrarse">\n\n      </div>\n\n    </div>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\register\register.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_login_register_login_register__["a" /* LoginRegisterProvider */]])
     ], RegisterPage);
@@ -1105,68 +1173,6 @@ var RegisterPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 45:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_register_login_register__ = __webpack_require__(27);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ProfilePage = /** @class */ (function () {
-    function ProfilePage(navCtrl, navParams, afDatabase, LoginRegister) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.afDatabase = afDatabase;
-        this.LoginRegister = LoginRegister;
-        this.clientesref = afDatabase.list('clientes');
-        this.user = this.LoginRegister.userLogged;
-    }
-    ProfilePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ProfilePage');
-    };
-    ProfilePage.prototype.eliminarClientes = function () {
-        var mensaje = confirm("¿Seguro que desea Eliminar su cuenta?");
-        if (mensaje) {
-            this.navCtrl.pop();
-            var temp = this.LoginRegister.userLogged.id;
-            this.LoginRegister.LogOut();
-            this.clientesref.remove(temp);
-        }
-    };
-    ProfilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\profile\profile.html"*/'<!--\n\n  Generated template for the ProfilePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">\n\n    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>\n\n    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>\n\n    \n\n  <ion-navbar>\n\n    <ion-title>Profile</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<!-- value="{{user.NombreEmpresa}}"" -->\n\n<ion-content padding>\n\n  <div>\n\n  <div>\n\n    <h1>Perfil de Usuario</h1>\n\n    <img class="avatar" src="assets/icon/perfil.png" alt="">\n\n  </div>\n\n  <div class="form-group1">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-name">Nombre Empresa:</label>\n\n      <input id =\'NombreEmpresa\' type="text" class="form-control1" value="{{user.NombreEmpresa}}" disabled>\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-lastname">Nombre Representante:</label>\n\n      <input id=\'NombreRepresentante\' type="text" class="form-control1" value="{{user.NombreRepresentante}}"disabled>\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-email">Correo Electrónico:</label>\n\n      <input id=\'Correo\' type="text" class="form-control1" value="{{user.Correo}}" disabled>\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-enquiry">Direccion</label>\n\n      <textarea id=\'Direccion\' rows="1" id="input-enquiry" class="form-control1" value="{{user.Direccion}}" disabled></textarea>\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-telephone">Telefono 1:</label>\n\n      <input id=\'Telefono1\' type="tel" class="form-control1" value="{{user.Telefono1}}"disabled >\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-telephone">Telefono 2:</label>\n\n      <input id=\'Telefono2\' type="tel" class="form-control1" value="{{user.Telefono2}}" disabled >\n\n    </div>\n\n  </div>\n\n  <div class="form-group1 required">\n\n    <div class="col-sm-10">\n\n      <label class="col-sm-2 control-label1" for="input-id">RTN:</label>\n\n      <input id=\'RTN\' type="text" class="form-control1" value="{{user.RTN}}"disabled>\n\n    </div>\n\n  </div>\n\n</div>\n\n  <div class="buttons1">\n\n      <div>\n\n        <!-- <input  type="delete" value="Eliminar Cuenta"> -->\n\n        <button type="button" class="btn btn-info">Modificar</button>\n\n        <button type="button2" class="btn btn-danger"(click)=\'eliminarClientes()\' >Borrar Cuenta</button>\n\n      </div>\n\n    </div>\n\n</ion-content>\n\n\n\n<!--  -->'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\profile\profile.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3__providers_login_register_login_register__["a" /* LoginRegisterProvider */]])
-    ], ProfilePage);
-    return ProfilePage;
-}());
-
-//# sourceMappingURL=profile.js.map
-
-/***/ }),
-
 /***/ 491:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1174,10 +1180,10 @@ var ProfilePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(292);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1209,7 +1215,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n \n\n'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n \n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */]])
     ], MyApp);
@@ -1227,12 +1233,12 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_login_login__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_home_home__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_register_register__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_login_login__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_home_home__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_register_register__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_login_register_login_register__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_profile_profile__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_profile_profile__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1291,86 +1297,14 @@ var HeaderComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 90:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_login_register_login_register__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_auth_service__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(76);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, LoginRegister, auth, afDatabase, afAuth) {
-        this.navCtrl = navCtrl;
-        this.LoginRegister = LoginRegister;
-        this.auth = auth;
-        this.afDatabase = afDatabase;
-        this.afAuth = afAuth;
-        this.login = __WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */];
-        this.register = __WEBPACK_IMPORTED_MODULE_3__register_register__["a" /* RegisterPage */];
-        this.Admin = __WEBPACK_IMPORTED_MODULE_5__admin_admin__["a" /* AdminPage */];
-        this.Profile = __WEBPACK_IMPORTED_MODULE_6__profile_profile__["a" /* ProfilePage */];
-        this.ofertaRef = afDatabase.list('imagenesPrincipal');
-        this.ofertas = this.ofertaRef.valueChanges();
-        this.logoRef = afDatabase.list('imagenesOfertas');
-        this.logos = this.logoRef.valueChanges();
-    }
-    HomePage.prototype.goToSlide = function () {
-        this.slides.slideTo(0, 15000);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */])
-    ], HomePage.prototype, "slides", void 0);
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\home\home.html"*/'<ion-header>\n\n\n\n  <ion-navbar hide-nav-bar="false">\n\n    <app-header></app-header>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n\n\n  <div class="bodyHome">\n\n    <div class="pictureCarrusel">\n\n\n\n      <ion-slides class="carrusel" >\n\n\n\n        <ion-slide *ngFor="let oferta of ofertas | async">\n\n          <img src={{oferta.imagen}}>\n\n        </ion-slide>\n\n      </ion-slides>\n\n    </div>\n\n    <div class="home_info">\n\n      <div class="home_info1">\n\n        <h2>Distribuidora REALVA</h2>\n\n\n\n        <p>\n\n          Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas\n\n          manejan la representación\n\n          de diversas líneas Veterinarias de calidad y esta en proceso de comenzar la distribución de líneas de\n\n          productos\n\n          agrícolas. Se manejan líneas de calidad global reconocida como lo es BAYER (Alemania) y MSD (USA), y líneas de\n\n          calidad regional reconocida como lo son las marcas INVET (Colombia), LAVET (Guatemala), LABIPHARM (Guatemala),\n\n          GAMMA LABORATORIES (El Salvador), ERMA (Colombia), VM (Colombia) VET BRANDS (USA) y SANFER (México) entre\n\n          otros.\n\n        </p>\n\n      </div>\n\n      <div class="home_info2" margin-top="4px">\n\n        <div>\n\n          <img src="assets/imgs/portada.jpg">\n\n          <div class="homeText2">\n\n            <p>\n\n              La empresa tiene una red de distribución a nivel de todo Honduras, con dos sucursales, una en Tegucigalpa y\n\n              otra en San Pedro\n\n              Sula, además de distribución por medio de vendedores de ruta alcanzando todo el territorio nacional. Además,\n\n              de la distribución actual, la empresa esta desarrollando proyectos para participar en el mercado regional de\n\n              América Central con distribuciones exclusivas regionales.\n\n            </p>\n\n          </div>\n\n        </div>\n\n        <div>\n\n          <img src="assets/imgs/portada2.jpg">\n\n          <div class="homeText3">\n\n            <p>\n\n              La empresa atiende las diversas especies productivas del mercado además de las especies de compañía\n\n              existentes en la región.\n\n              Existe una amplia gama de productos de la mayor calidad que sirven para atender la gran mayoría de la\n\n              necesidades\n\n              del mercado veterinario y productivo del país.\n\n            </p>\n\n          </div>\n\n\n\n        </div>\n\n      </div>\n\n      <hr>\n\n    </div>\n\n    <div class="pictureCarrusel1">\n\n\n\n      <ion-slides lass="carrusel2">\n\n\n\n        <ion-slide *ngFor="let logo of logos| async">\n\n          <img src={{logo.imagen}}>\n\n        </ion-slide>\n\n\n\n      </ion-slides>\n\n    </div>\n\n    <a href="http://www.google.com/" target="_blank">\n\n      <input type="button" value="Visit Google" />\n\n   </a>\n\n    <div class="footer">\n\n      <div class="footerTop">\n\n        <div>\n\n          <p style="color: white;">Direccion: </p>\n\n          <p style="color: white;">Edificio Alvarenga, Boulevard Morazan </p>\n\n          <p style="color: white;">Contiguo Paso Desnivel Las Lomas </p>\n\n          <p style="color: white;">Tegucigalpa, M.D.C. </p>\n\n          <p style="color: white;">HONDURAS </p>\n\n          <p style="color: white;"> Telefonos: +(504) 2236-5531 / 2236-5902 / 2236-8719</p>\n\n\n\n        </div>\n\n        <div>\n\n          <p style="color: white;">Correos: </p>\n\n          <p style="color: white;">info@realva.net </p>\n\n          <p style="color: white;">info@induvet.com </p>\n\n        </div>\n\n      </div>\n\n      <div class="footerBot">\n\n        <p>© copyright</p>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Mario\Documents\GitHub\grupo-realva-proyecto-ing.-software-\realva\src\pages\home\home.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_login_register_login_register__["a" /* LoginRegisterProvider */], __WEBPACK_IMPORTED_MODULE_7__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__["a" /* AngularFireAuth */]])
-    ], HomePage);
-    return HomePage;
-}());
-
-//# sourceMappingURL=home.js.map
-
-/***/ }),
-
-/***/ 91:
+/***/ 77:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1440,6 +1374,84 @@ var AuthService = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ 91:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_login_register_login_register__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_auth_service__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(56);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, LoginRegister, auth, afDatabase, afAuth) {
+        this.navCtrl = navCtrl;
+        this.LoginRegister = LoginRegister;
+        this.auth = auth;
+        this.afDatabase = afDatabase;
+        this.afAuth = afAuth;
+        this.login = __WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */];
+        this.register = __WEBPACK_IMPORTED_MODULE_3__register_register__["a" /* RegisterPage */];
+        this.Admin = __WEBPACK_IMPORTED_MODULE_5__admin_admin__["a" /* AdminPage */];
+        this.Profile = __WEBPACK_IMPORTED_MODULE_6__profile_profile__["a" /* ProfilePage */];
+        this.ofertaRef = afDatabase.list('imagenesPrincipal');
+        this.ofertas = this.ofertaRef.valueChanges();
+        this.logoRef = afDatabase.list('imagenesOfertas');
+        this.logos = this.logoRef.valueChanges();
+    }
+    HomePage.prototype.goToSlide = function () {
+        this.slides.slideTo(0, 15000);
+    };
+    HomePage.prototype.next = function () {
+        this.slides.slideNext();
+    };
+    HomePage.prototype.prev = function () {
+        this.slides.slidePrev();
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */])
+    ], HomePage.prototype, "slides", void 0);
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\home\home.html"*/'<ion-header>\n\n  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"\n\n    crossorigin="anonymous">\n\n  <ion-navbar hide-nav-bar="false">\n\n    <app-header></app-header>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div class="bodyHome">\n\n    <div class="pictureCarrusel">\n\n      <ion-slides class="carrusel">\n\n        <ion-slide *ngFor="let oferta of ofertas | async">\n\n          <img src={{oferta.imagen}}>\n\n          <button type="submit" ion-button round color="light" class="swiper-button-prev swiper-button-black" (click)="prev()"></button>\n\n          <button type="submit" ion-button round color="light" class="swiper-button-next swiper-button-black" (click)="next()"></button>\n\n        </ion-slide>\n\n      </ion-slides>\n\n    </div>\n\n\n\n    <div class="container">\n\n      <!-- Page Features -->\n\n      <div class="row text-center">\n\n\n\n        <div class="col-lg-3 col-md-6 mb-4">\n\n          <div class="card">\n\n            <img class="card-img-top" src="https://images.engormix.com/s_products/prod_25785.jpg" alt="">\n\n            <div class="card-body">\n\n              <h4 class="card-title">Bovimec</h4>\n\n              <p class="card-text">Tratamiento y control de parásitos internos (nematodos gastrointestinales,pulmonares y renales), y externos\n\n                (larvas causantes de miasis, piojos chupadores y masticadores, ácaros, garrapatas, mosca de los cuernos y\n\n                gusano de la nariz: Oestrus ovis).</p>\n\n            </div>\n\n            <div class="card-footer">\n\n              <a href="#" class="btn btn-primary">Encuentrala Aquí!</a>\n\n            </div>\n\n          </div>\n\n        </div>\n\n\n\n        <div class="col-lg-3 col-md-6 mb-4">\n\n          <div class="card">\n\n            <img class="card-img-top" src="http://www.perrogato.net/img/cms/10072-22%20(2)%20-%20copia.jpg" alt="">\n\n            <div class="card-body">\n\n              <h4 class="card-title">Cardisure</h4>\n\n              <p class="card-text">Cardisure es una tableta que contiene el ingrediente activo Pimobendan que se utiliza en el control de enfermedades\n\n                del corazón en perros. Cardisure es fabricado por Eurovet Animal Health Limited.</p>\n\n            </div>\n\n            <div class="card-footer">\n\n              <a href="#" class="btn btn-primary">Encuentrala Aquí!</a>\n\n            </div>\n\n          </div>\n\n        </div>\n\n\n\n        <div class="col-lg-3 col-md-6 mb-4">\n\n          <div class="card">\n\n            <img class="card-img-top" src="http://www.anabolicosyesteroideschile.cl/wp-content/uploads/2013/10/p_trembolona.jpg" alt="">\n\n            <div class="card-body">\n\n              <h4 class="card-title">Tremblona</h4>\n\n              <p class="card-text">La TREMBOLONA es un fuerte andrógeno que carece de actividad estrogénicaEstructuralmente, la TREMBOLONA es\n\n                un 19 nor esteroide, derivado de la nandrolona.</p>\n\n            </div>\n\n            <div class="card-footer">\n\n              <a href="#" class="btn btn-primary">Encuentrala Aquí!</a>\n\n            </div>\n\n          </div>\n\n        </div>\n\n\n\n        <div class="col-lg-3 col-md-6 mb-4">\n\n          <div class="card">\n\n            <img class="card-img-top" src="https://i.pinimg.com/736x/dc/c0/a0/dcc0a032927e9b72c497db9ae3d698cb.jpg" alt="">\n\n            <div class="card-body">\n\n              <h4 class="card-title">Spry</h4>\n\n              <p class="card-text">Desarrollado por expertos en salud animal, Spry® está científicamente formulado con niveles clínicos de ingredientes\n\n                activos para promover la salud respiratoria de su gato.</p>\n\n            </div>\n\n            <div class="card-footer">\n\n              <a href="#" class="btn btn-primary">Encuentrala aquí!</a>\n\n            </div>\n\n          </div>\n\n        </div>\n\n\n\n      </div>\n\n      <!-- /.row -->\n\n\n\n    </div>\n\n    <!-- <div class="pictureCarrusel1">\n\n\n\n      <ion-slides lass="carrusel2">\n\n\n\n        <ion-slide *ngFor="let logo of logos| async">\n\n          <img src={{logo.imagen}}>\n\n        </ion-slide>\n\n\n\n      </ion-slides>\n\n    </div>-->\n\n    <div>\n\n    </div>\n\n    <div class="footer-distributed">\n\n      <div class="footer-left">\n\n\n\n        <h3>Distribuidora\n\n          <span>Realva</span>\n\n        </h3>\n\n\n\n        <p class="footer-links">\n\n          <a href="#">Inicio</a>\n\n          ·\n\n          <a href="#">Productos</a>\n\n          ·\n\n          <a href="#">Nosotros</a>\n\n          ·\n\n          <a href="#">Contacto</a>\n\n          ·\n\n          <a href="#">Descargas</a>\n\n        </p>\n\n\n\n        <p class="footer-company-name">Realva &copy; 2018</p>\n\n      </div>\n\n\n\n      <div class="footer-center">\n\n\n\n        <div>\n\n          <i class="fa fa-map-marker"></i>\n\n          <p>\n\n            <span>\n\n              Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>\n\n        </div>\n\n\n\n        <div>\n\n          <i class="fa fa-phone"></i>\n\n          <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>\n\n        </div>\n\n\n\n        <div>\n\n          <i class="fa fa-envelope"></i>\n\n          <p>\n\n            <a href="mailto:support@company.com">info@realva.com</a>\n\n          </p>\n\n        </div>\n\n\n\n      </div>\n\n\n\n      <div class="footer-right">\n\n\n\n        <p class="footer-company-about">\n\n          <span>Acerca de Nosotros</span>\n\n          Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación\n\n          de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos\n\n          agrícolas.\n\n        </p>\n\n\n\n        <div class="footer-icons">\n\n\n\n          <a href="https://www.facebook.com/RealvaHonduras/">\n\n            <i class="fa fa-facebook"></i>\n\n          </a>\n\n          <a href="#">\n\n            <i class="fa fa-twitter"></i>\n\n          </a>\n\n          <a href="#">\n\n            <i class="fa fa-linkedin"></i>\n\n          </a>\n\n          <a href="#">\n\n            <i class="fa fa-youtube"></i>\n\n          </a>\n\n          <a href="#">\n\n              <i class="fa fa-instagram"></i>\n\n          </a>\n\n\n\n        </div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\grupo-realva-proyecto-ing.-software-\realva\src\pages\home\home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_login_register_login_register__["a" /* LoginRegisterProvider */], __WEBPACK_IMPORTED_MODULE_7__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__["a" /* AngularFireAuth */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
 
 /***/ })
 

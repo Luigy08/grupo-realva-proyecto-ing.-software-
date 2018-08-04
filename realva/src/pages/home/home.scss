@@ -7,6 +7,7 @@ page-home {
     height: 350px;
   }
   .pictureCarrusel{
+    padding-top: 17px;
     padding-bottom: 20px;
   }
   .bodyHome {
@@ -225,6 +226,10 @@ page-home {
       margin-left: 0;
     }
   
+  }
+  /*CARDS*/
+  .card {
+    height: 100%;
   }
   
 }

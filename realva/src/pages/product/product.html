@@ -14,18 +14,10 @@
       <div class="bodyProductTop">
         <div class="titleProduct">
           <div class="productProductos">
-            <h2>CATEGORIAS</h2>
-            <hr>
+            <h2>Categorias</h2>
           </div>
           <div class="productCategorias">
-            <h2>PRODUCTOS</h2>
-            <HR>
-          </div>
-          <div>
-            <button ion-button icon-start (click)="pushCotizar(producto)">
-              <ion-icon name="ios-clipboard"></ion-icon>
-              Cotizar
-            </button>
+            <h2>Productos</h2>
           </div>
         </div>
 
@@ -48,6 +40,10 @@
           <div class="productBodyRight">
             <div class="album py-5 bg-light">
               <div class="container">
+                <button ion-button icon-start (click)="pushCotizar(producto)">
+                  <ion-icon name="ios-clipboard"></ion-icon>
+                  Cotizar
+                </button>
                 <div class="row">
                   <div class="col-md-4" *ngFor='let producto of productos | async '>
                     <div class="card mb-4 box-shadow">
@@ -124,13 +120,12 @@
       <p class="footer-company-about">
         <span>Acerca de Nosotros</span>
         Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación
-        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos
-        agrícolas.
+        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos agrícolas.
       </p>
 
       <div class="footer-icons">
 
-        <a href="#">
+        <a href="https://www.facebook.com/RealvaHonduras/">
           <i class="fa fa-facebook"></i>
         </a>
         <a href="#">
@@ -140,8 +135,11 @@
           <i class="fa fa-linkedin"></i>
         </a>
         <a href="#">
-          <i class="fa fa-github"></i>
-        </a>
+            <i class="fa fa-youtube"></i>
+          </a>
+          <a href="#">
+              <i class="fa fa-instagram"></i>
+          </a>
 
       </div>
     </div>
