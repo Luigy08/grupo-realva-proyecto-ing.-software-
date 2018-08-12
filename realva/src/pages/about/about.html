@@ -1,4 +1,9 @@
 <ion-header>
+  <script src="//code.jquery.com/jquery-1.9.1.js" ></script>
+  <script src="scripts/jquery-ui-1.10.0.tabs.min.js"></script>
+  <script type="text/javascript">$(document).ready(function(){$("#tabcontainer").tabs({event:"click"})})</script>
+
+  <link href="styles/framework.css" rel="styles">
   <ion-navbar>
     <ion-buttons end>
       <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">Cerrar Sesion</button>
@@ -8,209 +13,91 @@
       <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil </button>
     </ion-buttons>
   </ion-navbar>
+  
 </ion-header>
-
-<script src="scripts/jquery-1.9.0.min.js" type="text/javascript"></script>
-<script src="scripts/jquery-ui-1.10.0.tabs.min.js" type="text/javascript"></script>
-<script type="text/javascript">$(document).ready(function(){$("#tabcontainer").tabs({event:"click"})})</script>
 
 <ion-content>
   <div class="About">
-    <!--Begin main container-->
-    <h1>Nosotros</h1>
-    <div class="genBlock">
-      <!--Begin General information block-->
-      <p>
-        <br>Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la
-        representación de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas
-        de productos agrícolas. Se manejan líneas de calidad global reconocida como lo es BAYER (Alemania) y MSD (USA), y
-        líneas de calidad regional reconocida como lo son las marcas INVET (Colombia), LAVET (Guatemala), LABIPHARM (Guatemala),
-        GAMMA LABORATORIES (El Salvador), ERMA (Colombia), VM (Colombia) VET BRANDS (USA) y SANFER (México) entre otros.
-        <br>
-        <br>La empresa tiene una red de distribución a nivel de todo Honduras, con dos sucursales, una en Tegucigalpa y otra
-        en San Pedro Sula, además de distribución por medio de vendedores de ruta alcanzando todo el territorio nacional.
-        Además, de la distribución actual, la empresa está desarrollando proyectos para participar en el mercado regional
-        de América Central con distribuciones exclusivas regionales.
-        <br>
-        <br>La empresa atiende las diversas especies productivas del mercado además de las especies de compañía existentes en
-        la región. Existe una amplia gama de productos de la mayor calidad que sirven para atender la gran mayoría de las
-        necesidades del mercado veterinario y productivo del país.
-      </p>
-    </div>
-    <br>
-    <!--End General information block-->
-    <div class="bigBlock">
-      <!--Begin blocks container-->
-
-      <div class="blocks">
-        <!--Begin block (Mission) container-->
-        <h2>Misión</h2>
-        <p>
-          Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad
-          para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país, promoviendo
-          y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.
-        </p>
-      </div>
-      <!--End block (Mission) container-->
-
-      <div class="blocks">
-        <!--Begin block (Vision) container-->
-        <h2>Visión</h2>
-        <p>
-          Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central, siendo reconocidos como una
-          empresa que represente calidad en todos los productos y servicios que brinde, manteniendo una trayectoria de servicio,
-          honestidad, calidad y crecimiento intachable.
-        </p>
-      </div>
-      <!--End block (Vision) container-->
-
-      <div class="blocks">
-        <!--Begin block (Values) container-->
-        <h2>Valores</h2>
-        <ul>
-          <li>Honestidad</li>
-          <li>Servicio</li>
-          <li>Responsabilidad</li>
-          <li>Transparencia</li>
-          <li>Calidad</li>
-          <li>Seguridad</li>
-        </ul>
-      </div>
-      <!--End block (Values) container-->
-
-    </div>
-    <!--End blocks container-->
+    
     <div class="wrapper row2">
-      <div id="container" class="clear">
-        <!-- ####################################################################################################### -->
-        <!-- ####################################################################################################### -->
-        <!-- ####################################################################################################### -->
-        <!-- ####################################################################################################### -->
-        <div id="about-us" class="clear">
+        <div id="container" class="clear">
           <!-- ####################################################################################################### -->
-          <div id="about-intro" class="clear">
-            <div class="one_half first"><img class="imgholder" src="images/demo/450x230.gif" alt="" /></div>
-            <div class="one_half">
-              <h2>Vivamuslibero Auguer</h2>
-              <p>In sed neque id libero pretium luctus. Vivamus faucibus. Ut vitae elit. In hac habitasse platea dictumst. Proin et nisl ac orci tempus luctus. Aenean lacinia justo at nisi. Vestibulum sed eros sit amet nisl lobortis commodo. Suspendisse nulla. Vivamus ac lorem. Aliquam pulvinar purus at felis. Quisque convallis nulla id ipsum. Praesent vitae urna. Fusce blandit nunc nec mi. Praesent vestibulum hendrerit ante.</p>
-              <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
-            </div>
-          </div>
           <!-- ####################################################################################################### -->
-          <div id="statements" class="clear">
-            <div id="tabcontainer" class="one_half first">
-              <ul id="tabnav">
-                <li><a href="#tabs-1">Tab 1</a></li>
-                <li><a href="#tabs-2">Tab 2</a></li>
-                <li><a href="#tabs-3">Tab 3</a></li>
-              </ul>
-              <!-- Tab Content -->
-              <div id="tabs-1" class="tabcontainer clear">
-                <h2>Vivamuslibero Auguer 1</h2>
-                <p>In sed neque id libero pretium luctus. Vivamus faucibus. Ut vitae elit. In hac habitasse platea dictumst. Proin et nisl ac orci tempus luctus. Aenean lacinia justo at nisi. Vestibulum sed eros sit amet nisl lobortis commodo. Suspendisse nulla. Vivamus ac lorem. Aliquam pulvinar purus at felis. Quisque convallis nulla id ipsum. Praesent vitae urna. Fusce blandit nunc nec mi. Praesent vestibulum hendrerit ante.</p>
-                <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
-                <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
-              </div>
-              <!-- ## TAB 2 ## -->
-              <div id="tabs-2" class="tabcontainer clear">
-                <h2>Vivamuslibero Auguer 2</h2>
+          <!-- ####################################################################################################### -->
+          <!-- ####################################################################################################### -->
+          <div id="about-us" class="clear">
+            <!-- ####################################################################################################### -->
+            <section id="about-intro" class="clear">
+              <div class="one_half first"><img class="imgholder" src="images/demo/450x230.gif" alt=""></div>
+              <div class="one_half">
+                <h2>Vivamuslibero Auguer</h2>
                 <p>In sed neque id libero pretium luctus. Vivamus faucibus. Ut vitae elit. In hac habitasse platea dictumst. Proin et nisl ac orci tempus luctus. Aenean lacinia justo at nisi. Vestibulum sed eros sit amet nisl lobortis commodo. Suspendisse nulla. Vivamus ac lorem. Aliquam pulvinar purus at felis. Quisque convallis nulla id ipsum. Praesent vitae urna. Fusce blandit nunc nec mi. Praesent vestibulum hendrerit ante.</p>
                 <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
               </div>
-              <!-- ## TAB 3 ## -->
-              <div id="tabs-3" class="tabcontainer clear">
-                <h2>Vivamuslibero Auguer 3</h2>
-                <p>In sed neque id libero pretium luctus. Vivamus faucibus. Ut vitae elit. In hac habitasse platea dictumst. Proin et nisl ac orci tempus luctus. Aenean lacinia justo at nisi. Vestibulum sed eros sit amet nisl lobortis commodo. Suspendisse nulla. Vivamus ac lorem. Aliquam pulvinar purus at felis. Quisque convallis nulla id ipsum. Praesent vitae urna. Fusce blandit nunc nec mi. Praesent vestibulum hendrerit ante.</p>
-                <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
+            </section>
+            <!-- ####################################################################################################### -->
+            <section id="statements" class="clear">
+              <div id="tabcontainer" class="one_half first">
+                <ul id="tabnav">
+                  <li><a href="#tabs-1">Tab 1</a></li>
+                  <li><a href="#tabs-2">Tab 2</a></li>
+                  <li><a href="#tabs-3">Tab 3</a></li>
+                </ul>
+                <!-- Tab Content -->
+                <div id="tabs-1" class="tabcontainer clear">
+                  <h2>Vivamuslibero Auguer 1</h2>
+                  <p>In sed neque id libero pretium luctus. Vivamus faucibus. Ut vitae elit. In hac habitasse platea dictumst. Proin et nisl ac orci tempus luctus. Aenean lacinia justo at nisi. Vestibulum sed eros sit amet nisl lobortis commodo. Suspendisse nulla. Vivamus ac lorem. Aliquam pulvinar purus at felis. Quisque convallis nulla id ipsum. Praesent vitae urna. Fusce blandit nunc nec mi. Praesent vestibulum hendrerit ante.</p>
+                  <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
+                  <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
+                </div>
+                <!-- ## TAB 2 ## -->
+                <div id="tabs-2" class="tabcontainer clear">
+                  <h2>Vivamuslibero Auguer 2</h2>
+                  <p>In sed neque id libero pretium luctus. Vivamus faucibus. Ut vitae elit. In hac habitasse platea dictumst. Proin et nisl ac orci tempus luctus. Aenean lacinia justo at nisi. Vestibulum sed eros sit amet nisl lobortis commodo. Suspendisse nulla. Vivamus ac lorem. Aliquam pulvinar purus at felis. Quisque convallis nulla id ipsum. Praesent vitae urna. Fusce blandit nunc nec mi. Praesent vestibulum hendrerit ante.</p>
+                  <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
+                </div>
+                <!-- ## TAB 3 ## -->
+                <div id="tabs-3" class="tabcontainer clear">
+                  <h2>Vivamuslibero Auguer 3</h2>
+                  <p>In sed neque id libero pretium luctus. Vivamus faucibus. Ut vitae elit. In hac habitasse platea dictumst. Proin et nisl ac orci tempus luctus. Aenean lacinia justo at nisi. Vestibulum sed eros sit amet nisl lobortis commodo. Suspendisse nulla. Vivamus ac lorem. Aliquam pulvinar purus at felis. Quisque convallis nulla id ipsum. Praesent vitae urna. Fusce blandit nunc nec mi. Praesent vestibulum hendrerit ante.</p>
+                  <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
+                </div>
+                <!-- / Tab Content -->
               </div>
-              <!-- / Tab Content -->
-            </div>
-            <!-- #### -->
-            <div id="skillset" class="one_half">
-              <h2>Companies Skillset !</h2>
-              <ul>
-                <li class="size_20"><strong>Text Here - 20%</strong></li>
-                <!--<li class="size_25"><strong>Text Here - 25%</strong></li>-->
-                <li class="size_30"><strong>Text Here - 30%</strong></li>
-                <!--<li class="size_35"><strong>Text Here - 35%</strong></li>-->
-                <li class="size_40"><strong>Text Here - 40%</strong></li>
-                <!--<li class="size_45"><strong>Text Here - 45%</strong></li>-->
-                <li class="size_50"><strong>Text Here - 50%</strong></li>
-                <!--<li class="size_55"><strong>Text Here - 55%</strong></li>-->
-                <li class="size_60"><strong>Text Here - 60%</strong></li>
-                <!--<li class="size_65"><strong>Text Here - 65%</strong></li>-->
-                <li class="size_70"><strong>Text Here - 70%</strong></li>
-                <!--<li class="size_75"><strong>Text Here - 75%</strong></li>-->
-                <li class="size_80"><strong>Text Here - 80%</strong></li>
-                <!--<li class="size_85"><strong>Text Here - 85%</strong></li>-->
-                <li class="size_90"><strong>Text Here - 90%</strong></li>
-                <!--<li class="size_95"><strong>Text Here - 95%</strong></li>-->
-                <li class="size_100"><strong>Text Here - 100%</strong></li>
-              </ul>
-            </div>
+              <!-- #### -->
+              <div id="skillset" class="one_half">
+                <h2>Companies Skillset !</h2>
+                <ul>
+                  <li class="size_20"><strong>Text Here - 20%</strong></li>
+                  <!--<li class="size_25"><strong>Text Here - 25%</strong></li>-->
+                  <li class="size_30"><strong>Text Here - 30%</strong></li>
+                  <!--<li class="size_35"><strong>Text Here - 35%</strong></li>-->
+                  <li class="size_40"><strong>Text Here - 40%</strong></li>
+                  <!--<li class="size_45"><strong>Text Here - 45%</strong></li>-->
+                  <li class="size_50"><strong>Text Here - 50%</strong></li>
+                  <!--<li class="size_55"><strong>Text Here - 55%</strong></li>-->
+                  <li class="size_60"><strong>Text Here - 60%</strong></li>
+                  <!--<li class="size_65"><strong>Text Here - 65%</strong></li>-->
+                  <li class="size_70"><strong>Text Here - 70%</strong></li>
+                  <!--<li class="size_75"><strong>Text Here - 75%</strong></li>-->
+                  <li class="size_80"><strong>Text Here - 80%</strong></li>
+                  <!--<li class="size_85"><strong>Text Here - 85%</strong></li>-->
+                  <li class="size_90"><strong>Text Here - 90%</strong></li>
+                  <!--<li class="size_95"><strong>Text Here - 95%</strong></li>-->
+                  <li class="size_100"><strong>Text Here - 100%</strong></li>
+                </ul>
+              </div>
+            </section>
+            <!-- ####################################################################################################### -->
+           
+            <!-- ####################################################################################################### -->
           </div>
           <!-- ####################################################################################################### -->
-          <div id="team">
-            <h2>Vivamuslibero Auguer</h2>
-            <ul class="clear">
-              <li class="one_third first">
-                <div class="figure"><img src="images/demo/team-member.gif" alt="" />
-                  <div class="figcaption">
-                    <p class="team_name">Name Goes Here</p>
-                    <p class="team_title">Job Title Here</p>
-                    <p class="team_description">Vestassapede et donec ut est liberos sus et eget sed eget. Quisqueta habitur augue magnisl magna phas ellus sagit titor ant curabi turpis.</p>
-                    <ul>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li class="one_third">
-                <div class="figure"><img src="images/demo/team-member.gif" alt="" />
-                  <div class="figcaption">
-                    <p class="team_name">Name Goes Here</p>
-                    <p class="team_title">Job Title Here</p>
-                    <p class="team_description">Vestassapede et donec ut est liberos sus et eget sed eget. Quisqueta habitur augue magnisl magna phas ellus sagit titor ant curabi turpis.</p>
-                    <ul>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li class="one_third">
-                <div class="figure"><img src="images/demo/team-member.gif" alt="" />
-                  <div class="figcaption">
-                    <p class="team_name">Name Goes Here</p>
-                    <p class="team_title">Job Title Here</p>
-                    <p class="team_description">Vestassapede et donec ut est liberos sus et eget sed eget. Quisqueta habitur augue magnisl magna phas ellus sagit titor ant curabi turpis.</p>
-                    <ul>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                      <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
+          <!-- ####################################################################################################### -->
+          <!-- ####################################################################################################### -->
           <!-- ####################################################################################################### -->
         </div>
-        <!-- ####################################################################################################### -->
-        <!-- ####################################################################################################### -->
-        <!-- ####################################################################################################### -->
-        <!-- ####################################################################################################### -->
       </div>
-    </div>
 
   </div>
   <!--End main container-->

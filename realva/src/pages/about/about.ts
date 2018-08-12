@@ -4,7 +4,10 @@ import {LoginRegisterProvider} from "../../providers/login-register/login-regist
 import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
 import {AdminPage} from "../admin/admin";
-import {ProfilePage} from "../profile/profile"
+import {ProfilePage} from "../profile/profile";
+import * as $ from 'jquery';
+
+
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
