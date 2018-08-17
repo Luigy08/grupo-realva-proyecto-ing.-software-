@@ -8,6 +8,7 @@ import {AdminPage} from "../admin/admin";
 import {DownloadsPage} from "../downloads/downloads";
 import {LoginRegisterProvider} from "../../providers/login-register/login-register"
 import { CotizarPage } from '../cotizar/cotizar';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -24,4 +25,6 @@ export class TabsPage {
   constructor(public LoginRegister: LoginRegisterProvider) {
 
   }
+  
+
 }

@@ -11,6 +11,7 @@ import Base64 from 'crypto-js/enc-base64';
 import { HomePage } from '../home/home';
 import { AuthService } from '../../services/auth.service';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import firebase from 'firebase';
 
 /**
  * Generated class for the RegisterPage page.
@@ -41,6 +42,9 @@ export class RegisterPage {
   passwordcheck: string;
   passwordcheck1: string;
   registroExitoso= false;
+  clavesRef: any =[];
+  descargaRef: any;
+  Activacion = 'Inactivo';
 
   constructor(public navCtrl: NavController,private alertCtrl: AlertController,public afDatabase: AngularFireDatabase, public navParams: NavParams, public LoginRegister: LoginRegisterProvider) {
     this.registerForm = new FormGroup({
@@ -54,12 +58,15 @@ export class RegisterPage {
       password: new FormControl('', [Validators.required, Validators.nullValidator]),
       Repassword: new FormControl('', [Validators.required, Validators.nullValidator]),
     });
+    this.descargaRef= afDatabase.list('clavesAntiguas');
+    this.descargaRef.valueChanges().subscribe((datas) => { this.clavesRef = datas;},(err)=>{ console.log("probleme : ", err) });
   }
 
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+    this.showConfirm();
   }
 
   Register(Data,estado) {
@@ -67,7 +74,7 @@ export class RegisterPage {
     const hmacDigest = Base64.stringify(hmacSHA512(Data.password, '9871236342'));
     console.log(hmacDigest);
     let clientesRef = this.afDatabase.list('clientes').push({});
-    clientesRef.set({id:clientesRef.key,ClaveCliente:0,NombreEmpresa:Data.username,NombreRepresentante:Data.userlastname,RTN:Data.RTN,Estatus:estado,Telefono1:Data.telephone,Telefono2:Data.telephone2,Contraseña:hmacDigest,Clasificacion:0,Saldo:0,Direccion:Data.direction,Correo:Data.email});
+    clientesRef.set({id:clientesRef.key,ClaveCliente:0,NombreEmpresa:Data.username,NombreRepresentante:Data.userlastname,RTN:Data.RTN,Estatus:estado,Telefono1:Data.telephone,Telefono2:Data.telephone2,Contraseña:hmacDigest,Clasificacion:0,Direccion:Data.direction,Correo:Data.email});
     this.presentAlert("Registro Exitoso", "Se logro registrar con exito", "OK");
   }
   presentAlert(Title, SubTitle, Button) {
@@ -77,6 +84,69 @@ export class RegisterPage {
       buttons: [Button]
     });
     alert.present();
+  }
+  showConfirm() {
+    const confirm = this.alertCtrl.create({
+      title: 'Registrarse',
+      message: 'Es cliente nuevo o antiguo',
+      buttons: [
+        {
+          text: 'Nuevo',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Antiguo',
+          handler: () => {
+            this.showPrompt();
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+  showPrompt() {
+    const prompt = this.alertCtrl.create({
+      title: 'Buscar Cliente Existente',
+      message: "Ingrese su Clave de Cliente",
+      inputs: [
+        {
+          name: 'Clave',
+          placeholder: 'Clave'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            this.buscarCliente(data.Clave);
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+  buscarCliente(Clave){
+    let existe = false;
+    for (const iterator of this.clavesRef) {
+      if(Clave == iterator.Clave){
+        existe = true;
+      }
+    }
+    if(existe){
+      this.presentAlert("Registre Sus Datos", "Su cuenta sera activada de forma automatica", "OK");
+      this.Activacion = 'Activo';
+    }else{
+      this.presentAlert("No se encontro su cliente", "Su Clave no existe, cree una nueva cuenta o intente de nuevo", "OK");
+      this.Activacion = 'InActivo';
+    }
   }
   public onKeyUp(event: any) {
     let newValue = event.target.value;
@@ -130,7 +200,7 @@ export class RegisterPage {
   }
 
   FullRegister(Data) {
-    this.Register(Data,'Inactivo');
+    this.Register(Data,this.Activacion);
     if(this.registroExitoso){
       this.registerForm.reset();
       this.registroExitoso = false; 

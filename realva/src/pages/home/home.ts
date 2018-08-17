@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Nav } from 'ionic-angular';
+import { NavController, Nav, AlertController } from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
 import {LoginRegisterProvider} from "../../providers/login-register/login-register";
@@ -28,7 +28,7 @@ export class HomePage {
 
   logoRef: any;
   logos: AngularFireList<any>;
-  constructor(public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider,public auth:AuthService,public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
+  constructor(private alertCtrl:AlertController,public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider,public auth:AuthService,public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
     this.ofertaRef= afDatabase.list('imagenesPrincipal');
     this.ofertas = this.ofertaRef.valueChanges();
     this.logoRef= afDatabase.list('imagenesOfertas');
