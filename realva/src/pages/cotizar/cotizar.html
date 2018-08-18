@@ -17,56 +17,85 @@
 
 <ion-content padding>
 
-  <div class="container"></div>
-  <div class="card">
-    <div class="card-header bg-secondary text-light">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      Cotizacion
-      <div class="clearfix"></div>
-    </div>
-    <div class="card-body">
+  <div class="container">
+    <div class="card">
+      <div class="card-header bg-secondary text-light">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        Cotizacion
+        <div class="clearfix"></div>
+      </div>
+      <div class="card-body">
 
-      <div class="row" *ngFor="let producto of productos">
-        <div class="col-xs-2 col-md-2">
-          <img class="img-responsive" src="http://placehold.it/400x250/000/fff" alt="prewiew">
-        </div>
-        <div class="col-xs-4 col-md-6">
-          <h4 class="product-name">
-            <strong>{{producto["nombre"]}}</strong>
-          </h4>
-          <h4>
-            <small>{{producto["descripcion"]}}</small>
-          </h4>
-        </div>
-        <div class="col-xs-6 col-md-4 row">
-          <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">
-            <h6>
-              <strong>Precio: Lps {{producto["precio"]}}
-                <span class="text-muted">x</span>
-              </strong>
-            </h6>
+        <div class="row" *ngFor="let producto of productos">
+          <div class="col-xs-2 col-md-2 mt-2">
+            <img class="img-responsive" src={{producto.imagen}} alt="prewiew">
           </div>
-          <div class="col-xs-4 col-md-4">
-            <input type="text" class="form-control input-sm" value="1">
+          <div class="col-xs-4 col-md-6 mt-2">
+            <h4 class="product-name">
+              <strong>{{producto["nombre"]}}</strong>
+            </h4>
+            <h4>
+              <small>{{producto["descripcion"]}}</small>
+            </h4>
           </div>
-          <div class="col-xs-2 col-md-2">
-            <button type="button" class="btn btn-outline-danger btn-xs">
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </button>
+          <div class="col-xs-6 col-md-4 row">
+            <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">
+              <h6>
+                <strong>Precio: Lps {{producto["precio"]}}
+                  <span class="text-muted">x</span>
+                </strong>
+              </h6>
+            </div>
+            <div class="col-xs-4 col-md-4">
+              <input type="text" class="form-control input-sm" value="1">
+            </div>
+            <div class="col-xs-2 col-md-2">
+              <button href="#" type="button" (click)="eliminar(producto)" class="btn btn-outline-danger btn-xs">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class='col-lg-8 col-lg-offset-2'>
+            <hr>
           </div>
         </div>
+
         <hr>
-
+        <div class="pull-right">
+          <a href="#" (click)="limpiar()" class="btn btn-outline-secondary pull-right">Limpiar</a>
+        </div>
       </div>
-
-      <hr>
-      <div class="pull-right">
-        <a href="" class="btn btn-outline-secondary pull-right">Limpiar</a>
+      <div class="card-footer">
+          <form [formGroup]="contactForm" (ngSubmit)="post()">
+              <fieldset>
+                <div class="form-group required">
+                  <div class="">
+                    <label class="control-label" for="input-name">Tu Nombre:</label>
+                    <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"
+                      (keyup)="onKeyUp($event)" min="10" max="32" required>
+                  </div>
+                </div>
+                <div class="form-group required">
+                  <div class="">
+                    <label class="control-label" for="input-email">Correo Electrónico:</label>
+                    <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" required ngModel email>
+                  </div>
+                </div>
+                <div class="form-group required">
+                  <div class="">
+                    <label class="control-label" for="input-enquiry">Mensaje:</label>
+                    <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.message" name="message" formControlName="message"
+                      min="10" max="3000" required></textarea>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="buttonsContacto">
+                <div class="pull-right">
+                  <input class="buttonLoco" type="submit" value="Enviar">
+                </div>
+              </div>
+            </form>
       </div>
-    </div>
-    <div class="card-footer">
-
     </div>
   </div>
-
 </ion-content>

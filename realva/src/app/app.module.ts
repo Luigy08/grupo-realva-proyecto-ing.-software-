@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, Header } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
+import{ HttpClientModule } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -31,6 +33,7 @@ import { AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HeaderComponent } from './header/header.component';
 import { CotizarPage} from "../pages/cotizar/cotizar";
+import { GlobalProvider } from '../providers/global/global';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBZAKqZfYiuQDTF-pDtZsxlO5X72wNFA1Q",
@@ -92,7 +95,8 @@ export const firebaseConfig = {
     LoginRegisterProvider,
     AuthService,
     ImageDataProvider,
-    AngularFireAuth
+    AngularFireAuth,
+    GlobalProvider
   ]
 })
 export class AppModule { }

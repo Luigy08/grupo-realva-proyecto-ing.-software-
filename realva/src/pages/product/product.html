@@ -1,6 +1,5 @@
 <ion-header>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
+
   <ion-navbar>
     <ion-buttons end>
       <app-header></app-header>
@@ -10,66 +9,52 @@
 
 <ion-content>
   <div class="container">
-    <div class="bodyProduct">
-      <div class="bodyProductTop">
-        <div class="titleProduct">
-          <div class="productProductos">
-            <h2>Categorias</h2>
-          </div>
-          <div class="productCategorias">
-            <h2>Productos</h2>
-          </div>
+    <div class="row mt-3">
+        <div class="col col-lg-3 col-md-3 col-sm-12 col-12 mt-2">
+          <h1>Categorias</h1>
         </div>
-
-
-        <div class="productBody">
-          <div class="productBodyLeft">
-
-            <!--<ion-item>
-              <ion-label>Employee</ion-label>
-              <ion-select [(ngModel)]="employee" [compareWith]="compareFn">
-                <ion-option *ngFor="let employee of employees" [value]="employee"></ion-option>
-              </ion-select>
-
-              autoplay="3000" loop="true" speed="3000" c
-            </ion-item> -->
-
-
-          </div>
-
-          <div class="productBodyRight">
-            <div class="album py-5 bg-light">
-              <div class="container">
-                <button ion-button icon-start (click)="pushCotizar(producto)">
-                  <ion-icon name="ios-clipboard"></ion-icon>
-                  Cotizar
-                </button>
-                <div class="row">
-                  <div class="col-md-4" *ngFor='let producto of productos | async '>
-                    <div class="card mb-4 box-shadow">
-                      <img class="imagenProducto" src={{producto.imagen}}>
-                      <div class="card-body">
-                        <p class="card-text">{{producto.nombre}} </p>
-                        <p class="card-text"> Precio: L. {{producto.precio}} </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <button (click)="push(producto)" type="button" class="btn btn-sm btn-outline-secondary">Mirar</button>
-                            <button (click)="cotizando(producto)" type="button" class="btn btn-sm btn-outline-secondary">Cotizar</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
+        <div class="col col-lg-9 col-md-9 col-sm-12 col-12 mt-2">
+            <h1>Productos</h1>
+            <div class="well well-sm">
+                <strong>Tipo de Vista</strong>
+                <div class="btn-group">
+                    <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+                    </span>Lista</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                        class="glyphicon glyphicon-th"></span>Cuadros</a>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
+            <div id="products" class="row grid-group">
+                <div class="item  col-xs-4 col-lg-4" *ngFor='let producto of productos | async '>
+                    <div class="thumbnail">
+                        <img class="group grid-group-image" src={{producto.imagen}} alt="">
+                        <div class="caption">
+                            <h4 class="group inner grid-group-item-heading">
+                                {{producto.nombre}}
+                            </h4>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        Precio: L. {{producto.precio}}</p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <a class="btn btn-success" (click)="push(producto)">Mirar</a>
+                                    <a class="btn btn-success" (click)="cotizando(producto)">Cotizar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+
+        </div>
     </div>
+
   </div>
+  <div class="container">
+
+  </div>
+
   <div class="footer-distributed">
     <div class="footer-left">
 
