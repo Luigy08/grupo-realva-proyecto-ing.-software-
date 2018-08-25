@@ -13,40 +13,77 @@
 
 <ion-content>
   <div class="About">
+      <h1>Nosotros</h1>
+      <div class="genBlock">
+        <!--Begin General information block-->
+        <p>
+          <br>Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la
+          representación de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas
+          de productos agrícolas. Se manejan líneas de calidad global reconocida como lo es BAYER (Alemania) y MSD (USA), y
+          líneas de calidad regional reconocida como lo son las marcas INVET (Colombia), LAVET (Guatemala), LABIPHARM (Guatemala),
+          GAMMA LABORATORIES (El Salvador), ERMA (Colombia), VM (Colombia) VET BRANDS (USA) y SANFER (México) entre otros.
+          <br>
+          <br>La empresa tiene una red de distribución a nivel de todo Honduras, con dos sucursales, una en Tegucigalpa y otra
+          en San Pedro Sula, además de distribución por medio de vendedores de ruta alcanzando todo el territorio nacional.
+          Además, de la distribución actual, la empresa está desarrollando proyectos para participar en el mercado regional
+          de América Central con distribuciones exclusivas regionales.
+          <br>
+          <br>La empresa atiende las diversas especies productivas del mercado además de las especies de compañía existentes en
+          la región. Existe una amplia gama de productos de la mayor calidad que sirven para atender la gran mayoría de las
+          necesidades del mercado veterinario y productivo del país.
+        </p>
+      </div>
+      <br>
+  
     <ion-toolbar no-border-top>
       <ion-segment [(ngModel)]="pet">
-        <ion-segment-button value="puppies">
-          Puppies
+        <ion-segment-button value="mision">
+          Misión
         </ion-segment-button>
-        <ion-segment-button value="kittens">
-          Kittens
+        <ion-segment-button value="vision">
+          Visión
         </ion-segment-button>
-        <ion-segment-button value="ducklings">
-          Ducklings
+        <ion-segment-button value="valores">
+          Valores
         </ion-segment-button>
       </ion-segment>
     </ion-toolbar>
 
     <div [ngSwitch]="pet">
-      <ion-list *ngSwitchCase="'puppies'">
-        asd
+      <ion-list *ngSwitchCase="'mision'">
+        <ion-item>
+          <p>
+            Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad
+            <br>para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país, promoviendo
+            <br>y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.
+          </p>
+        </ion-item>
       </ion-list>
-      </div>
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-      </li>
-    </ul>
-    <div class="tab-content" id="pills-tabContent">
-      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
-      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">2</div>
-      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+  
+      <ion-list *ngSwitchCase="'vision'">
+        <ion-item>
+            <p>
+              Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central,
+              <br>siendo reconocidos como una empresa que represente calidad en todos los productos y servicios que brinde,
+              <br>manteniendo una trayectoria de servicio, honestidad, calidad y crecimiento intachable.
+            </p>
+      
+        </ion-item>
+      </ion-list>
+  
+      <ion-list *ngSwitchCase="'valores'">
+        <ion-item>
+            <ul>
+              <li>Honestidad</li>
+              <li>Servicio</li>
+              <li>Responsabilidad</li>
+              <li>Transparencia</li>
+              <li>Calidad</li>
+              <li>Seguridad</li>
+            </ul>
+      
+        </ion-item>
+      </ion-list>
     </div>
   </div>
   <!--End main container-->

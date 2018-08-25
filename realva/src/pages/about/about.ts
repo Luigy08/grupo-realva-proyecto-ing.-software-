@@ -17,6 +17,7 @@ export class AboutPage {
   register = RegisterPage;
   Admin = AdminPage;
   Profile = ProfilePage;
+  pet: string = "mision";
   constructor(public navCtrl: NavController,public LoginRegister: LoginRegisterProvider) {
 
   }
