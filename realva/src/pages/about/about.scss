@@ -15,10 +15,35 @@ page-about {
     flex-direction: row;
     text-align: left;
     width: 100%;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #5C8BA6;
   }
   div.genBlock {
     text-align: justify;
   }
+
+  div.blocks2{
+    border: 1px;
+    border-style: solid;
+    border-color:black;
+    margin: 5px;
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+  }
+
+  #thisImg{
+    padding: 15px;
+    margin:auto;
+    border: 1px;
+    border-style: solid;
+    border-color:black;
+    width: 465px;
+    height: 245px;
+  }
+
   div.blocks {
     margin: 5px;
     width: 100%;
