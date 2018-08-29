@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, Header } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -18,6 +19,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginRegisterProvider } from '../providers/login-register/login-register';
 import { ImageDataProvider } from '../providers/image-data/image-data';
+
 
 import { ProductPage } from "../pages/product/product";
 import { DownloadsPage } from '../pages/downloads/downloads';
@@ -67,7 +69,8 @@ export const firebaseConfig = {
     AppMaskerModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    NgbModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
