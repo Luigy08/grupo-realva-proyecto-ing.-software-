@@ -48,62 +48,52 @@
         </div><!--End Row1: img and info-->
         <div class="row myRow">
           <div class="col">
-            <ion-toolbar no-border-top>
-                <ion-segment [(ngModel)]="pet">
-                  <ion-segment-button value="mision">
-                    Misión
-                  </ion-segment-button>
-                  <ion-segment-button value="vision">
-                    Visión
-                  </ion-segment-button>
-                  <ion-segment-button value="valores">
-                    Valores
-                  </ion-segment-button>
-                </ion-segment>
-              </ion-toolbar>
-          
-              <div [ngSwitch]="pet">
-                <ion-list *ngSwitchCase="'mision'">
-                  <ion-item>
-                    <div class="col">
-                      <p class="text-justify w-responsive mx-auto mb-5">
-                      Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad
-                      para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país, promoviendo
-                      y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.
-                      </p>
-                    </div>
-                  </ion-item>
-                </ion-list>
-          
-                <ion-list *ngSwitchCase="'vision'">
-                  <ion-item>
-                    <p>
-                      Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central,
-                      <br>siendo reconocidos como una empresa que represente calidad en todos los productos y servicios que brinde,
-                      <br>manteniendo una trayectoria de servicio, honestidad, calidad y crecimiento intachable.
+              <div class="tab">
+                  <button class="tablinks active" (click)="openCity('London',1)" id="default">London</button>
+                  <button class="tablinks" (click)="openCity('Paris',1)" id="vision">Paris</button>
+                  <button class="tablinks" (click)="openCity('Tokyo',1)" id="valores">Tokyo</button>
+                </div>
+                
+                <!-- Tab content -->
+                <div id="London" class="tabcontent">
+                  <h3>Misión</h3>
+                  <p class="text-justify w-responsive mx-auto mb-5">
+                    Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad
+                    para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país, promoviendo
+                    y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.
                     </p>
-          
-                  </ion-item>
-                </ion-list>
-          
-                <ion-list *ngSwitchCase="'valores'">
-                  <ion-item>
-                    <ul>
-                      <li>Honestidad</li>
-                      <li>Servicio</li>
-                      <li>Responsabilidad</li>
-                      <li>Transparencia</li>
-                      <li>Calidad</li>
-                      <li>Seguridad</li>
-                    </ul>
-          
-                  </ion-item>
-                </ion-list>
-              </div>
+                </div>
+                
+                <div id="Paris" class="tabcontent">
+                  <h3>Visión</h3>
+                  <p>
+                    Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central,
+                    siendo reconocidos como una empresa que represente calidad en todos los productos y servicios que brinde,
+                    manteniendo una trayectoria de servicio, honestidad, calidad y crecimiento intachable.
+                  </p>
+                </div>
+                
+                <div id="Tokyo" class="tabcontent">
+                  <h3>Valores</h3>
+                  <ul>
+                    <li>Honestidad</li>
+                    <li>Servicio</li>
+                    <li>Responsabilidad</li>
+                    <li>Transparencia</li>
+                    <li>Calidad</li>
+                    <li>Seguridad</li>
+                  </ul>
+                </div>
+                <div *ngIf="!getiClicked()">{{openCity('London',0)}}</div>
+                
+            
             </div>
         </div><!--End Row2-->
       </div><!--End Container-->
       <br>
+
+      
+
     </div>
     <!--End main container-->
     <div class="footer-distributed">
