@@ -1,157 +1,183 @@
 <ion-header>
-  <ion-navbar>
-    <ion-buttons end>
-      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">Cerrar Sesion</button>
-      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion</button>
-      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse </button>
-      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion </button>
-      <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
-
-<ion-content>
-  <div class="About">
-    <!--Begin main container-->
-    <h1>Nosotros</h1>
-    <div class="genBlock">
-      <!--Begin General information block-->
-      <p>
-        <br>Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la
-        representación de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas
-        de productos agrícolas. Se manejan líneas de calidad global reconocida como lo es BAYER (Alemania) y MSD (USA), y
-        líneas de calidad regional reconocida como lo son las marcas INVET (Colombia), LAVET (Guatemala), LABIPHARM (Guatemala),
-        GAMMA LABORATORIES (El Salvador), ERMA (Colombia), VM (Colombia) VET BRANDS (USA) y SANFER (México) entre otros.
-        <br>
-        <br>La empresa tiene una red de distribución a nivel de todo Honduras, con dos sucursales, una en Tegucigalpa y otra
-        en San Pedro Sula, además de distribución por medio de vendedores de ruta alcanzando todo el territorio nacional.
-        Además, de la distribución actual, la empresa está desarrollando proyectos para participar en el mercado regional
-        de América Central con distribuciones exclusivas regionales.
-        <br>
-        <br>La empresa atiende las diversas especies productivas del mercado además de las especies de compañía existentes en
-        la región. Existe una amplia gama de productos de la mayor calidad que sirven para atender la gran mayoría de las
-        necesidades del mercado veterinario y productivo del país.
-      </p>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous">
+    
+    <ion-navbar>
+      <ion-buttons end>
+        <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">Cerrar Sesion</button>
+        <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion</button>
+        <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse </button>
+        <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion </button>
+        <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content>
+    <div class="About">
+      <h1>Nosotros</h1>
+      <div class="container">
+        <div class="row myRow">
+          <div class="col-md-auto">
+            <div class="blocks2">
+              <div id="imgBlock">
+                <img id="thisImg" src="https://cdn.bulbagarden.net/upload/thumb/5/5b/Ilima_Eevee.png/250px-Ilima_Eevee.png">
+              </div>
+            </div>
+          </div><!--End Col1-->
+          <div class="col">
+            <p class="text-justify w-responsive mx-auto mb-5">
+              <br>Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan
+              la representación de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de
+              líneas de productos agrícolas. Se manejan líneas de calidad global reconocida como lo es BAYER (Alemania) y MSD
+              (USA), y líneas de calidad regional reconocida como lo son las marcas INVET (Colombia), LAVET (Guatemala), LABIPHARM
+              (Guatemala), GAMMA LABORATORIES (El Salvador), ERMA (Colombia), VM (Colombia) VET BRANDS (USA) y SANFER (México)
+              entre otros.
+              <br>
+              <br>La empresa tiene una red de distribución a nivel de todo Honduras, con dos sucursales, una en Tegucigalpa y otra
+              en San Pedro Sula, además de distribución por medio de vendedores de ruta alcanzando todo el territorio nacional.
+              Además, de la distribución actual, la empresa está desarrollando proyectos para participar en el mercado regional
+              de América Central con distribuciones exclusivas regionales.
+              <br>
+              <br>La empresa atiende las diversas especies productivas del mercado además de las especies de compañía existentes
+              en la región. Existe una amplia gama de productos de la mayor calidad que sirven para atender la gran mayoría
+              de las necesidades del mercado veterinario y productivo del país.
+            </p>
+          </div><!--End Col2-->
+        </div><!--End Row1: img and info-->
+        <div class="row myRow">
+          <div class="col">
+            <ion-toolbar no-border-top>
+                <ion-segment [(ngModel)]="pet">
+                  <ion-segment-button value="mision">
+                    Misión
+                  </ion-segment-button>
+                  <ion-segment-button value="vision">
+                    Visión
+                  </ion-segment-button>
+                  <ion-segment-button value="valores">
+                    Valores
+                  </ion-segment-button>
+                </ion-segment>
+              </ion-toolbar>
+          
+              <div [ngSwitch]="pet">
+                <ion-list *ngSwitchCase="'mision'">
+                  <ion-item>
+                    <div class="col">
+                      <p class="text-justify w-responsive mx-auto mb-5">
+                      Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad
+                      para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país, promoviendo
+                      y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.
+                      </p>
+                    </div>
+                  </ion-item>
+                </ion-list>
+          
+                <ion-list *ngSwitchCase="'vision'">
+                  <ion-item>
+                    <p>
+                      Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central,
+                      <br>siendo reconocidos como una empresa que represente calidad en todos los productos y servicios que brinde,
+                      <br>manteniendo una trayectoria de servicio, honestidad, calidad y crecimiento intachable.
+                    </p>
+          
+                  </ion-item>
+                </ion-list>
+          
+                <ion-list *ngSwitchCase="'valores'">
+                  <ion-item>
+                    <ul>
+                      <li>Honestidad</li>
+                      <li>Servicio</li>
+                      <li>Responsabilidad</li>
+                      <li>Transparencia</li>
+                      <li>Calidad</li>
+                      <li>Seguridad</li>
+                    </ul>
+          
+                  </ion-item>
+                </ion-list>
+              </div>
+            </div>
+        </div><!--End Row2-->
+      </div><!--End Container-->
+      <br>
     </div>
-    <br>
-    <!--End General information block-->
-    <div class="bigBlock">
-      <!--Begin blocks container-->
-
-      <div class="blocks">
-        <!--Begin block (Mission) container-->
-        <h2>Misión</h2>
-        <p>
-          Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad
-          para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país, promoviendo
-          y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.
+    <!--End main container-->
+    <div class="footer-distributed">
+      <div class="footer-left">
+  
+        <h3>Distribuidora
+          <span>Realva</span>
+        </h3>
+  
+        <p class="footer-links">
+          <a href="#">Inicio</a>
+          ·
+          <a href="#">Productos</a>
+          ·
+          <a href="#">Nosotros</a>
+          ·
+          <a href="#">Contacto</a>
+          ·
+          <a href="#">Descargas</a>
         </p>
+  
+        <p class="footer-company-name">Realva &copy; 2018</p>
       </div>
-      <!--End block (Mission) container-->
-
-      <div class="blocks">
-        <!--Begin block (Vision) container-->
-        <h2>Visión</h2>
-        <p>
-          Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central, siendo reconocidos como una
-          empresa que represente calidad en todos los productos y servicios que brinde, manteniendo una trayectoria de servicio,
-          honestidad, calidad y crecimiento intachable.
+  
+      <div class="footer-center">
+  
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p>
+            <span>
+              Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>
+        </div>
+  
+        <div>
+          <i class="fa fa-phone"></i>
+          <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>
+        </div>
+  
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p>
+            <a href="mailto:support@company.com">info@realva.com</a>
+          </p>
+        </div>
+  
+      </div>
+  
+      <div class="footer-right">
+  
+        <p class="footer-company-about">
+          <span>Acerca de Nosotros</span>
+          Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación
+          de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos agrícolas.
         </p>
-      </div>
-      <!--End block (Vision) container-->
-
-      <div class="blocks">
-        <!--Begin block (Values) container-->
-        <h2>Valores</h2>
-        <ul>
-          <li>Honestidad</li>
-          <li>Servicio</li>
-          <li>Responsabilidad</li>
-          <li>Transparencia</li>
-          <li>Calidad</li>
-          <li>Seguridad</li>
-        </ul>
-      </div>
-      <!--End block (Values) container-->
-
-    </div>
-    <!--End blocks container-->
-
-  </div>
-  <!--End main container-->
-  <div class="footer-distributed">
-    <div class="footer-left">
-
-      <h3>Distribuidora
-        <span>Realva</span>
-      </h3>
-
-      <p class="footer-links">
-        <a href="#">Inicio</a>
-        ·
-        <a href="#">Productos</a>
-        ·
-        <a href="#">Nosotros</a>
-        ·
-        <a href="#">Contacto</a>
-        ·
-        <a href="#">Descargas</a>
-      </p>
-
-      <p class="footer-company-name">Realva &copy; 2018</p>
-    </div>
-
-    <div class="footer-center">
-
-      <div>
-        <i class="fa fa-map-marker"></i>
-        <p>
-          <span>
-            Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>
-      </div>
-
-      <div>
-        <i class="fa fa-phone"></i>
-        <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>
-      </div>
-
-      <div>
-        <i class="fa fa-envelope"></i>
-        <p>
-          <a href="mailto:support@company.com">info@realva.com</a>
-        </p>
-      </div>
-
-    </div>
-
-    <div class="footer-right">
-
-      <p class="footer-company-about">
-        <span>Acerca de Nosotros</span>
-        Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación
-        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos
-        agrícolas.
-      </p>
-
-      <div class="footer-icons">
-
-        <a href="https://www.facebook.com/RealvaHonduras/">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="#">
+  
+        <div class="footer-icons">
+  
+          <a href="https://www.facebook.com/RealvaHonduras/">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="#">
             <i class="fa fa-youtube"></i>
           </a>
           <a href="#">
-              <i class="fa fa-instagram"></i>
+            <i class="fa fa-instagram"></i>
           </a>
-
+  
+        </div>
       </div>
     </div>
-  </div>
-</ion-content>
+  </ion-content>
