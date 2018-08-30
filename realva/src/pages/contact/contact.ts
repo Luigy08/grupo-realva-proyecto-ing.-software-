@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { NavController, ActionSheetController, AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
-import {LoginPage} from "../login/login";
-import {RegisterPage} from "../register/register";
-import {LoginRegisterProvider} from "../../providers/login-register/login-register";
-import {AdminPage} from "../admin/admin";
-import {ProfilePage} from "../profile/profile"
+import { LoginPage } from "../login/login";
+import { RegisterPage } from "../register/register";
+import { LoginRegisterProvider } from "../../providers/login-register/login-register";
+import { AdminPage } from "../admin/admin";
+import { ProfilePage } from "../profile/profile"
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -16,12 +16,13 @@ export class ContactPage {
   contactForm: FormGroup;
   username: AbstractControl;
   email: AbstractControl;
+  main: String = "Tegucigalpa";
   message: AbstractControl;
   login = LoginPage;
   register = RegisterPage;
   Admin = AdminPage;
   Profile = ProfilePage;
-  constructor(public http: Http, nav: NavController,public LoginRegister: LoginRegisterProvider, public actionSheetCtrl: ActionSheetController, private alertCtrl: AlertController) {
+  constructor(public http: Http, nav: NavController, public LoginRegister: LoginRegisterProvider, public actionSheetCtrl: ActionSheetController, private alertCtrl: AlertController) {
     this.http = http;
     this.contactForm = new FormGroup({
       username: new FormControl('', Validators.required),
