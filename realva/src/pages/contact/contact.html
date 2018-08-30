@@ -17,140 +17,223 @@
 </ion-header>
 
 <ion-content>
-  <div class="Contact">
-    <h1>Contacto</h1>
-    <div class="maps-location">
-      <iframe allowfullscreen="" frameborder="0" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.6069125744443!2d-87.18652868532534!3d14.100366790122589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fa2d8da2100d3%3A0xb4d71a25f87cfdc2!2sAgropecuaria+Realva!5e0!3m2!1sen!2shn!4v1527009401267"
-        style="border:0" width="100%"></iframe>
-    </div>
-    <div>
-      <h2>Nuestra Ubicación</h2>
-      <div class="row">
-        <div class="col-sm-3 col">
-          <strong>Distribuidora REALVA e INDUSTRIA VETERINARIA S. de R.L.</strong>
-          <br>
-          <address>
-            Edificio Alvarenga, Boulevard Morazán Contiguo Paso Desnivel Las Lomas, Tegucigalpa, Honduras.
-          </address>
-        </div>
-        <div class="col-sm-3 col">
-          <strong>Teléfonos</strong>
-          <br> +(504) 2236-5531 / 2236-5902 / 2236-8719
-          <br>
-          <br>
-          <strong>Correos</strong>
-          <br>
-          <a href="mailto:info@realva.com" target="_top">info@realva.com</a>
-          <br>
-          <br>
-        </div>
-      </div>
-    </div>
+  <ion-toolbar no-border end>
+    <ion-segment [(ngModel)]="main">
+      <ion-segment-button value="Tegucigalpa">
+        Tegucigalpa
+      </ion-segment-button>
+      <ion-segment-button value="San Pedro Sula">
+          San Pedro Sula
+        </ion-segment-button>
+    </ion-segment>
 
-    <h2>Formulario de Contacto </h2>
-    <form [formGroup]="contactForm" (ngSubmit)="post()">
-      <fieldset>
-        <div class="form-group required">
-          <div class="">
-            <label class="control-label" for="input-name">Tu Nombre:</label>
-            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"
-              (keyup)="onKeyUp($event)" min="10" max="32" required>
+  </ion-toolbar>
+  <div [ngSwitch]="main">
+    <ion-item *ngSwitchCase="'Tegucigalpa'">
+      <div class="Contact">
+        <h1>Contacto</h1>
+        <div class="maps-location">
+          <iframe allowfullscreen="" frameborder="0" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.6069125744443!2d-87.18652868532534!3d14.100366790122589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fa2d8da2100d3%3A0xb4d71a25f87cfdc2!2sAgropecuaria+Realva!5e0!3m2!1sen!2shn!4v1527009401267"
+            style="border:0" width="100%"></iframe>
+        </div>
+        <div>
+          <h2>Nuestra Ubicación</h2>
+          <div class="row">
+            <div class="col-sm-3 col">
+              <strong>Distribuidora REALVA e INDUSTRIA VETERINARIA S. de R.L.</strong>
+              <br>
+              <address>
+                Edificio Alvarenga, Boulevard Morazán Contiguo Paso Desnivel Las Lomas, Tegucigalpa, Honduras.
+              </address>
+            </div>
+            <div class="col-sm-3 col">
+              <strong>Teléfonos</strong>
+              <br> +(504) 2236-5531 / 2236-5902 / 2236-8719
+              <br>
+              <br>
+              <strong>Correos</strong>
+              <br>
+              <a href="mailto:info@realva.com" target="_top">info@realva.com</a>
+              <br>
+              <br>
+            </div>
           </div>
         </div>
-        <div class="form-group required">
-          <div class="">
-            <label class="control-label" for="input-email">Correo Electrónico:</label>
-            <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" required ngModel email>
+
+        <h2>Formulario de Contacto </h2>
+        <form [formGroup]="contactForm" (ngSubmit)="post()">
+          <fieldset>
+            <div class="form-group required">
+              <div class="">
+                <label class="control-label" for="input-name">Tu Nombre:</label>
+                <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username"
+                  (keypress)="onKeyUp($event)" (keyup)="onKeyUp($event)" min="10" max="32" required>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="">
+                <label class="control-label" for="input-email">Correo Electrónico:</label>
+                <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email"
+                  required ngModel email>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="">
+                <label class="control-label" for="input-enquiry">Mensaje:</label>
+                <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.message" name="message"
+                  formControlName="message" min="10" max="3000" required></textarea>
+              </div>
+            </div>
+          </fieldset>
+          <div class="buttonsContacto">
+            <div class="pull-right">
+              <input class="buttonLoco" type="submit" value="Enviar">
+            </div>
           </div>
-        </div>
-        <div class="form-group required">
-          <div class="">
-            <label class="control-label" for="input-enquiry">Mensaje:</label>
-            <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.message" name="message" formControlName="message"
-              min="10" max="3000" required></textarea>
-          </div>
-        </div>
-      </fieldset>
-      <div class="buttonsContacto">
-        <div class="pull-right">
-          <input class="buttonLoco" type="submit" value="Enviar">
-        </div>
+        </form>
       </div>
-    </form>
+    </ion-item>
+
+    <ion-item *ngSwitchCase="'San Pedro Sula'">
+        <div class="Contact">
+          <h1>Contacto</h1>
+          <div class="maps-location">
+            <iframe allowfullscreen="" frameborder="0" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.6069125744443!2d-87.18652868532534!3d14.100366790122589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fa2d8da2100d3%3A0xb4d71a25f87cfdc2!2sAgropecuaria+Realva!5e0!3m2!1sen!2shn!4v1527009401267"
+              style="border:0" width="100%"></iframe>
+          </div>
+          <div>
+            <h2>Nuestra Ubicación</h2>
+            <div class="row">
+              <div class="col-sm-3 col">
+                <strong>Distribuidora REALVA e INDUSTRIA VETERINARIA S. de R.L.</strong>
+                <br>
+                <address>
+                  Edificio Alvarenga, Boulevard Morazán Contiguo Paso Desnivel Las Lomas, Tegucigalpa, Honduras.
+                </address>
+              </div>
+              <div class="col-sm-3 col">
+                <strong>Teléfonos</strong>
+                <br> +(504) 2236-5531 / 2236-5902 / 2236-8719
+                <br>
+                <br>
+                <strong>Correos</strong>
+                <br>
+                <a href="mailto:info@realva.com" target="_top">info@realva.com</a>
+                <br>
+                <br>
+              </div>
+            </div>
+          </div>
+  
+          <h2>Formulario de Contacto </h2>
+          <form [formGroup]="contactForm" (ngSubmit)="post()">
+            <fieldset>
+              <div class="form-group required">
+                <div class="">
+                  <label class="control-label" for="input-name">Tu Nombre:</label>
+                  <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username"
+                    (keypress)="onKeyUp($event)" (keyup)="onKeyUp($event)" min="10" max="32" required>
+                </div>
+              </div>
+              <div class="form-group required">
+                <div class="">
+                  <label class="control-label" for="input-email">Correo Electrónico:</label>
+                  <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email"
+                    required ngModel email>
+                </div>
+              </div>
+              <div class="form-group required">
+                <div class="">
+                  <label class="control-label" for="input-enquiry">Mensaje:</label>
+                  <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.message" name="message"
+                    formControlName="message" min="10" max="3000" required></textarea>
+                </div>
+              </div>
+            </fieldset>
+            <div class="buttonsContacto">
+              <div class="pull-right">
+                <input class="buttonLoco" type="submit" value="Enviar">
+              </div>
+            </div>
+          </form>
+        </div>
+      </ion-item>
   </div>
   <div class="footer-distributed">
-    <div class="footer-left">
+      <div class="footer-left">
 
-      <h3>Distribuidora
-        <span>Realva</span>
-      </h3>
+        <h3>Distribuidora
+          <span>Realva</span>
+        </h3>
 
-      <p class="footer-links">
-        <a href="#">Inicio</a>
-        ·
-        <a href="#">Productos</a>
-        ·
-        <a href="#">Nosotros</a>
-        ·
-        <a href="#">Contacto</a>
-        ·
-        <a href="#">Descargas</a>
-      </p>
-
-      <p class="footer-company-name">Realva &copy; 2018</p>
-    </div>
-
-    <div class="footer-center">
-
-      <div>
-        <i class="fa fa-map-marker"></i>
-        <p>
-          <span>
-            Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>
-      </div>
-
-      <div>
-        <i class="fa fa-phone"></i>
-        <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>
-      </div>
-
-      <div>
-        <i class="fa fa-envelope"></i>
-        <p>
-          <a href="mailto:support@company.com">info@realva.com</a>
+        <p class="footer-links">
+          <a href="#">Inicio</a>
+          ·
+          <a href="#">Productos</a>
+          ·
+          <a href="#">Nosotros</a>
+          ·
+          <a href="#">Contacto</a>
+          ·
+          <a href="#">Descargas</a>
         </p>
+
+        <p class="footer-company-name">Realva &copy; 2018</p>
       </div>
 
-    </div>
+      <div class="footer-center">
 
-    <div class="footer-right">
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p>
+            <span>
+              Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>
+        </div>
 
-      <p class="footer-company-about">
-        <span>Acerca de Nosotros</span>
-        Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación
-        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos
-        agrícolas.
-      </p>
+        <div>
+          <i class="fa fa-phone"></i>
+          <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>
+        </div>
 
-      <div class="footer-icons">
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p>
+            <a href="mailto:support@company.com">info@realva.com</a>
+          </p>
+        </div>
 
-        <a href="https://www.facebook.com/RealvaHonduras/">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="#">
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Acerca de Nosotros</span>
+          Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas
+          manejan la representación
+          de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de
+          productos
+          agrícolas.
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="https://www.facebook.com/RealvaHonduras/">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="#">
             <i class="fa fa-youtube"></i>
           </a>
           <a href="#">
-              <i class="fa fa-instagram"></i>
+            <i class="fa fa-instagram"></i>
           </a>
 
+        </div>
       </div>
     </div>
-  </div>
 </ion-content>
