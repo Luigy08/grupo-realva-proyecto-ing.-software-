@@ -54,6 +54,12 @@ export class ProductPage {
   }
 
   push(p: any) {
+    refpo.orderByChild('codigo').equalTo(p.codigo)
+            .once('value').then(function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                  update.update(childSnapshot.key,{visita:childSnapshot.val().visita +1});
+            });
+        });
     this.navCtrl.push(ShowproductPage, {productoEntrada: p});
   }
 }

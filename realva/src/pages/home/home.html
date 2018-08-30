@@ -22,64 +22,19 @@
     <div class="container">
       <!-- Page Features -->
       <div class="row text-center">
-
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="https://images.engormix.com/s_products/prod_25785.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Bovimec</h4>
-              <p class="card-text">Tratamiento y control de parásitos internos (nematodos gastrointestinales,pulmonares y renales), y externos
-                (larvas causantes de miasis, piojos chupadores y masticadores, ácaros, garrapatas, mosca de los cuernos y
-                gusano de la nariz: Oestrus ovis).</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Encuentrala Aquí!</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="http://www.perrogato.net/img/cms/10072-22%20(2)%20-%20copia.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Cardisure</h4>
-              <p class="card-text">Cardisure es una tableta que contiene el ingrediente activo Pimobendan que se utiliza en el control de enfermedades
-                del corazón en perros. Cardisure es fabricado por Eurovet Animal Health Limited.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Encuentrala Aquí!</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="http://www.anabolicosyesteroideschile.cl/wp-content/uploads/2013/10/p_trembolona.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Tremblona</h4>
-              <p class="card-text">La TREMBOLONA es un fuerte andrógeno que carece de actividad estrogénicaEstructuralmente, la TREMBOLONA es
-                un 19 nor esteroide, derivado de la nandrolona.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Encuentrala Aquí!</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="https://i.pinimg.com/736x/dc/c0/a0/dcc0a032927e9b72c497db9ae3d698cb.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Spry</h4>
-              <p class="card-text">Desarrollado por expertos en salud animal, Spry® está científicamente formulado con niveles clínicos de ingredientes
-                activos para promover la salud respiratoria de su gato.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Encuentrala aquí!</a>
-            </div>
-          </div>
-        </div>
-
+            <div class="col-lg-3 col-md-6 mb-4" *ngFor=" let producto of productos|async">
+                <div class="card">
+                  <img class="card-img-top" src="{{producto.imagen}}" alt="" style="height:200px;">
+                  <div class="card-body">
+                    <h4 class="card-title">{{producto.nombre}}</h4>
+                    <p class="card-text" >{{producto.descripcion}}</p>
+                    <button onclick=""></button>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" (click)="push(producto)" class="btn btn-primary">Encuentrala Aquí!</a>
+                  </div>
+                </div>
+              </div>
       </div>
       <!-- /.row -->
 
