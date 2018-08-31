@@ -1,4 +1,10 @@
 <ion-header>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <script src="scripts/jquery-1.9.0.min.js" type="text/javascript"></script>
+  <script src="scripts/jquery-ui-1.10.0.tabs.min.js" type="text/javascript"></script>
+
+
   <ion-navbar>
     <ion-buttons end>
       <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">Cerrar Sesion</button>
@@ -8,74 +14,196 @@
       <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil </button>
     </ion-buttons>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content>
   <div class="About">
-    <!--Begin main container-->
     <h1>Nosotros</h1>
-    <div class="genBlock">
-      <!--Begin General information block-->
-      <p>
-        <br>Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la
-        representación de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas
-        de productos agrícolas. Se manejan líneas de calidad global reconocida como lo es BAYER (Alemania) y MSD (USA), y
-        líneas de calidad regional reconocida como lo son las marcas INVET (Colombia), LAVET (Guatemala), LABIPHARM (Guatemala),
-        GAMMA LABORATORIES (El Salvador), ERMA (Colombia), VM (Colombia) VET BRANDS (USA) y SANFER (México) entre otros.
-        <br>
-        <br>La empresa tiene una red de distribución a nivel de todo Honduras, con dos sucursales, una en Tegucigalpa y otra
-        en San Pedro Sula, además de distribución por medio de vendedores de ruta alcanzando todo el territorio nacional.
-        Además, de la distribución actual, la empresa está desarrollando proyectos para participar en el mercado regional
-        de América Central con distribuciones exclusivas regionales.
-        <br>
-        <br>La empresa atiende las diversas especies productivas del mercado además de las especies de compañía existentes en
-        la región. Existe una amplia gama de productos de la mayor calidad que sirven para atender la gran mayoría de las
-        necesidades del mercado veterinario y productivo del país.
-      </p>
+    <div class="container">
+      <div class="row myRow">
+        <div class="col-md-auto col-lg-5 col-sm-9">
+          <div class="blocks2">
+            <div id="imgBlock">
+              <img id="thisImg" src="https://cdn.bulbagarden.net/upload/thumb/5/5b/Ilima_Eevee.png/250px-Ilima_Eevee.png">
+            </div>
+          </div>
+          img: 450x230px
+        </div>
+        <!--End Col1-->
+        <div class="col col-lg-7 col-sm-9">
+          <p class="text-justify w-responsive mx-auto mb-5">
+            <br>Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan
+            la representación de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de
+            líneas de productos agrícolas. Se manejan líneas de calidad global reconocida como lo es BAYER (Alemania) y MSD
+            (USA), y líneas de calidad regional reconocida como lo son las marcas INVET (Colombia), LAVET (Guatemala), LABIPHARM
+            (Guatemala), GAMMA LABORATORIES (El Salvador), ERMA (Colombia), VM (Colombia) VET BRANDS (USA) y SANFER (México)
+            entre otros.
+            <br>
+            <br>La empresa tiene una red de distribución a nivel de todo Honduras, con dos sucursales, una en Tegucigalpa y otra
+            en San Pedro Sula, además de distribución por medio de vendedores de ruta alcanzando todo el territorio nacional.
+            Además, de la distribución actual, la empresa está desarrollando proyectos para participar en el mercado regional
+            de América Central con distribuciones exclusivas regionales.
+            <br>
+            <br>La empresa atiende las diversas especies productivas del mercado además de las especies de compañía existentes
+            en la región. Existe una amplia gama de productos de la mayor calidad que sirven para atender la gran mayoría
+            de las necesidades del mercado veterinario y productivo del país.
+          </p>
+        </div>
+        <!--End Col2-->
+      </div>
+      <!--End Row1: img and info-->
+      <div class="row myRow">
+        <div class="col align-self-center">
+          <div class="tab">
+            <button class="tablinks active" (click)="openElement('Mision',1)" id="default">Mision</button>
+            <button class="tablinks" (click)="openElement('Vision',1)" id="vision">Vision</button>
+            <button class="tablinks" (click)="openElement('Valores',1)" id="valores">Valores</button>
+          </div>
+
+          <!-- Tab content -->
+          <div id="Mision" class="tabcontent">
+            <h3>Misión</h3>
+            <p class="text-left w-responsive mx-auto mb-5">
+              Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad
+              para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país,
+              promoviendo y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.
+            </p>
+          </div>
+
+          <div id="Vision" class="tabcontent">
+            <h3>Visión</h3>
+            <p>
+              Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central, siendo reconocidos como una
+              empresa que represente calidad en todos los productos y servicios que brinde, manteniendo una trayectoria de
+              servicio, honestidad, calidad y crecimiento intachable.
+            </p>
+          </div>
+
+          <div id="Valores" class="tabcontent">
+            <h3>Valores</h3>
+            <ul>
+              <li>Honestidad</li>
+              <li>Servicio</li>
+              <li>Responsabilidad</li>
+              <li>Transparencia</li>
+              <li>Calidad</li>
+              <li>Seguridad</li>
+            </ul>
+          </div>
+          <div *ngIf="!getiClicked()">{{openElement('Mision',0)}}</div>
+
+
+        </div>
+        <div class="col">
+          <div class="wrapper row2">
+            <div id="container" class="clear">
+              <div id="about-us" class="clear">
+                <section id="statements" class="clear">
+
+                  <div id="skillset">
+                    <h2>Companies Skillset !</h2>
+                    <ul>
+                      <li class="size_20">
+                        <strong>Text Here</strong>
+                      </li>
+                      <!--<li class="size_25"><strong>Text Here - 25%</strong></li>-->
+                      <li class="size_30">
+                        <strong>Text Here</strong>
+                      </li>
+                      <!--<li class="size_35"><strong>Text Here - 35%</strong></li>-->
+                      <li class="size_40">
+                        <strong>Text Here</strong>
+                      </li>
+                      <!--<li class="size_45"><strong>Text Here - 45%</strong></li>-->
+                      <li class="size_50">
+                        <strong>Text Here</strong>
+                      </li>
+                      <!--<li class="size_55"><strong>Text Here - 55%</strong></li>-->
+                      <li class="size_60">
+                        <strong>Text Here</strong>
+                      </li>
+                      <!--<li class="size_65"><strong>Text Here - 65%</strong></li>-->
+                      <li class="size_70">
+                        <strong>Text Here</strong>
+                      </li>
+                      <!--<li class="size_75"><strong>Text Here - 75%</strong></li>-->
+                      <li class="size_80">
+                        <strong>Text Here</strong>
+                      </li>
+                      <!--<li class="size_85"><strong>Text Here - 85%</strong></li>-->
+                      <li class="size_90">
+                        <strong>Text Here</strong>
+                      </li>
+                      <!--<li class="size_95"><strong>Text Here - 95%</strong></li>-->
+                      <li class="size_100">
+                        <strong>Text Here - 100%</strong>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Col 2-->
+      </div>
+      <!--End Row2-->
+      <br>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img class="employeesImg" src="https://cdn.shopify.com/s/files/1/0257/6087/products/Eevee_Single_Front_4fd9a623-2da7-475f-9435-b6ee0b14a523.png?v=1523938923">
+          img: 280x220px
+          <div class="myRow">
+            <h3>Employee 1 Name</h3>
+            <h4>Occupation</h4>
+          </div>
+          
+          <p>
+            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum
+            est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble
+            des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq
+            siècles,
+
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img class="employeesImg" src="https://cdn.shopify.com/s/files/1/0257/6087/products/Eevee_Single_Front_4fd9a623-2da7-475f-9435-b6ee0b14a523.png?v=1523938923">
+          img: 280x220px
+          <div class="myRow">
+            <h3>Employee 2 Name</h3>
+            <h4>Occupation</h4>
+          </div>
+          <p>
+            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum
+            est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble
+            des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq
+            siècles,
+
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img class="employeesImg" src="https://cdn.shopify.com/s/files/1/0257/6087/products/Eevee_Single_Front_4fd9a623-2da7-475f-9435-b6ee0b14a523.png?v=1523938923">
+          img: 280x220px
+          <div class="myRow">
+            <h3>Employee 3 Name</h3>
+            <h4>Occupation</h4>
+          </div>
+          <p>
+            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum
+            est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble
+            des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq
+            siècles,
+
+          </p>
+        </div>
+      </div>
     </div>
+    <!--End Container-->
     <br>
-    <!--End General information block-->
-    <div class="bigBlock">
-      <!--Begin blocks container-->
 
-      <div class="blocks">
-        <!--Begin block (Mission) container-->
-        <h2>Misión</h2>
-        <p>
-          Brindar al mercado agropecuario y de mascotas de Honduras y América Central productos, servicios y soluciones de alta calidad
-          para el desarrollo adecuado de los animales de compañía, productos pecuarios y agro alimentarios del país, promoviendo
-          y manteniendo siempre la seguridad de la comunidad como el valor primordial de la empresa.
-        </p>
-      </div>
-      <!--End block (Mission) container-->
 
-      <div class="blocks">
-        <!--Begin block (Vision) container-->
-        <h2>Visión</h2>
-        <p>
-          Ser una empresa líder en el mercado agropecuario y de mascotas de Honduras y América Central, siendo reconocidos como una
-          empresa que represente calidad en todos los productos y servicios que brinde, manteniendo una trayectoria de servicio,
-          honestidad, calidad y crecimiento intachable.
-        </p>
-      </div>
-      <!--End block (Vision) container-->
-
-      <div class="blocks">
-        <!--Begin block (Values) container-->
-        <h2>Valores</h2>
-        <ul>
-          <li>Honestidad</li>
-          <li>Servicio</li>
-          <li>Responsabilidad</li>
-          <li>Transparencia</li>
-          <li>Calidad</li>
-          <li>Seguridad</li>
-        </ul>
-      </div>
-      <!--End block (Values) container-->
-
-    </div>
-    <!--End blocks container-->
 
   </div>
   <!--End main container-->
@@ -129,8 +257,7 @@
       <p class="footer-company-about">
         <span>Acerca de Nosotros</span>
         Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación
-        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos
-        agrícolas.
+        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos agrícolas.
       </p>
 
       <div class="footer-icons">
@@ -145,11 +272,11 @@
           <i class="fa fa-linkedin"></i>
         </a>
         <a href="#">
-            <i class="fa fa-youtube"></i>
-          </a>
-          <a href="#">
-              <i class="fa fa-instagram"></i>
-          </a>
+          <i class="fa fa-youtube"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-instagram"></i>
+        </a>
 
       </div>
     </div>
