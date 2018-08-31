@@ -31,10 +31,24 @@ export class ProductPage {
   productoRef: any;
   productos: AngularFireList<any>;
   cotizaciones= new Array();
-
+  public filterList: Array<any>;
+  public loadedfilterList: Array<any>;
+  public filterRef: firebase.database.Reference;
   constructor(public global: GlobalProvider ,public navCtrl: NavController, public LoginRegister: LoginRegisterProvider, public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
     this.productoRef = afDatabase.list('productos');
     this.productos = this.productoRef.valueChanges();
+
+    this.filterRef = afDatabase.database.ref('productos');
+    this.filterRef.on('value', productList => {
+      let productos = [];
+      productList.forEach(usuario => {
+        productos.push(usuario.val());
+        return false;
+      });
+      this.filterList = productos;
+      console.log(this.filterList);
+      this.loadedfilterList = productos;
+    });
 
   }
 
@@ -63,5 +77,55 @@ export class ProductPage {
             });
         });
     this.navCtrl.push(ShowproductPage, {productoEntrada: p});
+  }
+  initializeItems(): void {
+    this.filterRef.on('value', productList => {
+      let productos = [];
+      productList.forEach(usuario => {
+        productos.push(usuario.val());
+        return false;
+      });
+      this.filterList = productos;
+      this.loadedfilterList = productos;
+    });
+    this.filterList = this.loadedfilterList;
+  }
+  getItems(searchbar) {
+    // Reset items back to all of the items
+    this.initializeItems();
+    // set q to the value of the searchbar
+    var q = searchbar.srcElement.value;
+    // if the value is an empty string don't filter the items
+    if (!q) {
+      return;
+    }
+    this.filterList = this.filterList.filter((v) => {
+      if (v.nombre && q) {
+        if (v.nombre.toLowerCase().indexOf(q.toLowerCase()) > -1) {
+          return true;
+        }
+        return false;
+      }
+    });
+  }
+  getItemsCheck(searchbar) {
+    console.log(searchbar);
+    // Reset items back to all of the items
+    this.initializeItems();
+    // set q to the value of the searchbar
+    var temp = document.getElementById("Bovinos");
+    var q = searchbar.target.value;
+    // if the value is an empty string don't filter the items
+    if (!q || !searchbar.target.checked) {
+      return;
+    }
+    this.filterList = this.filterList.filter((v) => {
+      if (v.especie && q) {
+        if (v.especie.toLowerCase().indexOf(q.toLowerCase()) > -1) {
+          return true;
+        }
+        return false;
+      }
+    });
   }
 }
