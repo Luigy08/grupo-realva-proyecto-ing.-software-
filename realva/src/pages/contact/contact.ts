@@ -32,7 +32,7 @@ export class ContactPage {
   }
   post() {
     if (this.contactForm.valid) {
-      if (this.http.post("api/form/d34b479b-974b-53dd-9737-94d59ea03275/form-response", this.Data).subscribe() != null) {
+      if (this.http.post("api/form/f93deaf0-cbd9-55d8-828d-434c341ed019/form-response", this.Data).subscribe() != null) {
         this.contactForm.reset();
         this.presentAlert("Mensaje Enviado", "Su mensaje ha sido enviado con éxito!", "Ok");
       }
