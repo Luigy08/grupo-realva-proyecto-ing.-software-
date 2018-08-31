@@ -54,6 +54,14 @@ export class ProductPage {
   }
 
   push(p: any) {
+    let refpo = this.afDatabase.database.ref('productos');
+    let update = this.afDatabase.list('productos');
+    refpo.orderByChild('codigo').equalTo(p.codigo)
+            .once('value').then(function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                  update.update(childSnapshot.key,{visita:childSnapshot.val().visita +1});
+            });
+        });
     this.navCtrl.push(ShowproductPage, {productoEntrada: p});
   }
 }
