@@ -20,7 +20,7 @@ export class AboutPage {
     
   }
   
-  openCity(cityName, num) {
+  openElement(elementName, num) {
     // Declare all variables
 
     var i, tabcontent, tablinks;
@@ -38,24 +38,24 @@ export class AboutPage {
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(elementName).style.display = "block";
     if(num == 1){
       this.iClicked = true;
       console.log(this.iClicked);
     }
     if(this.iClicked){
-      if(cityName == "London"){
+      if(elementName == "Mision"){
         document.getElementById("default").className = "tablinks active";
       } 
       
-      if(cityName == "Paris"){
+      if(elementName == "Vision"){
         document.getElementById("vision").className = "tablinks active";
       }
-      if(cityName == "Tokyo"){
+      if(elementName == "Valores"){
         document.getElementById("valores").className = "tablinks active";
       }
     } else {
-      if(cityName == "London"){
+      if(elementName == "Mision"){
         document.getElementById("default").className = "tablinks active";
       } 
     }

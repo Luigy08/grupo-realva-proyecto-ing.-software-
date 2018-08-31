@@ -14,9 +14,6 @@ page-about {
     border-style: solid;
     border-color: #5C8BA6;
   }
-  div.genBlock {
-    text-align: justify;
-  }
 
   div.blocks2{
     margin: 5px;
@@ -28,18 +25,29 @@ page-about {
 
   #imgBlock{
     margin:auto;
-    border: 1px;
+    border-top: 1px;
+    border-left: 1px;
     border-style: solid;
-    border-color:black;
-    width: 470px;
-    height: 250px;
+    border-color:#5C8BA6;
+    width: 454.5px;
+    height: 232.3px;
   }
 
   #thisImg{
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
     width: 450px;
     height: 230px;
+  }
+
+  img.employeesImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px;
+    height: 220px;
   }
 
   div.blocks {
@@ -57,192 +65,245 @@ page-about {
   }
 
   /* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color:  #5C8BA6;
+  }
 
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color:  #5C8BA6;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-weight: bold;
+  }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
 
-/* Style the tab content */
-.tabcontent {
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+  /* Style the tab content */
+  .tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  /*Bar Graph CSS*/
+  #about-us #statements #skillset{line-height:normal;}
+  #about-us #statements #skillset ul{margin:0; padding:0; list-style:none;}
+  #about-us #statements #skillset ul li{margin:5px 0 0 0; padding:3px; color:#333333; background-color:#E2E2E2;}
+  #about-us #statements #skillset ul li:first-child{margin-top:0;}
+  #about-us #statements #skillset ul li strong{display:block; padding:5px 8px; color:#FFFFFF; background-color:#333333; font-weight:normal;}
+  #about-us #statements #skillset ul li.size_20 strong{width:16.5%;}
+  #about-us #statements #skillset ul li.size_25 strong{width:21.5%;}
+  #about-us #statements #skillset ul li.size_30 strong{width:26.5%;}
+  #about-us #statements #skillset ul li.size_35 strong{width:31.5%;}
+  #about-us #statements #skillset ul li.size_40 strong{width:36.5%;}
+  #about-us #statements #skillset ul li.size_45 strong{width:41.5%;}
+  #about-us #statements #skillset ul li.size_50 strong{width:46.5%;}
+  #about-us #statements #skillset ul li.size_55 strong{width:51.5%;}
+  #about-us #statements #skillset ul li.size_60 strong{width:56.5%;}
+  #about-us #statements #skillset ul li.size_65 strong{width:61.5%;}
+  #about-us #statements #skillset ul li.size_70 strong{width:66.5%;}
+  #about-us #statements #skillset ul li.size_75 strong{width:71.5%;}
+  #about-us #statements #skillset ul li.size_80 strong{width:76.5%;}
+  #about-us #statements #skillset ul li.size_85 strong{width:81.5%;}
+  #about-us #statements #skillset ul li.size_90 strong{width:86.5%;}
+  #about-us #statements #skillset ul li.size_95 strong{width:91.5%;}
+  #about-us #statements #skillset ul li.size_100 strong{width:96.5%;}
+
+  /* CSS3 Elements Only Work In Latest Browsers */
+
+  #about-us #skillset li, #about-us #statements strong{
+    /* Rounded Corners */
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    -khtml-border-radius:8px;
+    border-radius:8px;
+    }
+
+  #about-us #team{margin-bottom:0;}
+  #about-us #team h2{margin-bottom:40px;}
+  #about-us #team ul{margin:0; padding:0; list-style:none;}
+  #about-us #team ul li{}
+  #about-us #team ul li figure{}
+  #about-us #team ul li figure img{padding:9px; border:1px solid #CCCCCC;}
+  #about-us #team ul li figure figcaption{}
+  #about-us #team ul li figure figcaption p{margin:15px 0 0 0; padding:0;}
+  #about-us #team ul li figure figcaption .team_name{font-weight:bold;}
+  #about-us #team ul li figure figcaption .team_title{margin:0; font-size:11px; line-height:normal;}
+  #about-us #team ul li figure figcaption .team_description{padding-top:15px; line-height:1.4em; border-top:1px solid #CCCCCC;}
+  #about-us #team ul li figure figcaption ul{margin-top:15px;}
+  #about-us #team ul li figure figcaption ul li{display:inline; margin:0 0 0 6px;}
+  #about-us #team ul li figure figcaption ul li:first-child{margin-left:0;}
+  #about-us #team ul li figure figcaption ul li a{}
+  #about-us #team ul li figure figcaption ul li a img{padding:0; border:none;}
 
   /*Aqui empieza footer*/
-.footer-distributed{
-  background-color: #292c2f;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  width: 100%;
-  text-align: left;
-  font: bold 16px sans-serif;
+  .footer-distributed{
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
 
-  padding: 55px 50px;
-  margin-top: 80px;
-}
+    padding: 55px 50px;
+    margin-top: 80px;
+  }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
-  display: inline-block;
-  vertical-align: top;
-}
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+  }
 
-/* Footer left */
+  /* Footer left */
 
-.footer-distributed .footer-left{
-  width: 40%;
-}
+  .footer-distributed .footer-left{
+    width: 40%;
+  }
 
-/* The company logo */
+  /* The company logo */
 
-.footer-distributed h3{
-  color:  #ffffff;
-  font: normal 36px 'Cookie', cursive;
-  margin: 0;
-}
+  .footer-distributed h3{
+    color:  #ffffff;
+    font: normal 36px 'Cookie', cursive;
+    margin: 0;
+  }
 
-.footer-distributed h3 span{
-  color:  #5383d3;
-}
+  .footer-distributed h3 span{
+    color:  #5383d3;
+  }
 
-/* Footer links */
+  /* Footer links */
 
-.footer-distributed .footer-links{
-  color:  #ffffff;
-  margin: 20px 0 12px;
-  padding: 0;
-}
+  .footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
 
-.footer-distributed .footer-links a{
-  display:inline-block;
-  line-height: 1.8;
-  text-decoration: none;
-  color:  inherit;
-}
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color:  inherit;
+  }
 
-.footer-distributed .footer-company-name{
-  color:  #8f9296;
-  font-size: 14px;
-  font-weight: normal;
-  margin: 0;
-}
+  .footer-distributed .footer-company-name{
+    color:  #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
 
-/* Footer Center */
+  /* Footer Center */
 
-.footer-distributed .footer-center{
-  width: 35%;
-}
+  .footer-distributed .footer-center{
+    width: 35%;
+  }
 
-.footer-distributed .footer-center i{
-  background-color:  #33383b;
-  color: #ffffff;
-  font-size: 25px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 42px;
-  margin: 10px 15px;
-  vertical-align: middle;
-}
+  .footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
 
-.footer-distributed .footer-center i.fa-envelope{
-  font-size: 17px;
-  line-height: 38px;
-}
+  .footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
 
-.footer-distributed .footer-center p{
-  display: inline-block;
-  color: #ffffff;
-  vertical-align: middle;
-  margin:0;
-}
+  .footer-distributed .footer-center p{
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin:0;
+  }
 
-.footer-distributed .footer-center p span{
-  display:block;
-  font-weight: normal;
-  font-size:14px;
-  line-height:2;
-}
+  .footer-distributed .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
 
-.footer-distributed .footer-center p a{
-  color:  #5383d3;
-  text-decoration: none;;
-}
+  .footer-distributed .footer-center p a{
+    color:  #5383d3;
+    text-decoration: none;;
+  }
 
 
-/* Footer Right */
+  /* Footer Right */
 
-.footer-distributed .footer-right{
-  width: 20%;
-}
+  .footer-distributed .footer-right{
+    width: 20%;
+  }
 
-.footer-distributed .footer-company-about{
-  line-height: 20px;
-  color:  #92999f;
-  font-size: 13px;
-  font-weight: normal;
-  margin: 0;
-}
+  .footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
 
-.footer-distributed .footer-company-about span{
-  display: block;
-  color:  #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+  .footer-distributed .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
 
-.footer-distributed .footer-icons{
-  margin-top: 25px;
-}
+  .footer-distributed .footer-icons{
+    margin-top: 25px;
+  }
 
-.footer-distributed .footer-icons a{
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  background-color:  #33383b;
-  border-radius: 2px;
+  .footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color:  #33383b;
+    border-radius: 2px;
 
-  font-size: 20px;
-  color: #ffffff;
-  text-align: center;
-  line-height: 35px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
 
-  margin-right: 3px;
-  margin-bottom: 5px;
-}
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
 
   /* If you don't want the footer to be responsive, remove these media queries */
   
