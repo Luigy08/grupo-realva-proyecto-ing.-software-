@@ -81,6 +81,7 @@ export class ProductPage {
       });
     this.navCtrl.push(ShowproductPage, { productoEntrada: p });
   }
+
   initializeItems(): void {
     this.filterRef.on('value', productList => {
       let productos = [];
@@ -94,6 +95,7 @@ export class ProductPage {
     this.filterList = this.loadedfilterList;
     this.mostrarList = [];
   }
+
   getItems(searchbar) {
     // Reset items back to all of the items
     this.initializeItems();
@@ -112,6 +114,7 @@ export class ProductPage {
       }
     });
   }
+
   getItemsCheck(searchbar) {
     var q = searchbar.target.value;
     // Reset items back to all of the items
@@ -134,6 +137,7 @@ export class ProductPage {
         if (v.especie && this.filt.length > 0) {
           if (v.especie.toLowerCase() == iterator.toLowerCase()) {
             this.mostrarList.push(v);
+            console.log(this.mostrarList);
             return true;
           }
           return false;
