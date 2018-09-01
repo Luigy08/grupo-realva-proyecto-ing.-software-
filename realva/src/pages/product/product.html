@@ -25,51 +25,54 @@
                           </a>
                         </li>
 
-                        <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                          <a href="#"><i class="fa fa-gift fa-lg"></i> Especies <span class="arrow"></span></a>
+                        <li  data-toggle="collapse" data-target="#especies" class="collapsed active">
+                          <a href="#"><i class="fa fa-paw fa-lg"></i> Especies <span class="arrow"></span></a>
                         </li>
-                        <ul class="sub-menu collapse" id="products">
-                            <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
-                            <label><input id="Bovinos" type="checkbox" value="BOVINOS" (change)="getItemsCheck($event)">Bovinos</label>
+                        <ul class="sub-menu collapse" id="especies">
                             <label><input id="Caninos" type="checkbox" value="CANINOS" (change)="getItemsCheck($event)">Caninos</label>
-                            BOVINOS
-                            EQUINOS
-                            OVINOS
-                            CAPRINOS
-                            FELINOS
-                            ZORROS
-                            HURONES
-                            TODAS ESPECIES
-                            PORCINOS
-                            CONEJOS
-                            AVES DE ENGORDE
-                            AVES DE POSTURA
-                            AVES DE TRASPATIO
-                            PAVOS
-                            GALLOS DE PELEA
-                            AVES
-                            <li><a href="#">Ovinos</a></li>
-                            <li><a href="#">Bovinos</a></li>
+                            <label><input id="Bovinos" type="checkbox" value="BOVINOS" (change)="getItemsCheck($event)">Bovinos</label>
+                            <label><input id="Equinos" type="checkbox" value="EQUINOS" (change)="getItemsCheck($event)">Equinos</label>
+                            <label><input id="Ovinos" type="checkbox" value="OVINOS" (change)="getItemsCheck($event)">Ovinos</label>
+                            <label><input id="Caprinos" type="checkbox" value="CAPRINOS" (change)="getItemsCheck($event)">Caprinos</label>
+                            <label><input id="Felinos" type="checkbox" value="FELINOS" (change)="getItemsCheck($event)">Felinos</label>
+                            <label><input id="Zorros" type="checkbox" value="ZORROS" (change)="getItemsCheck($event)">Zorros</label>
+                            <label><input id="Hurones" type="checkbox" value="HURONES" (change)="getItemsCheck($event)">Hurones</label>
+                            <label><input id="Todas Especies" type="checkbox" value="TODAS ESPECIES" (change)="getItemsCheck($event)">Todas Especies</label>
+                            <label><input id="Porcinos" type="checkbox" value="PORCINOS" (change)="getItemsCheck($event)">Porcinos</label>
+                            <label><input id="Conejos" type="checkbox" value="CONEJOS" (change)="getItemsCheck($event)">Conejos</label>
+                            <label><input id="Aves de Engorde" type="checkbox" value="AVES DE ENGORDE" (change)="getItemsCheck($event)">Aves de Engorde</label>
+                            <label><input id="Aves de Postura" type="checkbox" value="AVES DE POSTURA" (change)="getItemsCheck($event)">Aves de Postura</label>
+                            <label><input id="Aves de Traspatio" type="checkbox" value="AVES DE TRASPATIO" (change)="getItemsCheck($event)">Aves de Traspatio</label>
+                            <label><input id="Pavos" type="checkbox" value="PAVOS" (change)="getItemsCheck($event)">Pavos</label>
+                            <label><input id="Gallos de Pelea" type="checkbox" value="Gallos de Pelea" (change)="getItemsCheck($event)">Gallos de Pelea</label>
+                            <label><input id="Aves" type="checkbox" value="AVES" (change)="getItemsCheck($event)">Aves</label>
+                           
                         </ul>
 
 
-                        <li data-toggle="collapse" data-target="#service" class="collapsed">
+                        <li data-toggle="collapse" data-target="#unidadTecnica" class="collapsed">
                           <a href="#"><i class="fa fa-globe fa-lg"></i> Unidad Técnica <span class="arrow"></span></a>
                         </li>
-                        <ul class="sub-menu collapse" id="service">
-                          <li>Animales de Producción</li>
-                          <li>Animales de Compañía</li>
+                        <ul class="sub-menu collapse" id="unidadTecnica">
+                          <label><input id="Animales de Produccion" type="checkbox" value="ANIMALES DE PRODUCCIÓN" (change)="getItemsCheck($event)">Animales de Producción</label>
+                          <label><input id="Animales de Compañia" type="checkbox" value="ANIMALES DE COMPAÑÍA" (change)="getItemsCheck($event)">Animales de Compañía</label>
                           
                         </ul>
 
 
-                        <li data-toggle="collapse" data-target="#new" class="collapsed">
-                          <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
+                        <li data-toggle="collapse" data-target="#laboratorio" class="collapsed">
+                          <a href="#"><i class="fa fa-flask fa-lg"></i> Laboratorio <span class="arrow"></span></a>
                         </li>
-                        <ul class="sub-menu collapse" id="new">
-                          <li>New New 1</li>
-                          <li>New New 2</li>
-                          <li>New New 3</li>
+                        <ul class="sub-menu collapse" id="laboratorio">
+                          
+                          <label><input id="LAVET" type="checkbox" value="LAVET" (change)="getItemsCheck($event)">LAVET</label>
+                          <label><input id="LABIPHARM" type="checkbox" value="LABIPHARM" (change)="getItemsCheck($event)">LABIPHARM</label>
+                          <label><input id="INVET" type="checkbox" value="INVET" (change)="getItemsCheck($event)">INVET</label>
+                          <label><input id="LABORATORIOS VM" type="checkbox" value="LABORATORIOS VM" (change)="getItemsCheck($event)">LABORATORIOS VM</label>
+                          <label><input id="SCHIPPERS - VET BRANDS" type="checkbox" value="SCHIPPERS - VET BRANDS" (change)="getItemsCheck($event)">SCHIPPERS - VET BRANDS</label>
+                          <label><input id="ERMA" type="checkbox" value="ERMA" (change)="getItemsCheck($event)">ERMA</label>
+                          <label><input id="GAMMA" type="checkbox" value="GAMMA" (change)="getItemsCheck($event)">GAMMA</label>
+                          <label><input id="MSD - ANIMAL HEALTH" type="checkbox" value="MSD - ANIMAL HEALTH" (change)="getItemsCheck($event)">MSD - ANIMAL HEALTH</label>
                         </ul>
 
 
