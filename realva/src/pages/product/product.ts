@@ -45,11 +45,10 @@ export class ProductPage {
         return false;
       });
       this.filterList = productos;
-      console.log(this.filterList);
       this.loadedfilterList = productos;
       this.mostrarList = [];
     });
-
+    console.log(this.filterList);
   }
 
   cotizando(c) {
@@ -90,6 +89,41 @@ export class ProductPage {
     });
     this.filterList = this.loadedfilterList;
     this.mostrarList = [];
+  }
+
+  highlightMe(information){
+    
+    if(information == 1){
+      if(document.getElementById("test").className.indexOf("collapsed") != -1){
+        document.getElementById("test").className = "active";
+        //document.getElementById("ut").className = "";
+        //document.getElementById("lab").className = "";
+      } else {
+        document.getElementById("test").className = "";
+      }  
+      
+    }
+    
+
+    if(information == 2){
+      if(document.getElementById("ut").className.indexOf("collapsed") != -1){
+        //document.getElementById("test").className = "";
+        document.getElementById("ut").className = "active";
+        //document.getElementById("lab").className = "";
+      } else {
+        document.getElementById("ut").className = "";
+      }
+    }
+
+    if(information == 3){
+      if(document.getElementById("lab").className.indexOf("collapsed") != -1){
+        //document.getElementById("test").className = "";
+        //document.getElementById("ut").className = "";
+        document.getElementById("lab").className = "active";
+      } else {
+        document.getElementById("lab").className = "";
+      }
+    }
   }
   getItems(searchbar) {
     // Reset items back to all of the items
