@@ -12,6 +12,66 @@
     <div class="row mt-3">
         <div class="col col-lg-3 col-md-3 col-sm-12 col-12 mt-2">
           <h1>Categorias</h1>
+          <div class="nav-side-menu">
+            <div class="brand">Realva</div>
+            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+                <div class="menu-list">
+
+                    <ul id="menu-content" class="menu-content collapse out">
+
+                        <li  data-toggle="collapse" data-target="#especies" id="test" class="collapsed" (click)="highlightMe(1)">
+                          <a href="#"><i class="fa fa-paw fa-lg"></i> Especies <span class="arrow"></span></a>
+                        </li>
+                        <ul class="sub-menu collapse" id="especies">
+                            <li><label class="myLabel"><input id="Caninos" type="checkbox" value="CANINOS" (change)="getItemsCheck($event)">Caninos</label></li>
+                            <li><label class="myLabel"><input id="Bovinos" type="checkbox" value="BOVINOS" (change)="getItemsCheck($event)">Bovinos</label></li>
+                            <li><label class="myLabel"><input id="Equinos" type="checkbox" value="EQUINOS" (change)="getItemsCheck($event)">Equinos</label></li>
+                            <li><label class="myLabel"><input id="Ovinos" type="checkbox" value="OVINOS" (change)="getItemsCheck($event)">Ovinos</label></li>
+                            <li><label class="myLabel"><input id="Caprinos" type="checkbox" value="CAPRINOS" (change)="getItemsCheck($event)">Caprinos</label></li>
+                            <li><label class="myLabel"><input id="Felinos" type="checkbox" value="FELINOS" (change)="getItemsCheck($event)">Felinos</label></li>
+                            <li><label class="myLabel"><input id="Zorros" type="checkbox" value="ZORROS" (change)="getItemsCheck($event)">Zorros</label></li>
+                            <li><label class="myLabel"><input id="Hurones" type="checkbox" value="HURONES" (change)="getItemsCheck($event)">Hurones</label></li>
+                            <li><label class="myLabel"><input id="Todas Especies" type="checkbox" value="TODAS ESPECIES" (change)="getItemsCheck($event)">Todas Especies</label></li>
+                            <li><label class="myLabel"><input id="Porcinos" type="checkbox" value="PORCINOS" (change)="getItemsCheck($event)">Porcinos</label></li>
+                            <li><label class="myLabel"><input id="Conejos" type="checkbox" value="CONEJOS" (change)="getItemsCheck($event)">Conejos</label></li>
+                            <li><label class="myLabel"><input id="Aves de Engorde" type="checkbox" value="AVES DE ENGORDE" (change)="getItemsCheck($event)">Aves de Engorde</label></li>
+                            <li><label class="myLabel"><input id="Aves de Postura" type="checkbox" value="AVES DE POSTURA" (change)="getItemsCheck($event)">Aves de Postura</label></li>
+                            <li><label class="myLabel"><input id="Aves de Traspatio" type="checkbox" value="AVES DE TRASPATIO" (change)="getItemsCheck($event)">Aves de Traspatio</label></li>
+                            <li><label class="myLabel"><input id="Pavos" type="checkbox" value="PAVOS" (change)="getItemsCheck($event)">Pavos</label></li>
+                            <li><label class="myLabel"><input id="Gallos de Pelea" type="checkbox" value="Gallos de Pelea" (change)="getItemsCheck($event)">Gallos de Pelea</label></li>
+                            <li><label class="myLabel"><input id="Aves" type="checkbox" value="AVES" (change)="getItemsCheck($event)">Aves</label></li>
+                           
+                        </ul>
+
+
+                        <li data-toggle="collapse" data-target="#unidadTecnica" id="ut" class="collapsed" (click)="highlightMe(2)">
+                          <a href="#"><i class="fa fa-globe fa-lg"></i> Unidad Técnica <span class="arrow"></span></a>
+                        </li>
+                        <ul class="sub-menu collapse" id="unidadTecnica">
+                          <label class="myLabel"><input id="Animales de Produccion" type="checkbox" value="ANIMALES DE PRODUCCIÓN" (change)="getItemsCheck($event)">Animales de Producción</label>
+                          <label class="myLabel"><input id="Animales de Compañia" type="checkbox" value="ANIMALES DE COMPAÑÍA" (change)="getItemsCheck($event)">Animales de Compañía</label>
+                          
+                        </ul>
+
+
+                        <li data-toggle="collapse" data-target="#laboratorio" id="lab" class="collapsed" (click)="highlightMe(3)">
+                          <a href="#"><i class="fa fa-flask fa-lg"></i> Laboratorio <span class="arrow"></span></a>
+                        </li>
+                        <ul class="sub-menu collapse" id="laboratorio">
+                          
+                          <li><label class="myLabel"><input id="LAVET" type="checkbox" value="LAVET" (change)="getItemsCheck($event)">LAVET</label></li>
+                            <li><label class="myLabel"><input id="LABIPHARM" type="checkbox" value="LABIPHARM" (change)="getItemsCheck($event)">LABIPHARM</label></li>
+                              <li><label class="myLabel"><input id="INVET" type="checkbox" value="INVET" (change)="getItemsCheck($event)">INVET</label></li>
+                                <li><label class="myLabel"><input id="LABORATORIOS VM" type="checkbox" value="LABORATORIOS VM" (change)="getItemsCheck($event)">LABORATORIOS VM</label></li>
+                                  <li><label class="myLabel"><input id="SCHIPPERS - VET BRANDS" type="checkbox" value="SCHIPPERS - VET BRANDS" (change)="getItemsCheck($event)">SCHIPPERS - VET BRANDS</label></li>
+                                    <li><label class="myLabel"><input id="ERMA" type="checkbox" value="ERMA" (change)="getItemsCheck($event)">ERMA</label></li>
+                                      <li><label class="myLabel"><input id="GAMMA" type="checkbox" value="GAMMA" (change)="getItemsCheck($event)">GAMMA</label></li>
+                                        <li><label class="myLabel"><input id="MSD - ANIMAL HEALTH" type="checkbox" value="MSD - ANIMAL HEALTH" (change)="getItemsCheck($event)">MSD - ANIMAL HEALTH</label></li>
+                        </ul>
+                    </ul>
+             </div>
+        </div>
         </div>
         <div class="col col-lg-9 col-md-9 col-sm-12 col-12 mt-2">
             <h1>Productos</h1>
@@ -24,7 +84,7 @@
                 </div>
             </div>
             <div id="products" class="row grid-group">
-                <div class="item  col-xs-4 col-lg-4" *ngFor='let producto of productos | async '>
+                <div class="item  col-xs-4 col-lg-4" *ngFor='let producto of filterList '>
                     <div class="thumbnail">
                         <img class="group grid-group-image" src={{producto.imagen}} alt="">
                         <div class="caption">
@@ -33,12 +93,11 @@
                             </h4>
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
+                                    <p class="lead" *ngIf="LoginRegister.userLogged != null">
                                         Precio: L. {{producto.precio}}</p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <a class="btn btn-success" (click)="push(producto)">Mirar</a>
-                                    <a class="btn btn-success" (click)="cotizando(producto)">Cotizar</a>
                                 </div>
                             </div>
                         </div>
