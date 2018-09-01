@@ -9,14 +9,9 @@ import {ShowproductPage} from "../showproduct/showproduct";
 
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {CotizarPage} from "../cotizar/cotizar";
-
 
 import {GlobalProvider} from '../../providers/global/global';
 
-import { HttpModule } from '@angular/http';
-import{ HttpClientModule } from '@angular/common/http';
-import { Http } from '@angular/http';
 
 @Component({
   selector: 'page-product',
