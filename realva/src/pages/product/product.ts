@@ -37,9 +37,6 @@ export class ProductPage {
   mostrarList = [];
   filt = [];
   constructor(public global: GlobalProvider, public navCtrl: NavController, public LoginRegister: LoginRegisterProvider, public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
-    this.productoRef = afDatabase.list('productos');
-    this.productos = this.productoRef.valueChanges();
-
     this.filterRef = afDatabase.database.ref('productos');
     this.filterRef.on('value', productList => {
       let productos = [];
@@ -132,8 +129,10 @@ export class ProductPage {
     for (const iterator of this.filt) {
       this.filterList.filter((v) => {
         if (v.especie && this.filt.length > 0) {
-          if (v.especie.toLowerCase() == iterator.toLowerCase()) {
-            this.mostrarList.push(v);
+          if (v.especie.indexOf(iterator.toUpperCase())> -1) {
+            if(this.mostrarList.indexOf(v) == -1){
+              this.mostrarList.push(v);
+            }
             return true;
           }
           return false;
