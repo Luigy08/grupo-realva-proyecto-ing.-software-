@@ -13,53 +13,41 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="bodyShowProduct">
-    <div class="bodyShowProductTop">
-      <div class="bodyShowProductTopLeft">
-        <img src={{producto.imagen}} alt="">
-      </div>
-      <div class="bodyShowProductTopRight">
-        <div margin-left="2%">
-          <h2 margin-top="2px">{{producto.nombre}} </h2>
-          <div class="bodyShowProductTopRightInto">
-            <div class="bodyShowProductTopRightInfo">
-              <p>
-                <b>Precio:</b> L. {{producto.precio}}
-              </p>
-              <button class="btn btn-primary">Cotizar</button>
-              <p>
-                <b>Descripcion: </b>{{producto.descripcion}}
-              </p>
-              <p margin-top="2px">
-                <b>Indicaciones: </b>{{producto.indicaciones}}
-              </p>
-              <p>
-                <b>Contra indicaciones: </b>{{producto.contraindicaciones}}
-              </p>
-            </div>
-            <div class="bodyShowProductTopRightInfoCotizar">
 
-
+<!-- Section: Blog v.1 -->
+<div class="container">
+    <section class="my-5">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+              <img class="img-fluid" src="{{producto.imagen}}" alt="Sample image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
             </div>
           </div>
-
+          <div class="col-lg-7">
+            <h3 class="font-weight-bold mb-3"><strong>{{producto.nombre}}</strong></h3>
+            <p *ngIf="LoginRegister.userLogged != null"><b>Precio:</b> L. {{producto.precio}}</p>
+            <p><b>Descripcion: </b>{{producto.descripcion}}</p>
+            <p margin-top="2px">
+                <b>Indicaciones: </b>{{producto.indicacion}}
+              </p>
+              <p>
+                  <b>Contra indicaciones: </b>{{producto.contraindicacion}}
+                </p>
+                <p>
+                    <b>Especies: </b>{{producto.especie}}</p>
+                  <p>
+                    <b>Tipo de uso: </b>{{producto.tipoUso}}</p>
+                  <p>
+                    <b>Dosis: </b>{{producto.dosis}}</p>
+            <a class="btn btn-success" (click)="cotizando(producto)">Cotizar</a>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="bodyShowProductBot">
-      <div margin-left="5%" margin-top="2%">
-        <p>
-          <b>Especies: </b>{{producto.especie}}</p>
-        <p>
-          <b>Tipo de uso: </b>{{producto.tipoUso}}</p>
-        <p>
-          <b>Dosis: </b>{{producto.dosis}}</p>
-        <div class="btn-group">
-            <button (click)="cotizando(producto)" type="button" class="btn btn-sm btn-outline-secondary">Cotizar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+        <hr class="my-5">
+      </section>
+</div>
   <div class="footer-distributed">
     <div class="footer-left">
 

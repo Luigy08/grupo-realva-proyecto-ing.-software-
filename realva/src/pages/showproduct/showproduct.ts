@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {CotizarPage} from "../cotizar/cotizar";
 import {GlobalProvider} from '../../providers/global/global';
-import { HttpModule } from '@angular/http';
-import{ HttpClientModule } from '@angular/common/http';
-import { Http } from '@angular/http';
+import {LoginRegisterProvider} from "../../providers/login-register/login-register";
+
 /**
  * Generated class for the ShowproductPage page.
  *
@@ -20,7 +18,7 @@ import { Http } from '@angular/http';
 export class ShowproductPage {
   producto: any;
   cantidad: any;
-  constructor(public global: GlobalProvider ,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public LoginRegister: LoginRegisterProvider, public global: GlobalProvider ,public navCtrl: NavController, public navParams: NavParams) {
     this.producto= navParams.get('productoEntrada');
     console.log(this.producto.price);
   }
