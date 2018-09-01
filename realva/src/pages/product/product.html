@@ -83,6 +83,7 @@
                         class="glyphicon glyphicon-th"></span>Cuadros</a>
                 </div>
             </div>
+            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
             <div id="products" class="row grid-group">
                 <div class="item  col-xs-4 col-lg-4" *ngFor='let producto of filterList '>
                     <div class="thumbnail">
