@@ -28,13 +28,13 @@
           </div>
           <div class="col-lg-7">
             <h3 class="font-weight-bold mb-3"><strong>{{producto.nombre}}</strong></h3>
-            <p><b>Precio:</b> L. {{producto.precio}}</p>
+            <p *ngIf="LoginRegister.userLogged != null"><b>Precio:</b> L. {{producto.precio}}</p>
             <p><b>Descripcion: </b>{{producto.descripcion}}</p>
             <p margin-top="2px">
-                <b>Indicaciones: </b>{{producto.indicaciones}}
+                <b>Indicaciones: </b>{{producto.indicacion}}
               </p>
               <p>
-                  <b>Contra indicaciones: </b>{{producto.contraindicaciones}}
+                  <b>Contra indicaciones: </b>{{producto.contraindicacion}}
                 </p>
                 <p>
                     <b>Especies: </b>{{producto.especie}}</p>
@@ -42,12 +42,10 @@
                     <b>Tipo de uso: </b>{{producto.tipoUso}}</p>
                   <p>
                     <b>Dosis: </b>{{producto.dosis}}</p>
-            <p>by <a><strong>Carine Fox</strong></a>, 19/08/2018</p>
-            <button class="btn btn-primary">Cotizar</button>
+            <a class="btn btn-success" (click)="cotizando(producto)">Cotizar</a>
           </div>
         </div>
         <hr class="my-5">
-
       </section>
 </div>
   <div class="footer-distributed">
