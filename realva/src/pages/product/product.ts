@@ -53,16 +53,37 @@ export class ProductPage {
   }
 
   highlightMe(information){
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+    
+    if(information == 1){
+      if(document.getElementById("test").className.indexOf("collapsed") != -1){
+        document.getElementById("test").className = "active";
+        //document.getElementById("ut").className = "";
+        //document.getElementById("lab").className = "";
+      } else {
+        document.getElementById("test").className = "";
+      }  
+      
+    }
+    
+
+    if(information == 2){
+      if(document.getElementById("ut").className.indexOf("collapsed") != -1){
+        //document.getElementById("test").className = "";
+        document.getElementById("ut").className = "active";
+        //document.getElementById("lab").className = "";
+      } else {
+        document.getElementById("ut").className = "";
+      }
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    if(information == 3){
+      if(document.getElementById("lab").className.indexOf("collapsed") != -1){
+        //document.getElementById("test").className = "";
+        //document.getElementById("ut").className = "";
+        document.getElementById("lab").className = "active";
+      } else {
+        document.getElementById("lab").className = "";
+      }
     }
   }
 }
