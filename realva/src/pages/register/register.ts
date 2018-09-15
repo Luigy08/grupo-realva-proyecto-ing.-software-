@@ -62,7 +62,7 @@ export class RegisterPage {
       direction: new FormControl(),
       telephone: new FormControl('', [Validators.required, Validators.minLength(15),Validators.maxLength(15)]),
       telephone2: new FormControl('', [Validators.required, Validators.minLength(15),Validators.maxLength(15)]),
-      RTN: new FormControl('', [Validators.required, Validators.minLength(16)]),
+      RTN: new FormControl('', [Validators.required, Validators.minLength(16),Validators.maxLength(16)]),
       password: new FormControl('', [Validators.required, Validators.nullValidator]),
       Repassword: new FormControl('', [Validators.required, Validators.nullValidator]),
     });
