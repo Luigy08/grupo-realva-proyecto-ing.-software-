@@ -6,13 +6,9 @@
 
 
   <ion-navbar>
-    <ion-buttons end>
-      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">Cerrar Sesion</button>
-      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion</button>
-      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse </button>
-      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion </button>
-      <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil </button>
-    </ion-buttons>
+    <ion-navbar hide-nav-bar="false">
+      <app-header></app-header>
+    </ion-navbar>
   </ion-navbar>
 
 </ion-header>
