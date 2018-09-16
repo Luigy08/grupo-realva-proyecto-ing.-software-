@@ -23,7 +23,7 @@
           <div class="col-sm-6" *ngFor="let descarga of filterList ">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title"> {{descarga.nombre}} </h5>
+                <p> {{descarga.nombre}} </p>
                 <p class="card-text">Aqui encontrara los productos que actualmente tenemos disponibles.</p>
                 <a download href="{{descarga.imagen}}" class="btn btn-primary">Descargar</a>
               </div>
