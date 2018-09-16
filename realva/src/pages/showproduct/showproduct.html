@@ -14,40 +14,48 @@
 
 <ion-content padding>
 
-<!-- Section: Blog v.1 -->
-<div class="container">
+  <!-- Section: Blog v.1 -->
+  <div class="container">
     <section class="my-5">
-        <div class="row">
-          <div class="col-lg-5">
-            <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
-              <img class="img-fluid" src="{{producto.imagen}}" alt="Sample image">
-              <a>
-                <div class="mask rgba-white-slight"></div>
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+            <img class="img-fluid" src="{{producto.imagen}}" alt="Sample image">
+            <div class="mask rgba-white-slight"></div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <h2 class="font-weight-bold mb-3 text-center"><strong>{{producto.nombre}}</strong></h2>
+          <p><b>Precio:</b> L. {{presentacion.precio}}</p>
+          <div class="row">
+            <div class="col col-2">
+              <p><b>Dosis: </b></p>
+            </div>
+            <div *ngFor="let dosis of producto.presentacion" class="col col-2">
+              <a class="text-primary" (click)="dosisPrecio(dosis)">
+                <p> {{dosis.dosis}} </p>
               </a>
             </div>
           </div>
-          <div class="col-lg-7">
-            <h3 class="font-weight-bold mb-3"><strong>{{producto.nombre}}</strong></h3>
-            <p *ngIf="LoginRegister.userLogged != null"><b>Precio:</b> L. {{producto.precio}}</p>
-            <p><b>Descripcion: </b>{{producto.descripcion}}</p>
-            <p margin-top="2px">
-                <b>Indicaciones: </b>{{producto.indicacion}}
-              </p>
-              <p>
-                  <b>Contra indicaciones: </b>{{producto.contraindicacion}}
-                </p>
-                <p>
-                    <b>Especies: </b>{{producto.especie}}</p>
-                  <p>
-                    <b>Tipo de uso: </b>{{producto.tipoUso}}</p>
-                  <p>
-                    <b>Dosis: </b>{{producto.dosis}}</p>
-            <a class="btn btn-success" (click)="cotizando(producto)">Cotizar</a>
-          </div>
+          <p><b>Descripcion: </b>{{producto.descripcion}}</p>
+          <p margin-top="2px">
+            <b>Indicaciones: </b>{{producto.indicacion}}
+          </p>
+          <p>
+            <b>Contra indicaciones: </b>{{producto.contraindicacion}}
+          </p>
+          <p>
+            <b>Especies: </b>{{producto.especie}}</p>
+          <p>
+            <b>Tipo de uso: </b>{{producto.tipoUso}}</p>
+
+
+          <a class="btn btn-success" (click)="cotizando(producto)">Cotizar</a>
         </div>
-        <hr class="my-5">
-      </section>
-</div>
+      </div>
+      <hr class="my-5">
+    </section>
+  </div>
   <div class="footer-distributed">
     <div class="footer-left">
 
@@ -97,8 +105,10 @@
 
       <p class="footer-company-about">
         <span>Acerca de Nosotros</span>
-        Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación
-        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos agrícolas.
+        Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan
+        la representación
+        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos
+        agrícolas.
       </p>
 
       <div class="footer-icons">

@@ -18,23 +18,29 @@ import {LoginRegisterProvider} from "../../providers/login-register/login-regist
 export class ShowproductPage {
   producto: any;
   cantidad: any;
-  constructor(public LoginRegister: LoginRegisterProvider, public global: GlobalProvider ,public navCtrl: NavController, public navParams: NavParams) {
+  presentacion: any;
+  constructor(public LoginRegister: LoginRegisterProvider, public global: GlobalProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.producto= navParams.get('productoEntrada');
     console.log(this.producto.price);
+    this.presentacion= this.producto.presentacion[0];
   }
-
+  dosisPrecio(dosis) {
+    this.presentacion = dosis;
+  }
   cotizando(c) {
+    const a = {...c, ...this.presentacion }
     if (this.global.cotizaciones.length == 0) {
-      this.global.cotizaciones.push(c);
+      this.global.cotizaciones.push(a);
     } else {
-      for (var i = 0; i < this.global.cotizaciones.length; i++) {
-        if (this.global.cotizaciones[i] == c) {
+      for (let i = 0; i < this.global.cotizaciones.length; i++) {
+        if (this.global.cotizaciones[i].precio == a.precio) {
           break;
         }
-        if (i == this.global.cotizaciones.length - 1 && this.global.cotizaciones != c) {
-          this.global.cotizaciones.push(c);
+        if (i === this.global.cotizaciones.length - 1 && this.global.cotizaciones[i].precio !== a.precio) {
+          this.global.cotizaciones.push(a);
         }
       }
     }
   }
+
 }
