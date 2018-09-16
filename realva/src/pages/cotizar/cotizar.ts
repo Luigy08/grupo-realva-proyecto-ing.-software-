@@ -52,7 +52,7 @@ export class CotizarPage {
     if (this.contactForm.valid) {
       const totalSalida = this.total;
       const salida = {...this.Data, ...this.productos, totalSalida}
-      if (this.http.post("api/form/d34b479b-974b-53dd-9737-94d59ea03275/form-response", salida).subscribe() != null) {
+      if (this.http.post("api/form/c2d427ba-fe70-5f56-b24a-18c1ae07d531/form-response", salida).subscribe() != null) {
         this.contactForm.reset();
         this.presentAlert("Mensaje Enviado", "Su mensaje ha sido enviado con éxito!", "Ok");
       }
