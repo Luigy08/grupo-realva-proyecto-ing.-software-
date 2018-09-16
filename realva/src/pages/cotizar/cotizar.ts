@@ -50,8 +50,12 @@ export class CotizarPage {
   }
   post() {
     if (this.contactForm.valid) {
-      const totalSalida = this.total;
-      const salida = {...this.Data, ...this.productos, totalSalida}
+      const Total = this.total;
+      let salida = {...this.Data, Total}
+      for (let i=0; i < this.productos.length; i++) {
+        let productoTemporal = { nombre: this.productos[i].nombre, dosis: this.productos[i].dosis, precio: this.productos[i].precio, cantidad: this.productos[i].cantidad };
+        salida = { ...salida, ...productoTemporal }
+      }
       if (this.http.post("api/form/c2d427ba-fe70-5f56-b24a-18c1ae07d531/form-response", salida).subscribe() != null) {
         this.contactForm.reset();
         this.presentAlert("Mensaje Enviado", "Su mensaje ha sido enviado con éxito!", "Ok");
@@ -91,10 +95,8 @@ export class CotizarPage {
     this.total = temporal;
   }
   limpiar() {
-    for(let i=0; i<=this.global.cotizaciones.length; i++) {
-      this.global.cotizaciones.splice(i, 1);
-    }
-    this.global.cotizaciones.splice(0, 1);
+    this.global.cotizaciones = [];
+    this.productos = this.global.cotizaciones;
     this.total = 0;
   }
 
