@@ -25,7 +25,7 @@ export class CotizarPage {
   register = RegisterPage;
   Admin = AdminPage;
   Profile = ProfilePage;
-
+  total = 0;
   productos= this.global.cotizaciones;
   constructor(private alertCtrl: AlertController, public http: Http ,public global: GlobalProvider ,public navCtrl: NavController ,public LoginRegister: LoginRegisterProvider,public navParams: NavParams) {
     this.http = http;
@@ -45,7 +45,6 @@ export class CotizarPage {
       this.presentAlert("Error", "Ingrese todos sus datos de manera correcta!", "Ok");
     }
   }
-
   presentAlert(Title, SubTitle, Button) {
     let alert = this.alertCtrl.create({
       title: Title,

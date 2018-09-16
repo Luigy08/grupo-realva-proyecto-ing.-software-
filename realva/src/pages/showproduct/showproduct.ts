@@ -28,12 +28,14 @@ export class ShowproductPage {
     this.presentacion = dosis;
   }
   cotizando(c) {
-    const a = {...c, ...this.presentacion }
+    const cantidad =1;
+    const a = {...c, ...this.presentacion, cantidad }
+    console.log(a)
     if (this.global.cotizaciones.length == 0) {
       this.global.cotizaciones.push(a);
     } else {
       for (let i = 0; i < this.global.cotizaciones.length; i++) {
-        if (this.global.cotizaciones[i].precio == a.precio) {
+        if (this.global.cotizaciones[i].precio == a.precio && this.global.cotizaciones[i].nombre == a.nombre) {
           break;
         }
         if (i === this.global.cotizaciones.length - 1 && this.global.cotizaciones[i].precio !== a.precio) {
