@@ -32,17 +32,21 @@ export class ProfilePage {
   telephone: AbstractControl;
   telephone2: AbstractControl;
   RTN: AbstractControl;
+
+  hasenter = false;
+ 
+
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, public navParams: NavParams, public afDatabase: AngularFireDatabase, public LoginRegister: LoginRegisterProvider) {
     this.clientesref = afDatabase.list('clientes');
     this.user = this.LoginRegister.userLogged;
     this.profileForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]), 
-      userlastname: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]),
+      username: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(2)]),
+      userlastname: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.nullValidator, Validators.email]),
       direction: new FormControl(),
-      telephone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.nullValidator]),
-      telephone2: new FormControl('', [Validators.required, Validators.minLength(8), Validators.nullValidator]),
-      RTN: new FormControl('', [Validators.required, Validators.minLength(14)]),
+      telephone: new FormControl('', [Validators.required, Validators.minLength(15),Validators.maxLength(15)]),
+      telephone2: new FormControl('', [Validators.required, Validators.minLength(15),Validators.maxLength(15)]),
+      RTN: new FormControl('', [Validators.required, Validators.minLength(16),Validators.maxLength(16)]),
     });
   }
 
@@ -94,6 +98,7 @@ export class ProfilePage {
     if(temp > 0){
       firebase.database().ref().update(updates);
       this.presentAlert("Modificacion Exitosa", "Se logro modificar con exito", "OK");
+      this.hasenter = false;
     }
   }
   presentConfirm(Data) {
@@ -111,7 +116,7 @@ export class ProfilePage {
         {
           text: 'Aceptar',
           handler: () => {
-            this.modificar(Data);
+            this.ValidateModify(Data);
           }
         }
       ]
@@ -177,5 +182,12 @@ export class ProfilePage {
 
     }
 
+  }
+  ValidateModify(Data){
+    this.hasenter = true;
+    console.log(this.profileForm);
+    if(this.profileForm.valid){
+      this.modificar(Data);
+    }
   }
 }

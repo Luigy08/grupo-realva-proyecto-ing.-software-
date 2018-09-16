@@ -26,50 +26,98 @@
       <fieldset>
         <div class="form-group1 required">
           <div class="col-sm-10">
-            <label class="col-sm-2 control-label1" for="input-name">Nombre Empresa:</label>
-            <input id='NombreEmpresa' type="text" class="form-control1" value="{{user.NombreEmpresa}}" formControlName="username" [(ngModel)]="Data.username" name="username"
-              (keypress)="onKeyUp($event)" (keyup)="onKeyUp($event)" min="10" max="32" required>
+            <label class="col-sm-2 control-label" for="input-name">Nombre Empresa:</label>
+            <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)" value="{{user.NombreEmpresa}}"
+              (keyup)="onKeyUp($event)" min="2" max="32" required> 
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.profileForm.touched && !this.profileForm.get('username').value && this.hasenter) || (this.profileForm.untouched && this.hasenter)">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Campo Requerido.
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.profileForm.touched && this.profileForm.get('username').invalid && this.profileForm.get('username').touched  && this.hasenter">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Nombre Invalido.
           </div>
         </div>
         <div class="form-group1 required">
           <div class="col-sm-10">
-            <label class="col-sm-2 control-label1" for="input-lastname">Nombre Representante:</label>
-            <input id='NombreRepresentante' type="text" class="form-control1" value="{{user.NombreRepresentante}}" [(ngModel)]="Data.userlastname" formControlName="userlastname" name="userlastname"(keypress)="onKeyUp($event)"
-              (keyup)="onKeyUp($event)" min="10" max="32" required>
+            <label class="col-sm-2 control-label" for="input-lastname">Nombre Representante:</label>
+            <input type="text" class="form-control" [(ngModel)]="Data.userlastname" name="userlastname" formControlName="userlastname" (keypress)="onKeyUp($event)" value="{{user.NombreRepresentante}}"
+              (keyup)="onKeyUp($event)" min="3" max="32" required>
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.profileForm.touched && !this.profileForm.get('userlastname').value && this.hasenter) || (this.profileForm.untouched && this.hasenter) ">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Campo Requerido.
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.profileForm.touched && this.profileForm.get('userlastname').invalid && this.profileForm.get('userlastname').touched  && this.hasenter">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Representante Invalido.
           </div>
         </div>
         <div class="form-group1 required">
           <div class="col-sm-10">
-            <label class="col-sm-2 control-label1" for="input-email">Correo Electrónico:</label>
-            <input id='Correo' type="text" class="form-control1" [(ngModel)]="Data.email"   name="email" value="{{user.Correo}}" formControlName="email" required ngModel email>
+            <label class="col-sm-2 control-label" for="input-email">Correo Electrónico:</label>
+            <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" value="{{user.email}}"required ngModel email>
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.profileForm.touched && !this.profileForm.get('email').value && this.hasenter ) || (this.profileForm.untouched && this.hasenter) ">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>
+            <strong>Error!</strong>  Campo Requerido.
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.profileForm.touched && this.profileForm.get('email').invalid && this.profileForm.get('email').touched  && this.hasenter ">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Correo Invalido.
           </div>
         </div>
         <div class="form-group1 required">
           <div class="col-sm-10">
-            <label class="col-sm-2 control-label1" for="input-enquiry">Direccion</label>
-            <textarea id='Direccion' rows="1" id="input-enquiry" class="form-control" [(ngModel)]="Data.direction" name="direction" formControlName="direction" class="form-control1" value="{{user.Direccion}}" min="10" max="3000"
-              required></textarea>
+            <label class="col-sm-2 control-label" for="input-enquiry">Direccion</label>
+            <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.direction" name="direction" formControlName="direction" value="{{user.Direccion}}"
+              min="10" max="3000" required></textarea>
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('direction').value && this.hasenter) || (this.registerForm.untouched && this.hasenter) ">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>
+            <strong>Error!</strong>  Campo Requerido.
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.registerForm.get('direction').invalid && this.registerForm.get('direction').touched  && this.hasenter">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Direccion Invalida.
           </div>
         </div>
         <div class="form-group1 required">
           <div class="col-sm-10">
-            <label class="col-sm-2 control-label1" for="input-telephone">Telefono 1:</label>
-            <input id='Telefono1' type="tel" class="form-control1"  formControlName="telephone" name="telephone" [(ngModel)]="Data.telephone" value="{{user.Telefono1}}" [brmasker]="{mask:'+(000)0000-0000', len:15}"
-              (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8" max="12" required>
+            <label class="col-sm-2 control-label" for="input-telephone">Telefono 1:</label>
+            <input type="tel" class="form-control" [(ngModel)]="Data.telephone" [brmasker]="{mask:'+(000)0000-0000', len:15}" name="telephone" value="{{user.Telefono1}}"
+              formControlName="telephone" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)"  min='15' max="15" placeholder="+(504)9999-9999" required>
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.profileForm.touched && this.profileForm.get('telephone').invalid && this.profileForm.get('telephone').touched  && this.hasenter">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Telefono Invalido.
           </div>
         </div>
         <div class="form-group1 required">
           <div class="col-sm-10">
-            <label class="col-sm-2 control-label1" for="input-telephone">Telefono 2:</label>
-            <input id='Telefono2' type="tel" class="form-control1" name="telephone2" formControlName="telephone2" [(ngModel)]="Data.telephone2" value="{{user.Telefono2}}" [brmasker]="{mask:'+(000)0000-0000', len:15}"
-              (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8" max="12">
+            <label class="col-sm-2 control-label" for="input-telephone">Telefono 2:</label>
+            <input type="tel" class="form-control" [(ngModel)]="Data.telephone2" [brmasker]="{mask:'+(000)0000-0000', len:15}" name="telephone2" value="{{user.Telefono2}}"
+              formControlName="telephone" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)"  min='15' max="15" placeholder="+(504)9999-9999" required>
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.profileForm.touched && this.profileForm.get('telephone2').invalid && this.profileForm.get('telephone2').touched  && this.hasenter">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Telefono2 Invalido.
           </div>
         </div>
         <div class="form-group1 required">
           <div class="col-sm-10">
-            <label class="col-sm-2 control-label1" for="input-id">RTN:</label>
-            <input id='RTN' type="text" class="form-control1" [(ngModel)]="Data.RTN" name="RTN" formControlName="RTN" value="{{user.RTN}}" [brmasker]="{mask:'0000-0000-000000', len:16}" (keypress)="onKeyUpRTN($event)"
-              (keyup)="onKeyUpRTN($event)" min="14" max="17" required>
+            <label class="col-sm-2 control-label" for="input-id">RTN:</label>
+            <input type="text" class="form-control" [(ngModel)]="Data.RTN" name="RTN" formControlName="RTN" [brmasker]="{mask:'0000-0000-000000', len:16}"  value="{{user.RTN}}"
+              (keypress)="onKeyUpRTN($event)" placeholder="9999-9999-999999"  (keyup)="onKeyUpRTN($event)" min="16" max="16" required>
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.profileForm.touched && !this.profileForm.get('RTN').value && this.hasenter) || (this.profileForm.untouched && this.hasenter) ">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>
+            <strong>Error!</strong>  Campo Requerido.
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.profileForm.touched && this.profileForm.get('RTN').invalid && this.profileForm.get('RTN').touched  && this.hasenter">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  RTN Invalido.
           </div>
         </div>
       </fieldset>
