@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import {LoginRegisterProvider} from "../../providers/login-register/login-register";
-import { NavParams,NavController, ActionSheetController, AlertController } from 'ionic-angular';
-import {ShowproductPage} from "../showproduct/showproduct";
+import { NavParams,NavController, AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import {GlobalProvider} from '../../providers/global/global';
-import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
+import { FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
 import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
 import {AdminPage} from "../admin/admin";
@@ -34,10 +33,26 @@ export class CotizarPage {
       email: new FormControl(),
       message: new FormControl
     });
+    for (let i=0; i< global.cotizaciones.length; i++) {
+      this.total += global.cotizaciones[i].precio*global.cotizaciones[i].cantidad
+    }
+  }
+  calcularTotal (item, valor) {
+    let cantidad = valor.target.value;
+    let temporal =0;
+    for (let i=0; i< this.global.cotizaciones.length; i++) {
+      if (item.nombre == this.global.cotizaciones[i].nombre && item.precio == this.global.cotizaciones[i].precio) {
+        this.global.cotizaciones[i].cantidad = cantidad;
+      }
+      temporal += this.global.cotizaciones[i].precio*this.global.cotizaciones[i].cantidad
+    }
+    this.total = temporal;
   }
   post() {
     if (this.contactForm.valid) {
-      if (this.http.post("api/form/d34b479b-974b-53dd-9737-94d59ea03275/form-response", this.Data).subscribe() != null) {
+      const totalSalida = this.total;
+      const salida = {...this.Data, ...this.productos, totalSalida}
+      if (this.http.post("api/form/d34b479b-974b-53dd-9737-94d59ea03275/form-response", salida).subscribe() != null) {
         this.contactForm.reset();
         this.presentAlert("Mensaje Enviado", "Su mensaje ha sido enviado con éxito!", "Ok");
       }
@@ -69,13 +84,18 @@ export class CotizarPage {
     if (index>-1) {
       this.global.cotizaciones.splice(index, 1);
     }
+    let temporal =0;
+    for (let i=0; i< this.global.cotizaciones.length; i++) {
+      temporal += this.global.cotizaciones[i].precio*this.global.cotizaciones[i].cantidad
+    }
+    this.total = temporal;
   }
   limpiar() {
     for(let i=0; i<=this.global.cotizaciones.length; i++) {
       this.global.cotizaciones.splice(i, 1);
     }
     this.global.cotizaciones.splice(0, 1);
-
+    this.total = 0;
   }
 
 }

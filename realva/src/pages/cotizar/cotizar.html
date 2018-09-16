@@ -45,7 +45,7 @@
               </h6>
             </div>
             <div class="col-xs-4 col-md-4">
-              <input type="text" class="form-control input-sm" value={{producto.cantidad}}>
+              <input type="number" class="form-control input-sm" min="1" value={{producto.cantidad}} (change)="calcularTotal(producto, $event)">
             </div>
             <div class="col-xs-2 col-md-2">
               <button href="#" type="button" (click)="eliminar(producto)" class="btn btn-outline-danger btn-xs">
