@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl, } from '@angular/forms';
 import { LoginRegisterProvider } from "../../providers/login-register/login-register";
 import { HttpClient } from '@angular/common/http';
 import { Http } from '@angular/http';
-import {CryptoJS} from 'crypto-js'
+import { CryptoJS } from 'crypto-js'
 import sha256 from 'crypto-js/sha256';
 import hmacSHA512 from 'crypto-js/hmac-sha512';
 import Base64 from 'crypto-js/enc-base64';
@@ -41,25 +41,33 @@ export class RegisterPage {
   my_variable: string = '#bfbcbc';
   passwordcheck: string;
   passwordcheck1: string;
-  registroExitoso= false;
-  clavesRef: any =[];
+  registroExitoso = false;
+  clavesRef: any = [];
   descargaRef: any;
   Activacion = 'Inactivo';
 
-  constructor(public navCtrl: NavController,private alertCtrl: AlertController,public afDatabase: AngularFireDatabase, public navParams: NavParams, public LoginRegister: LoginRegisterProvider) {
+  passnumvall = false;
+  passcapvall = false;
+  passlowvall = false;
+  passminvall = false;
+  hasenter = false;
+  passunequal = false;
+
+
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public afDatabase: AngularFireDatabase, public navParams: NavParams, public LoginRegister: LoginRegisterProvider) {
     this.registerForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]), 
-      userlastname: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(10)]),
+      username: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(2)]),
+      userlastname: new FormControl('', [Validators.required, Validators.nullValidator, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.nullValidator, Validators.email]),
       direction: new FormControl(),
-      telephone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.nullValidator]),
-      telephone2: new FormControl('', [Validators.required, Validators.minLength(8), Validators.nullValidator]),
-      RTN: new FormControl('', [Validators.required, Validators.minLength(14)]),
+      telephone: new FormControl('', [Validators.required, Validators.minLength(15),Validators.maxLength(15)]),
+      telephone2: new FormControl('', [Validators.required, Validators.minLength(15),Validators.maxLength(15)]),
+      RTN: new FormControl('', [Validators.required, Validators.minLength(16),Validators.maxLength(16)]),
       password: new FormControl('', [Validators.required, Validators.nullValidator]),
       Repassword: new FormControl('', [Validators.required, Validators.nullValidator]),
     });
-    this.descargaRef= afDatabase.list('clavesAntiguas');
-    this.descargaRef.valueChanges().subscribe((datas) => { this.clavesRef = datas;},(err)=>{ console.log("probleme : ", err) });
+    this.descargaRef = afDatabase.list('clavesAntiguas');
+    this.descargaRef.valueChanges().subscribe((datas) => { this.clavesRef = datas; }, (err) => { console.log("probleme : ", err) });
   }
 
 
@@ -69,12 +77,12 @@ export class RegisterPage {
     this.showConfirm();
   }
 
-  Register(Data,estado) {
+  Register(Data, estado) {
     console.log(Data);
     const hmacDigest = Base64.stringify(hmacSHA512(Data.password, '9871236342'));
-    console.log(hmacDigest);
     let clientesRef = this.afDatabase.list('clientes').push({});
-    clientesRef.set({id:clientesRef.key,ClaveCliente:0,NombreEmpresa:Data.username,NombreRepresentante:Data.userlastname,RTN:Data.RTN,Estatus:estado,Telefono1:Data.telephone,Telefono2:Data.telephone2,Contraseña:hmacDigest,Clasificacion:0,Direccion:Data.direction,Correo:Data.email});
+    clientesRef.set({ id: clientesRef.key, ClaveCliente: 0, NombreEmpresa: Data.username, NombreRepresentante: Data.userlastname, RTN: Data.RTN, Estatus: estado, Telefono1: Data.telephone, Telefono2: Data.telephone2, Contraseña: hmacDigest, Clasificacion: 0, Direccion: Data.direction, Correo: Data.email });
+    this.registroExitoso = true;
     this.presentAlert("Registro Exitoso", "Se logro registrar con exito", "OK");
   }
   presentAlert(Title, SubTitle, Button) {
@@ -88,7 +96,7 @@ export class RegisterPage {
   showConfirm() {
     const confirm = this.alertCtrl.create({
       title: 'Registrarse',
-      message: 'Es cliente nuevo o antiguo',
+      message: 'Es cliente nuevo o existente',
       buttons: [
         {
           text: 'Nuevo',
@@ -97,7 +105,7 @@ export class RegisterPage {
           }
         },
         {
-          text: 'Antiguo',
+          text: 'Existente',
           handler: () => {
             this.showPrompt();
           }
@@ -133,24 +141,24 @@ export class RegisterPage {
     });
     prompt.present();
   }
-  buscarCliente(Clave){
+  buscarCliente(Clave) {
     let existe = false;
     for (const iterator of this.clavesRef) {
-      if(Clave == iterator.Clave){
+      if (Clave == iterator.Clave) {
         existe = true;
       }
     }
-    if(existe){
+    if (existe) {
       this.presentAlert("Registre Sus Datos", "Su cuenta sera activada de forma automatica", "OK");
       this.Activacion = 'Activo';
-    }else{
+    } else {
       this.presentAlert("No se encontro su cliente", "Su Clave no existe, cree una nueva cuenta o intente de nuevo", "OK");
       this.Activacion = 'InActivo';
     }
   }
   public onKeyUp(event: any) {
     let newValue = event.target.value;
-    let regExp = new RegExp('^[A-ZaÑñÁÉÍÓÚáéíóú,a-z, ]+$');
+    let regExp = new RegExp('^[0-9A-ZaÑñÁÉÍÓÚáéíóú,a-z, ]+$');
     if (!regExp.test(newValue)) {
       event.target.value = newValue.slice(0, -1);
     }
@@ -183,7 +191,6 @@ export class RegisterPage {
     } else {
       this.my_variable = "red";
     }
-
   }
 
   public checkPassWord1(event) {
@@ -200,10 +207,46 @@ export class RegisterPage {
   }
 
   FullRegister(Data) {
-    this.Register(Data,this.Activacion);
-    if(this.registroExitoso){
-      this.registerForm.reset();
-      this.registroExitoso = false; 
+    this.passnumvall = false;
+    this.passcapvall = false;
+    this.passlowvall = false;
+    this.passunequal = false;
+    this.passminvall = false;
+    this.hasenter = true;
+    let passvalid = false;
+    //this.Register(Data,this.Activacion);
+    console.log(this.registerForm);
+    if (this.registerForm.get('password').value) {
+      var containsDigits = /[0-9]/.test(this.registerForm.get('password').value)
+      var containsUpper = /[A-Z]/.test(this.registerForm.get('password').value)
+      var containsLower = /[a-z]/.test(this.registerForm.get('password').value)
+      if (!containsDigits) {
+        this.passnumvall = true;
+      }
+      if (!containsUpper) {
+        this.passcapvall = true;
+      }
+      if (!containsLower) {
+        this.passlowvall = true;
+      }
+      if (this.registerForm.get('password').value.length < 8) {
+        this.passminvall = true;
+      }
+      if (this.registerForm.get('password').value != this.registerForm.get('Repassword').value && this.registerForm.get('Repassword').value) {
+        this.passunequal = true;
+      }
+      if(!this.passnumvall && !this.passlowvall && !this.passcapvall && !this.passunequal && !this.passminvall){
+        passvalid = true;
+      }
+    }
+    if(this.registerForm.valid && passvalid){
+      this.Register(Data,this.Activacion);
+      if (this.registroExitoso) {
+        this.hasenter = false;
+        this.registerForm.reset();
+        this.registroExitoso = false;
+        this.navCtrl.pop();
+      }
     }
   }
 }

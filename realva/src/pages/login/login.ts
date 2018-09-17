@@ -69,23 +69,5 @@ export class LoginPage {
 		});
 		alert.present();
 	}
-	login(data) {
-
-    /*let data = this.loginForm.value;
-
-		if (!data.email) {
-			return;
-		}
-
-		let credentials = {
-			email: data.email,
-			password: data.password
-		};
-		this.auth.signInWithEmail(credentials)
-			.then(
-				() => this.navCtrl.setRoot(HomePage),
-				error => this.loginError = error.message
-			);*/
-	}//login method
 
 }//main brackets

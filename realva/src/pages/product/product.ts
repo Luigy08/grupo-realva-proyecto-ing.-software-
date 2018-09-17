@@ -36,6 +36,9 @@ export class ProductPage {
   public filterRef: firebase.database.Reference;
   mostrarList = [];
   filt = [];
+  filtLab = "";
+  filtTec = "";
+  ListaFiltTec = [];
   constructor(public global: GlobalProvider, public navCtrl: NavController, public LoginRegister: LoginRegisterProvider, public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
     this.filterRef = afDatabase.database.ref('productos');
     this.filterRef.on('value', productList => {
@@ -47,8 +50,21 @@ export class ProductPage {
       this.filterList = productos;
       this.loadedfilterList = productos;
       this.mostrarList = [];
+      this.ListaFiltTec = [];
     });
     console.log(this.filterList);
+  }
+
+  ionViewDidLoad() {
+    if(this.filt.length > 0){
+      this.getItemsCheckMin();
+    }
+    if(this.filtLab != ""){
+      this.getItemsCheckLabMin(this.filtLab);
+    }
+    if(this.filtTec != ""){
+      this.getItemsCheckMinTec(this.filtTec);
+    }
   }
 
   cotizando(c) {
@@ -89,24 +105,25 @@ export class ProductPage {
     });
     this.filterList = this.loadedfilterList;
     this.mostrarList = [];
+    this.ListaFiltTec = [];
   }
 
-  highlightMe(information){
-    
-    if(information == 1){
-      if(document.getElementById("test").className.indexOf("collapsed") != -1){
+  highlightMe(information) {
+
+    if (information == 1) {
+      if (document.getElementById("test").className.indexOf("collapsed") != -1) {
         document.getElementById("test").className = "active";
         //document.getElementById("ut").className = "";
         //document.getElementById("lab").className = "";
       } else {
         document.getElementById("test").className = "";
-      }  
-      
-    }
-    
+      }
 
-    if(information == 2){
-      if(document.getElementById("ut").className.indexOf("collapsed") != -1){
+    }
+
+
+    if (information == 2) {
+      if (document.getElementById("ut").className.indexOf("collapsed") != -1) {
         //document.getElementById("test").className = "";
         document.getElementById("ut").className = "active";
         //document.getElementById("lab").className = "";
@@ -115,8 +132,8 @@ export class ProductPage {
       }
     }
 
-    if(information == 3){
-      if(document.getElementById("lab").className.indexOf("collapsed") != -1){
+    if (information == 3) {
+      if (document.getElementById("lab").className.indexOf("collapsed") != -1) {
         //document.getElementById("test").className = "";
         //document.getElementById("ut").className = "";
         document.getElementById("lab").className = "active";
@@ -143,6 +160,69 @@ export class ProductPage {
       }
     });
   }
+  getItemsCheckTec(searchbar) {
+    var q = searchbar.target.value;
+    // Reset items back to all of the items
+    this.initializeItems();
+    if (this.filt.length > 0 || this.filtLab != "") {
+      if(this.filt.length > 0){
+        this.getItemsCheckMin();
+      }
+      if(this.filtLab != ""){
+        this.getItemsCheckLabMin(this.filtLab);
+      }
+    }
+    // if the value is an empty string don't filter the items
+    if (!q || !searchbar.target.checked) {
+      this.filtTec = "";
+      return;
+    }
+    if (searchbar.target.checked) {
+      this.filtTec = searchbar.target.value;
+    }
+    this.filterList.filter((v) => {
+      if (v.unidTec) {
+        if (v.unidTec.indexOf(q.toUpperCase()) > -1) {
+          console.log('Entro');
+          if (this.ListaFiltTec.indexOf(v) == -1) {
+            this.ListaFiltTec.push(v);
+          }
+          return true;
+        }
+        return false;
+      }
+    });
+    this.filterList = this.ListaFiltTec;
+  }
+  getItemsCheckLab(searchbar) {
+    var q = searchbar.target.value;
+    // Reset items back to all of the items
+    this.initializeItems();
+    if (this.filt.length > 0 || this.filtTec != "") {
+      if(this.filt.length > 0){
+        this.getItemsCheckMin();
+      }
+      if(this.filtTec != ""){
+        this.getItemsCheckMinTec(this.filtTec);
+      }
+    }
+    // if the value is an empty string don't filter the items
+    if (!q || !searchbar.target.checked) {
+      this.filtLab = "";
+      return;
+    }
+    if (searchbar.target.checked) {
+      this.filtLab = searchbar.target.value;
+    }
+    this.filterList = this.filterList.filter((v) => {
+      if (v.laboratorio && q) {
+        if (v.laboratorio == q) {
+          return true;
+        }
+        return false;
+      }
+    });
+  }
   getItemsCheck(searchbar) {
     var q = searchbar.target.value;
     // Reset items back to all of the items
@@ -151,6 +231,14 @@ export class ProductPage {
       this.filt.splice(borrar, 1);
     }
     this.initializeItems();
+    if (this.filtTec != "" || this.filtLab != "") {
+      if(this.filtLab != ""){
+        this.getItemsCheckLabMin(this.filtLab);
+      }
+      if(this.filtTec != ""){
+        this.getItemsCheckMinTec(this.filtTec);
+      }
+    }
     // if the value is an empty string don't filter the items
     if (this.filt.length == 0) {
       if (!q || !searchbar.target.checked) {
@@ -163,8 +251,55 @@ export class ProductPage {
     for (const iterator of this.filt) {
       this.filterList.filter((v) => {
         if (v.especie && this.filt.length > 0) {
-          if (v.especie.indexOf(iterator.toUpperCase())> -1) {
-            if(this.mostrarList.indexOf(v) == -1){
+          if (v.especie.indexOf(iterator.toUpperCase()) > -1) {
+            if (this.mostrarList.indexOf(v) == -1) {
+              this.mostrarList.push(v);
+            }
+            return true;
+          }
+          return false;
+        }
+      });
+    }
+    this.filterList = this.mostrarList;
+  }
+
+  getItemsCheckMinTec(searchbar) {
+    var q = searchbar;
+    // Reset items back to all of the items
+    this.ListaFiltTec = [];
+    this.filterList.filter((v) => {
+      if (v.unidTec) {
+        console.log(v.unidTec.indexOf(q.toUpperCase()))
+        if (v.unidTec.indexOf(q.toUpperCase()) > -1) {
+          if (this.ListaFiltTec.indexOf(v) == -1) {
+            this.ListaFiltTec.push(v);
+          }
+          return true;
+        }
+        return false;
+      }
+    });
+    this.filterList = this.ListaFiltTec;
+  }
+  getItemsCheckLabMin(searchbar) {
+    var q = searchbar;
+    this.filterList = this.filterList.filter((v) => {
+      if (v.laboratorio && q) {
+        if (v.laboratorio == q) {
+          return true;
+        }
+        return false;
+      }
+    });
+  }
+  getItemsCheckMin() {
+    this.mostrarList = [];
+    for (const iterator of this.filt) {
+      this.filterList.filter((v) => {
+        if (v.especie && this.filt.length > 0) {
+          if (v.especie.indexOf(iterator.toUpperCase()) > -1) {
+            if (this.mostrarList.indexOf(v) == -1) {
               this.mostrarList.push(v);
             }
             return true;

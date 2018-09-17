@@ -21,14 +21,30 @@
           <div class="col-sm-10">
             <label class="col-sm-2 control-label" for="input-name">Nombre Empresa:</label>
             <input type="text" class="form-control" [(ngModel)]="Data.username" name="username" formControlName="username" (keypress)="onKeyUp($event)"
-              (keyup)="onKeyUp($event)" min="10" max="32" required>
+              (keyup)="onKeyUp($event)" min="2" max="32" required>
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('username').value && this.hasenter) || (this.registerForm.untouched && this.hasenter)">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Campo Requerido.
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.registerForm.get('username').invalid && this.registerForm.get('username').touched  && this.hasenter">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Nombre Invalido.
           </div>
         </div>
       <div class="form-group required">
           <div class="col-sm-10">
             <label class="col-sm-2 control-label" for="input-lastname">Nombre Representante:</label>
             <input type="text" class="form-control" [(ngModel)]="Data.userlastname" name="userlastname" formControlName="userlastname" (keypress)="onKeyUp($event)"
-              (keyup)="onKeyUp($event)" min="10" max="32" required>
+              (keyup)="onKeyUp($event)" min="3" max="32" required>
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('userlastname').value && this.hasenter) || (this.registerForm.untouched && this.hasenter) ">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Campo Requerido.
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.registerForm.get('userlastname').invalid && this.registerForm.get('userlastname').touched  && this.hasenter">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Representante Invalido.
           </div>
         </div>
       <div class="form-group required">
@@ -36,22 +52,55 @@
           <label class="col-sm-2 control-label" for="input-email">Correo Electrónico:</label>
           <input type="text" class="form-control" [(ngModel)]="Data.email" name="email" formControlName="email" required ngModel email>
         </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('email').value && this.hasenter ) || (this.registerForm.untouched && this.hasenter) ">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>
+          <strong>Error!</strong>  Campo Requerido.
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.registerForm.get('email').invalid && this.registerForm.get('email').touched  && this.hasenter ">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong>  Correo Invalido.
+        </div>
       </div>
       <div class="form-group required">
         <div class="col-sm-10">
           <label class="col-sm-2 control-label" for="input-password">Contraseña:</label>
           <input type="password" class="form-control" [(ngModel)]="Data.password" name="password" formControlName="password" min="5"
             max="32"(keypress)="checkPassWord($event)" (keyup)="checkPassWord($event)" required>
-            <div *ngIf="Contravalnull">
-              Contraseña tiene que estar lleno
-            </div>
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('password').value && this.hasenter) || (this.registerForm.untouched && this.hasenter) ">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>
+          <strong>Error!</strong>  Campo Requerido.
+        </div>
+        <div class="alert alert-danger  alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.passnumvall">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="this.passnumvall = false">&times;</a>
+          <strong>Error!</strong>La contraseña deber contener almenos un numero.
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.passcapvall">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="this.passcapvall = false">&times;</a>
+          <strong>Error!</strong>La contraseña deber contener almenos una letra mayuscula.
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.passlowvall">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="this.passlowvall = false">&times;</a>
+          <strong>Error!</strong>La contraseña deber contener almenos una letra minuscula.
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.passminvall">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="this.passminvall = false">&times;</a>
+          <strong>Error!</strong>La contraseña deber contener almenos 8 caracteres.
         </div>
       </div>
       <div class="form-group required">
         <div class="col-sm-10">
           <label class="col-sm-2 control-label" for="input-password">Ingrese Contraseña Nuevamente:</label>
-          <input [style.borderColor]="my_variable" type="password" class="form-control" [(ngModel)]="Data.repassword" name="Repassword" formControlName="Repassword"
+          <input [style.borderColor]="my_variable" type="password" class="form-control" [(ngModel)]="Data.Repassword" name="Repassword" formControlName="Repassword"
             min="5" max="32" required [ngStyle]="style" (keypress)="checkPassWord1($event)" (keyup)="checkPassWord1($event)">
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('Repassword').value && this.hasenter) || (this.registerForm.untouched && this.hasenter) ">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong>  Campo Requerido.
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.passunequal">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong>  Las Contraseña no son iguales.
         </div>
       </div>
       <div class="form-group required">
@@ -60,28 +109,59 @@
           <textarea rows="10" id="input-enquiry" class="form-control" [(ngModel)]="Data.direction" name="direction" formControlName="direction"
             min="10" max="3000" required></textarea>
         </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('direction').value && this.hasenter) || (this.registerForm.untouched && this.hasenter) ">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>
+          <strong>Error!</strong>  Campo Requerido.
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.registerForm.get('direction').invalid && this.registerForm.get('direction').touched  && this.hasenter">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong>  Direccion Invalida.
+        </div>
       </div>
       <div class="form-group required">
         <div class="col-sm-10">
           <label class="col-sm-2 control-label" for="input-telephone">Telefono 1:</label>
           <input type="tel" class="form-control" [(ngModel)]="Data.telephone" [brmasker]="{mask:'+(000)0000-0000', len:15}" name="telephone"
-            formControlName="telephone" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8"
-            max="12" required>
+            formControlName="telephone" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)"  min='15' max="15" placeholder="+(504)9999-9999" required>
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('telephone').value && this.hasenter) || (this.registerForm.untouched && this.hasenter) ">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>
+          <strong>Error!</strong>  Campo Requerido.
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.registerForm.get('telephone').invalid && this.registerForm.get('telephone').touched  && this.hasenter">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong>  Telefono Invalido.
         </div>
       </div>
       <div class="form-group required">
           <div class="col-sm-10">
             <label class="col-sm-2 control-label" for="input-telephone">Telefono 2:</label>
             <input type="tel" class="form-control" [(ngModel)]="Data.telephone2" [brmasker]="{mask:'+(000)0000-0000', len:15}" name="telephone2"
-              formControlName="telephone2" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" pattern="[0-9]{8}" min="8"
-              max="12" required>
+              formControlName="telephone2" (keypress)="onKeyUpNum($event)" (keyup)="onKeyUpNum($event)" placeholder="+(504)9999-9999" 
+              max="15"  required>
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('telephone2').value && this.hasenter) || (this.registerForm.untouched && this.hasenter) ">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>
+            <strong>Error!</strong>  Campo Requerido.
+          </div>
+          <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.registerForm.get('telephone2').invalid && this.registerForm.get('telephone2').touched  && this.hasenter">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>  Telefono Invalido.
           </div>
         </div>
       <div class="form-group required">
         <div class="col-sm-10">
           <label class="col-sm-2 control-label" for="input-id">RTN:</label>
           <input type="text" class="form-control" [(ngModel)]="Data.RTN" name="RTN" formControlName="RTN" [brmasker]="{mask:'0000-0000-000000', len:16}"
-            (keypress)="onKeyUpRTN($event)" (keyup)="onKeyUpRTN($event)" min="14" max="17" required>
+            (keypress)="onKeyUpRTN($event)" placeholder="9999-9999-999999"  (keyup)="onKeyUpRTN($event)" min="16" max="16" required>
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="(this.registerForm.touched && !this.registerForm.get('RTN').value && this.hasenter) || (this.registerForm.untouched && this.hasenter) ">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>
+          <strong>Error!</strong>  Campo Requerido.
+        </div>
+        <div class="alert alert-danger alert-dismissible col-sm-10" *ngIf="this.registerForm.touched && this.registerForm.get('RTN').invalid && this.registerForm.get('RTN').touched  && this.hasenter">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong>  RTN Invalido.
         </div>
       </div>
     </fieldset>

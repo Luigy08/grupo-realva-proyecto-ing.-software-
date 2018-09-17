@@ -49,9 +49,8 @@
                           <a href="#"><i class="fa fa-globe fa-lg"></i> Unidad Técnica <span class="arrow"></span></a>
                         </li>
                         <ul class="sub-menu collapse" id="unidadTecnica">
-                          <label class="myLabel"><input id="Animales de Produccion" type="checkbox" value="ANIMALES DE PRODUCCIÓN" (change)="getItemsCheck($event)">Animales de Producción</label>
-                          <label class="myLabel"><input id="Animales de Compañia" type="checkbox" value="ANIMALES DE COMPAÑÍA" (change)="getItemsCheck($event)">Animales de Compañía</label>
-                          
+                          <li><label class="myLabel"><input id="Animales de Produccion" *ngIf="filtTec == '' || filtTec == 'ANIMALES DE PRODUCCIÓN' " type="checkbox" value="ANIMALES DE PRODUCCIÓN" (change)="getItemsCheckTec($event)">Animales de Producción</label></li>
+                          <li> <label class="myLabel"><input id="Animales de Compañia" *ngIf="filtTec == '' || filtTec == 'ANIMALES DE COMPAÑÍA' " type="checkbox" value="ANIMALES DE COMPAÑÍA" (change)="getItemsCheckTec($event)">Animales de Compañía</label></li>
                         </ul>
 
 
@@ -60,14 +59,14 @@
                         </li>
                         <ul class="sub-menu collapse" id="laboratorio">
                           
-                          <li><label class="myLabel"><input id="LAVET" type="checkbox" value="LAVET" (change)="getItemsCheck($event)">LAVET</label></li>
-                            <li><label class="myLabel"><input id="LABIPHARM" type="checkbox" value="LABIPHARM" (change)="getItemsCheck($event)">LABIPHARM</label></li>
-                              <li><label class="myLabel"><input id="INVET" type="checkbox" value="INVET" (change)="getItemsCheck($event)">INVET</label></li>
-                                <li><label class="myLabel"><input id="LABORATORIOS VM" type="checkbox" value="LABORATORIOS VM" (change)="getItemsCheck($event)">LABORATORIOS VM</label></li>
-                                  <li><label class="myLabel"><input id="SCHIPPERS - VET BRANDS" type="checkbox" value="SCHIPPERS - VET BRANDS" (change)="getItemsCheck($event)">SCHIPPERS - VET BRANDS</label></li>
-                                    <li><label class="myLabel"><input id="ERMA" type="checkbox" value="ERMA" (change)="getItemsCheck($event)">ERMA</label></li>
-                                      <li><label class="myLabel"><input id="GAMMA" type="checkbox" value="GAMMA" (change)="getItemsCheck($event)">GAMMA</label></li>
-                                        <li><label class="myLabel"><input id="MSD - ANIMAL HEALTH" type="checkbox" value="MSD - ANIMAL HEALTH" (change)="getItemsCheck($event)">MSD - ANIMAL HEALTH</label></li>
+                          <li><label class="myLabel"><input id="LAVET" *ngIf="filtLab == '' || filtLab == 'LAVET' " type="checkbox" value="LAVET" (change)="getItemsCheckLab($event)">LAVET</label></li>
+                            <li><label class="myLabel"><input id="LABIPHARM" *ngIf="filtLab == '' || filtLab == 'LABIPHARM' " type="checkbox" value="LABIPHARM" (change)="getItemsCheckLab($event)">LABIPHARM</label></li>
+                              <li><label class="myLabel"><input id="INVET"  *ngIf="filtLab == '' || filtLab == 'INVET' "type="checkbox" value="INVET" (change)="getItemsCheckLab($event)">INVET</label></li>
+                                <li><label class="myLabel"><input id="LABORATORIOS VM"  *ngIf="filtLab == '' || filtLab == 'LABORATORIOS VM' " type="checkbox" value="LABORATORIOS VM" (change)="getItemsCheckLab($event)">LABORATORIOS VM</label></li>
+                                  <li><label class="myLabel"><input id="SCHIPPERS - VET BRANDS" *ngIf="filtLab == '' || filtLab == 'SCHIPPERS - VET BRANDS' " type="checkbox" value="SCHIPPERS - VET BRANDS" (change)="getItemsCheckLab($event)">SCHIPPERS - VET BRANDS</label></li>
+                                    <li><label class="myLabel"><input id="ERMA" type="checkbox"  *ngIf="filtLab == '' || filtLab == 'ERMA' "value="ERMA" (change)="getItemsCheckLab($event)">ERMA</label></li>
+                                      <li><label class="myLabel"><input id="GAMMA" type="checkbox"  *ngIf="filtLab == '' || filtLab == 'GAMMA' "value="GAMMA" (change)="getItemsCheckLab($event)">GAMMA</label></li>
+                                        <li><label class="myLabel"><input id="MSD - ANIMAL HEALTH"  *ngIf="filtLab == '' || filtLab == 'MSD - ANIMAL HEALTH' "type="checkbox" value="MSD - ANIMAL HEALTH" (change)="getItemsCheckLab($event)">MSD - ANIMAL HEALTH</label></li>
                         </ul>
                     </ul>
              </div>

@@ -7,19 +7,9 @@
 <ion-header>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
-  <ion-navbar>
-    <ion-buttons end>
-      <button ion-button (click)="LoginRegister.LogOut()" *ngIf="LoginRegister.ClientAuth||LoginRegister.AdminAuth">
-        Cerrar Sesion
-      </button>
-      <button ion-button [navPush]="login" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth">Iniciar Sesion
-      </button>
-      <button ion-button [navPush]="register" *ngIf="!LoginRegister.ClientAuth&&!LoginRegister.AdminAuth"> Registrarse
-      </button>
-      <button ion-button [navPush]="Admin" *ngIf="LoginRegister.AdminAuth"> Administracion</button>
-      <button ion-button [navPush]="Profile" *ngIf="LoginRegister.ClientAuth"> Ver Perfil</button>
-    </ion-buttons>
-  </ion-navbar>
+    <ion-navbar hide-nav-bar="false">
+      <app-header></app-header>
+    </ion-navbar>
 </ion-header>
 
 
